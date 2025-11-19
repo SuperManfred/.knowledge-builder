@@ -232,6 +232,49 @@ Workflow Steps
 
    If NO to any: adjust patterns and regenerate.
 
+   9.5) ANALYZE REPOSITORY COMMIT FREQUENCY
+
+   **Track how actively this repository is developed to guide re-curation cadence:**
+
+   ```bash
+   cd ${FULL_REPO_PATH}
+
+   # Count commits in last 3 months
+   COMMITS_3MO=$(git log --since="3 months ago" --oneline --no-merges | wc -l)
+
+   # Count commits in last 1 month
+   COMMITS_1MO=$(git log --since="1 month ago" --oneline --no-merges | wc -l)
+
+   # Calculate commits per month (average from 3-month window)
+   COMMITS_PER_MONTH=$(echo "$COMMITS_3MO / 3" | bc)
+
+   # Store in metadata
+   cat >> ${DEST}/.curation/provenance.yaml << EOF
+   commit_frequency:
+     last_3_months: ${COMMITS_3MO}
+     last_1_month: ${COMMITS_1MO}
+     commits_per_month_avg: ${COMMITS_PER_MONTH}
+     analyzed_at: $(date -u +"%Y-%m-%dT%H:%M:%SZ")
+   EOF
+   ```
+
+   **Report to user:**
+
+   ```
+   📊 Repository Activity Analysis:
+
+   Commits (last 3 months): ${COMMITS_3MO}
+   Commits (last month): ${COMMITS_1MO}
+   Average: ~${COMMITS_PER_MONTH} commits/month
+
+   Re-curation recommendation:
+   - Low activity (<5 commits/month): Re-curate every 6 months
+   - Moderate activity (5-20 commits/month): Re-curate every 2-3 months
+   - High activity (>20 commits/month): Re-curate monthly
+
+   This helps you decide when to refresh this knowledge base.
+   ```
+
 10) GENERATE SPECIALIST-PROMPT.md (Multi-Agent)
 
    **10.1 - Create proposals directory:**
