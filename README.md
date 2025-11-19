@@ -15,7 +15,7 @@ Tell your AI agent:
 **For curated website docs resource:**
 
 ```
-Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
 
 **For curated GitHub code resource:**
@@ -127,7 +127,7 @@ Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=
 **Agent Command**:
 
 ```
-Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
 
 ---
@@ -147,7 +147,7 @@ Read /Users/MN/GITHUB/.knowledge/curated-docs-web/docs.example.com/SPECIALIST-PR
 Tell your agent to curate a new resource (one-time setup):
 
 ```
-Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://docs.example.com
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT.md with WEBSITE_URL=https://docs.example.com
 ```
 
 ### Pattern 3: Improve the System (two paths: self improve based on performance over time, user/agent brainstorm for how to improve the system)
@@ -187,7 +187,7 @@ Each directory contains a SPECIALIST-PROMPT.md you can use.
 Tell your AI agent:
 
 ```
-Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
 
 The agent will scrape, curate, and create `.knowledge/curated-docs-web/repoprompt.com/`
@@ -238,8 +238,7 @@ The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 │   └── CONTEXT.md
 │
 └── curated-docs-web-builder/          ← Curate website docs for "how to use"
-    ├── CURATOR-PROMPT-V2.md           ← USE THIS (simple, works)
-    ├── CURATOR-PROMPT.md              ← OLD (overcomplicated, don't use)
+    ├── CURATOR-PROMPT.md
     ├── CONSTRAINTS.md
     └── CONTEXT.md
 
@@ -265,7 +264,7 @@ The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 
 - `curated-code-builder/CURATOR-PROMPT.md` - Curate code
 - `curated-docs-gh-builder/CURATOR-PROMPT.md` - Curate GitHub docs
-- `curated-docs-web-builder/CURATOR-PROMPT-V2.md` - **Curate website docs (USE THIS)**
+- `curated-docs-web-builder/CURATOR-PROMPT.md` - Curate website docs
 
 ### Specialist Generators
 
