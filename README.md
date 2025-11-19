@@ -2,32 +2,59 @@
 
 Build curated knowledge bases from code repositories and documentation websites for specialist AI agents.
 
+**Agent-First Design**: This system is designed to be used by AI agents. Simply clone the repo and tell your agent to read the appropriate prompt file.
+
 ---
 
-## Quick Start
+## Quick Start (Agent-Driven)
 
-### 1. Scrape a Website
-```bash
-/Users/MN/GITHUB/.knowledge-builder/full-docs-website-sync/sync.sh https://repoprompt.com/docs
+### 1. Add a New Resource
+
+Tell your AI agent:
+
+**For website docs:**
+```
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
 
-### 2. Curate Documentation
-```bash
-Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
+**For GitHub code:**
+```
+Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
 ```
 
-### 3. Generate Specialist Prompt
-```bash
-Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=/Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com
+**For GitHub docs:**
+```
+Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
 ```
 
-### 4. Use the Specialist
-The generated specialist prompt lives at:
+The agent will:
+1. Scrape/clone the source (if needed)
+2. Analyze and curate the content
+3. Output clean, minimal knowledge base
+
+---
+
+### 2. Use a Resource in Your Project
+
+Tell your AI agent working on another project:
+
 ```
-/Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 ```
 
-Invoke it by reading that file in a fresh agent session.
+The agent will become a specialist in that resource and can answer questions or help you use it.
+
+---
+
+### 3. Improve the Builder System
+
+Tell your AI agent:
+
+```
+Read .knowledge-builder/META-BUILDER-PROMPT.md
+```
+
+The agent will audit and improve the curation system itself.
 
 ---
 
@@ -58,83 +85,102 @@ Location: .knowledge/             Location: .knowledge/         Location: KB/SPE
 
 ### 1. **Curated Code** (Implementation)
 - **Source**: GitHub repository code
-- **Purpose**: Understand how it works internally
-- **Scraper**: `full-repo-sync/sync.sh`
-- **Curator**: `curated-code-builder/CURATOR-PROMPT.md`
+- **Purpose**: Understand how a library works internally
+- **Use Case**: Fork a library, debug internals, understand architecture
 - **Output**: `.knowledge/curated-code/{owner}-{repo}/`
 
-**Example**:
-```bash
-# Scrape
-/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh https://github.com/unclecode/crawl4ai
-
-# Curate
-Read /Users/MN/GITHUB/.knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
+**Agent Command**:
+```
+Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
 ```
 
 ---
 
 ### 2. **Curated Docs-GH** (GitHub Docs)
 - **Source**: GitHub repository docs/ directory
-- **Purpose**: Learn how to use it (from repo docs)
-- **Scraper**: `full-repo-sync/sync.sh`
-- **Curator**: `curated-docs-gh-builder/CURATOR-PROMPT.md`
+- **Purpose**: Learn how to use a library (from repo docs)
+- **Use Case**: Implement features, understand API, follow guides
 - **Output**: `.knowledge/curated-docs-gh/{owner}-{repo}/`
 
-**Example**:
-```bash
-# Scrape
-/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh https://github.com/vercel/next.js
-
-# Curate
-Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
+**Agent Command**:
+```
+Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
 ```
 
 ---
 
 ### 3. **Curated Docs-Web** (Website Docs)
 - **Source**: Official documentation website
-- **Purpose**: Learn how to use it (from official site)
-- **Scraper**: `full-docs-website-sync/sync.sh`
-- **Curator**: `curated-docs-web-builder/CURATOR-PROMPT-V2.md`
+- **Purpose**: Learn how to use a tool/framework (from official site)
+- **Use Case**: Most comprehensive docs, tutorials, best practices
 - **Output**: `.knowledge/curated-docs-web/{domain}/`
 
-**Example**:
-```bash
-# Scrape
-/Users/MN/GITHUB/.knowledge-builder/full-docs-website-sync/sync.sh https://repoprompt.com/docs
-
-# Curate
-Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
+**Agent Command**:
 ```
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
+```
+
+---
+
+## Usage Patterns
+
+### Pattern 1: Build a Knowledge Base
+Tell your agent to curate a new resource (one-time setup):
+```
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://docs.example.com
+```
+
+### Pattern 2: Use a Knowledge Base
+Tell your agent working on a project to become a specialist:
+```
+Read /Users/MN/GITHUB/.knowledge/curated-docs-web/docs.example.com/SPECIALIST-PROMPT.md
+```
+
+### Pattern 3: Improve the System
+Tell your agent to audit and improve the builder infrastructure:
+```
+Read .knowledge-builder/META-BUILDER-PROMPT.md
+```
+
+### Pattern 4: Browse Available Resources
+```
+ls .knowledge/curated-code/        # Implementation code
+ls .knowledge/curated-docs-gh/     # GitHub documentation
+ls .knowledge/curated-docs-web/    # Website documentation
+```
+
+Each directory contains a SPECIALIST-PROMPT.md you can use.
 
 ---
 
 ## Complete Workflow Example
 
-### Building a RepoPrompt Documentation Specialist
+### Building and Using a RepoPrompt Specialist
 
-**Step 1: Scrape the website**
-```bash
-/Users/MN/GITHUB/.knowledge-builder/full-docs-website-sync/sync.sh https://repoprompt.com/docs
+**Scenario**: You want to use RepoPrompt in your project and need an AI specialist to help.
+
+**Step 1: Create the knowledge base (one-time setup)**
+
+Tell your AI agent:
+```
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
 
-**Step 2: Curate into clean docs**
-```bash
-Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
-```
+The agent will scrape, curate, and create `.knowledge/curated-docs-web/repoprompt.com/`
 
-**Step 3: Generate specialist prompt**
-```bash
-Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=/Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com
-```
+**Step 2: Use the specialist in your project**
 
-**Step 4: Use the specialist**
-```bash
+In a new agent session working on your project, tell the agent:
+```
 Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 ```
 
-Then ask it questions about RepoPrompt.
+Now ask questions:
+- "How do I configure RepoPrompt for my codebase?"
+- "What's the best way to structure my repository for RepoPrompt?"
+- "Help me debug this RepoPrompt configuration error..."
+
+The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 
 ---
 
