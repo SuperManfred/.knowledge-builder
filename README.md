@@ -12,22 +12,26 @@ Build curated knowledge bases from code repositories and documentation websites 
 
 Tell your AI agent:
 
-**For website docs:**
+**For curated website docs resource:**
+
 ```
 Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
 
-**For GitHub code:**
+**For curated GitHub code resource:**
+
 ```
 Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
 ```
 
-**For GitHub docs:**
+**For curated GitHub docs resource:**
+
 ```
 Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
 ```
 
 The agent will:
+
 1. Scrape/clone the source (if needed)
 2. Analyze and curate the content
 3. Output clean, minimal knowledge base
@@ -62,8 +66,8 @@ The agent will audit and improve the curation system itself.
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    KNOWLEDGE BUILDER                         │
-│                                                              │
+│                    KNOWLEDGE BUILDER                        │
+│                                                             │
 │  Input: URLs, GitHub repos                                  │
 │  Output: Curated knowledge bases for specialist agents      │
 └─────────────────────────────────────────────────────────────┘
@@ -84,12 +88,14 @@ Location: .knowledge/             Location: .knowledge/         Location: KB/SPE
 ## Three Knowledge Types
 
 ### 1. **Curated Code** (Implementation)
+
 - **Source**: GitHub repository code
 - **Purpose**: Understand how a library works internally
 - **Use Case**: Fork a library, debug internals, understand architecture
 - **Output**: `.knowledge/curated-code/{owner}-{repo}/`
 
 **Agent Command**:
+
 ```
 Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
 ```
@@ -97,12 +103,14 @@ Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=htt
 ---
 
 ### 2. **Curated Docs-GH** (GitHub Docs)
+
 - **Source**: GitHub repository docs/ directory
 - **Purpose**: Learn how to use a library (from repo docs)
 - **Use Case**: Implement features, understand API, follow guides
 - **Output**: `.knowledge/curated-docs-gh/{owner}-{repo}/`
 
 **Agent Command**:
+
 ```
 Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
 ```
@@ -110,12 +118,14 @@ Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=
 ---
 
 ### 3. **Curated Docs-Web** (Website Docs)
+
 - **Source**: Official documentation website
 - **Purpose**: Learn how to use a tool/framework (from official site)
 - **Use Case**: Most comprehensive docs, tutorials, best practices
 - **Output**: `.knowledge/curated-docs-web/{domain}/`
 
 **Agent Command**:
+
 ```
 Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
@@ -124,25 +134,38 @@ Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSI
 
 ## Usage Patterns
 
-### Pattern 1: Build a Knowledge Base
-Tell your agent to curate a new resource (one-time setup):
-```
-Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://docs.example.com
-```
+### Pattern 1: Use a Knowledge Base (have your agent imbued with optimal resource knowledge)
 
-### Pattern 2: Use a Knowledge Base
-Tell your agent working on a project to become a specialist:
+Tell your agent working on a project to become a specialist of the resource:
+
 ```
 Read /Users/MN/GITHUB/.knowledge/curated-docs-web/docs.example.com/SPECIALIST-PROMPT.md
 ```
 
-### Pattern 3: Improve the System
-Tell your agent to audit and improve the builder infrastructure:
+### Pattern 2: Add a Knowledge Base (have an agent add another resource and curate it optimally)
+
+Tell your agent to curate a new resource (one-time setup):
+
+```
+Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://docs.example.com
+```
+
+### Pattern 3: Improve the System (two paths: self improve based on performance over time, user/agent brainstorm for how to improve the system)
+
+#### Self improvement: (have an agent improve the prompts to make the system better - do not DIY)
+
+Tell your agent an idea/concept to improve the builder infrastructure:
+
 ```
 Read .knowledge-builder/META-BUILDER-PROMPT.md
 ```
 
+#### User/AI collaborative improvement: (have an agent brainstorm with you for how to improve the system)
+
+<!-- to do: write this -->
+
 ### Pattern 4: Browse Available Resources
+
 ```
 ls .knowledge/curated-code/        # Implementation code
 ls .knowledge/curated-docs-gh/     # GitHub documentation
@@ -162,6 +185,7 @@ Each directory contains a SPECIALIST-PROMPT.md you can use.
 **Step 1: Create the knowledge base (one-time setup)**
 
 Tell your AI agent:
+
 ```
 Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT-V2.md with WEBSITE_URL=https://repoprompt.com/docs
 ```
@@ -171,11 +195,13 @@ The agent will scrape, curate, and create `.knowledge/curated-docs-web/repopromp
 **Step 2: Use the specialist in your project**
 
 In a new agent session working on your project, tell the agent:
+
 ```
 Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 ```
 
 Now ask questions:
+
 - "How do I configure RepoPrompt for my codebase?"
 - "What's the best way to structure my repository for RepoPrompt?"
 - "Help me debug this RepoPrompt configuration error..."
@@ -231,15 +257,18 @@ The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 ## Key Files
 
 ### Scrapers
+
 - `full-repo-sync/sync.sh` - Clone GitHub repos
 - `full-docs-website-sync/sync.sh` - Scrape websites (httrack + crawl4ai + playwright)
 
 ### Curators
+
 - `curated-code-builder/CURATOR-PROMPT.md` - Curate code
 - `curated-docs-gh-builder/CURATOR-PROMPT.md` - Curate GitHub docs
 - `curated-docs-web-builder/CURATOR-PROMPT-V2.md` - **Curate website docs (USE THIS)**
 
 ### Specialist Generators
+
 - `.knowledge/curated-code/SPECIALIST-META-PROMPT.md`
 - `.knowledge/curated-docs-gh/SPECIALIST-META-PROMPT.md`
 - `.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md`
@@ -276,6 +305,7 @@ After curation, verify:
 **Curation = Reading + Judgment**
 
 There's no shortcut. Scripts and automation fail. Agents must:
+
 1. Read the files
 2. Understand the content
 3. Identify duplicates
