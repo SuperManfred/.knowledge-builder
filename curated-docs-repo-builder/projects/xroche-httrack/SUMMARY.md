@@ -12,8 +12,8 @@ Successfully curated HTTrack documentation from https://github.com/xroche/httrac
 ## Locations
 
 - **Curated Docs**: `/Users/MN/GITHUB/.knowledge/curated-docs-gh/xroche-httrack/`
-- **Curation Metadata**: `/Users/MN/GITHUB/.knowledge-builder/curated-docs-gh-builder/projects/xroche-httrack/`
-- **API Snapshot**: `/Users/MN/GITHUB/.knowledge-builder/curated-docs-gh-builder/snapshots/xroche-httrack/748c35de7858ead963daf1393ad023d75b7820c2/`
+- **Curation Metadata**: `/Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/projects/xroche-httrack/`
+- **API Snapshot**: `/Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/snapshots/xroche-httrack/748c35de7858ead963daf1393ad023d75b7820c2/`
 
 ## Results
 

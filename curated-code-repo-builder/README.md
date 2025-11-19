@@ -7,7 +7,7 @@ Curates GitHub repositories into minimal, code-only context for specialist agent
 Invoke curation agent with:
 
 ```
-read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with https://github.com/owner/repo
+read .knowledge-builder/curated-code-repo-builder/CURATOR-PROMPT.md with https://github.com/owner/repo
 ```
 
 The agent handles everything else automatically.
@@ -17,12 +17,12 @@ The agent handles everything else automatically.
 1. Checks for pristine repo clone (syncs if missing/stale)
 2. Analyzes repository structure
 3. Applies qualitative curation criteria (keep implementation, exclude tests/docs)
-4. Outputs minimal code-only curation to `.knowledge/curated-code/{owner}-{repo}/`
+4. Outputs minimal code-only curation to `.knowledge/curated-code-repo/{owner}-{repo}/`
 
 ## Output
 
 ```
-.knowledge/curated-code/
+.knowledge/curated-code-repo/
 ├── vercel-next.js/         # Curated Next.js code
 └── facebook-react/         # Curated React code
 ```

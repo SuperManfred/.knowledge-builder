@@ -1,6 +1,6 @@
 # Docs-GH Curation Constraints
 
-This document defines immutable rules that govern the GitHub documentation curation system. These constraints ensure consistency, reliability, and maintainability.
+This document defines immutable rules that govern the repository documentation curation system. These constraints ensure consistency, reliability, and maintainability.
 
 ## Constraint Categories
 
@@ -13,21 +13,21 @@ This document defines immutable rules that govern the GitHub documentation curat
 ## INVARIANTS
 
 ### INVARIANT: Docs-Only Content Directory
-**Rule**: `.knowledge/curated-docs-gh/` contains ONLY documentation content. No website code, build artifacts, or tests.
+**Rule**: `.knowledge/curated-docs-repo/` contains ONLY documentation content. No website code, build artifacts, or tests.
 **Why**: Agents need clean docs without website infrastructure noise.
 **Explicitly Excluded**: React/Vue/Svelte components for docs sites, build configs, tests for docs
 **Example**:
-- ✅ `.knowledge/curated-docs-gh/vercel-next.js/docs/api-reference.md`
-- ✅ `.knowledge/curated-docs-gh/vercel-next.js/docs/guides/getting-started.mdx`
-- ❌ `.knowledge/curated-docs-gh/vercel-next.js/website/components/Navigation.tsx`
-- ❌ `.knowledge/curated-docs-gh/vercel-next.js/docs/__tests__/links.test.js`
+- ✅ `.knowledge/curated-docs-repo/vercel-next.js/docs/api-reference.md`
+- ✅ `.knowledge/curated-docs-repo/vercel-next.js/docs/guides/getting-started.mdx`
+- ❌ `.knowledge/curated-docs-repo/vercel-next.js/website/components/Navigation.tsx`
+- ❌ `.knowledge/curated-docs-repo/vercel-next.js/docs/__tests__/links.test.js`
 
 ### INVARIANT: Meta-Docs Separation
-**Rule**: `.knowledge-builder/curated-docs-gh-builder/` contains ALL planning, meta, and tooling. Never mix with `.knowledge/curated-docs-gh/`.
+**Rule**: `.knowledge-builder/curated-docs-repo-builder/` contains ALL planning, meta, and tooling. Never mix with `.knowledge/curated-docs-repo/`.
 **Why**: Clean separation ensures agents working with docs never see curation logic.
 **Example**:
-- Curated docs: `.knowledge/curated-docs-gh/vercel-next.js/`
-- Curation data: `.knowledge-builder/curated-docs-gh-builder/projects/vercel-next.js/`
+- Curated docs: `.knowledge/curated-docs-repo/vercel-next.js/`
+- Curation data: `.knowledge-builder/curated-docs-repo-builder/projects/vercel-next.js/`
 
 ### INVARIANT: Canonical Schema
 **Rule**: `curated-tree.json` MUST follow this exact schema:
@@ -54,23 +54,23 @@ This document defines immutable rules that govern the GitHub documentation curat
 **Why**: Predictable paths enable automation and agent discovery.
 **Example**:
 - GitHub: `https://github.com/vercel/next.js`
-- Directory: `.knowledge/curated-docs-gh/vercel-next.js`
+- Directory: `.knowledge/curated-docs-repo/vercel-next.js`
 
 ### INVARIANT: Snapshot Immutability
-**Rule**: Files in `.knowledge-builder/curated-docs-gh-builder/snapshots/` are write-once, read-only audit trails.
+**Rule**: Files in `.knowledge-builder/curated-docs-repo-builder/snapshots/` are write-once, read-only audit trails.
 **Why**: Snapshots provide forensic history for debugging bad curations. Modifications destroy evidence.
 
 ### INVARIANT: One Repo Per Specialist
 **Rule**: Each curated docs repository is the complete documentation domain for exactly ONE specialist agent.
 **Why**: Deep specialization requires exclusive focus. Shared domains create confused expertise.
 **Example**:
-- `next.js-docs-specialist` uses ONLY `.knowledge/curated-docs-gh/vercel-next.js/`
+- `next.js-docs-specialist` uses ONLY `.knowledge/curated-docs-repo/vercel-next.js/`
 - Never split next.js docs across multiple curations
 
 ### INVARIANT: No Test Files in Curated Output
 **Rule**: Curated docs repos MUST contain zero test files: `*.test.*`, `*.spec.*`, `__tests__/`, `test/`, `tests/`
 **Why**: Tests for docs are infrastructure noise, not content.
-**Validation**: `find .knowledge/curated-docs-gh/repo -name "*.test.*" -o -name "*.spec.*" | wc -l` must return 0
+**Validation**: `find .knowledge/curated-docs-repo/repo -name "*.test.*" -o -name "*.spec.*" | wc -l` must return 0
 
 ---
 

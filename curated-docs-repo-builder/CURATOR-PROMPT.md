@@ -1,13 +1,13 @@
-One-Shot Specialist Curation Prompt
-====================================
+One-Shot Documentation Curation Prompt
+=======================================
 
 MISSION
 -------
-Create a minimal, code-only knowledge base for ONE specialist AI agent from a GitHub repository.
+Create a comprehensive, clean documentation knowledge base for ONE specialist AI agent from a GitHub repository's documentation.
 
 MANDATORY READS (Before Starting)
-- `/Users/MN/GITHUB/.knowledge-builder/curated-code-builder/CONTEXT.md` — Vision and goals
-- `/Users/MN/GITHUB/.knowledge-builder/curated-code-builder/CONSTRAINTS.md` — Invariants and rules you MUST follow
+- `/Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/CONTEXT.md` — Vision and goals
+- `/Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/CONSTRAINTS.md` — Invariants and rules you MUST follow
 
 ACKNOWLEDGEMENT (Required)
 - Before any action, print EXACTLY this single line:
@@ -15,10 +15,10 @@ ACKNOWLEDGEMENT (Required)
 
 CRITICAL INVARIANTS (From CONSTRAINTS.md)
 ------------------------------------------
-1. `.knowledge/curated-code/` contains ONLY code (no docs, tests, or meta files)
-2. Each curated repo serves ONE specialist agent exclusively
-3. Schema MUST be canonical (see section 4)
-4. Reasons MUST be one of three exact formats (see section 4.1)
+1. `.knowledge/curated-docs-repo/` contains ONLY documentation content (no website code, tests, or build artifacts)
+2. Each curated docs repo serves ONE specialist agent exclusively
+3. Schema MUST be canonical (see section 5)
+4. Reasons MUST be one of three exact formats (see section 5.1)
 5. NO test files in output (validated post-clone)
 6. Size is an OUTCOME of qualitative decisions, NOT a constraint
 
@@ -29,13 +29,13 @@ Inputs
 **IMPORTANT: All paths in this prompt are ABSOLUTE paths starting with /**
 Derived Paths (compute, don't ask)
 -----------------------------------
-- BUILDER_ROOT = `/Users/MN/GITHUB/.knowledge-builder/curated-code-builder`
+- BUILDER_ROOT = `/Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder`
 - KNOWLEDGE_ROOT = `/Users/MN/GITHUB/.knowledge`
 - FULL_REPO_DIR = `${KNOWLEDGE_ROOT}/full-repo`
-- CURATED_CODE_DIR = `${KNOWLEDGE_ROOT}/curated-code`
+- CURATED_DOCS_DIR = `${KNOWLEDGE_ROOT}/curated-docs-gh`
 - OWNER, REPO = parse from REPO_URL (lowercase, hyphenated)
 - REPO_NAME = `${OWNER}-${REPO}`
-- DEST = `${CURATED_CODE_DIR}/${REPO_NAME}`
+- DEST = `${CURATED_DOCS_DIR}/${REPO_NAME}`
 - FULL_REPO_PATH = `${FULL_REPO_DIR}/${REPO_NAME}`
 - BRANCH = default branch via GitHub API
 - COMMIT = branch head SHA via GitHub API
@@ -55,7 +55,7 @@ Workflow Steps
    - This ensures we have a pristine clone to work from
 
 1) READ CONSTRAINTS
-   - Read `/Users/MN/GITHUB/.knowledge-builder/curated-code-builder/CONSTRAINTS.md` in full
+   - Read `/Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/CONSTRAINTS.md` in full
    - Understand all INVARIANTS, RULES, and GUIDELINES
 
 2) SCAFFOLD PROJECT
@@ -71,38 +71,46 @@ Workflow Steps
      ```
    - Convert output to GitHub API tree format
    - Save to `${SNAPSHOT_DIR}/github-api-tree.json`
-   - If local clone has issues: Step 0 should have ensured pristine clone exists
 
 4) ANALYZE & DERIVE PATTERNS
 
    4.1) Compute sizes
    - Calculate directory sizes from tree
    - Identify largest subtrees and files
-   - Flag files >500KB for review (potential bundles)
+   - Focus on documentation directories
 
-   4.2) Identify runtime code
-   - Source directories: `src/`, `lib/`, `packages/*/src/`, `app/`, `core/`, `pkg/`, `cmd/`
-   - Must be adjacent to manifest: `package.json`, `pyproject.toml`, `go.mod`, etc.
-   - Navigation files: `index.*`, `router.*`, `registry.*` (help agents understand structure)
+   4.2) Identify documentation directories
+   - Common patterns: `docs/`, `documentation/`, `website/`, `content/`, `guides/`
+   - Look for markdown/MDX files
+   - Identify docs-specific assets (images, diagrams)
+   - Navigation files within docs (for structure understanding)
 
    4.3) Build explicit patterns
    - ALLOWLIST (what to keep):
-     * Core source directories: `src/`, `lib/`, `packages/*/src/`, `app/`, `core/`, `pkg/`, `cmd/`
-     * Be specific: `packages/next/src/**` not `packages/next/**`
-     * Include root: manifest files, configuration (exclude *.md files)
+     * Documentation directories: `docs/**/*.md`, `docs/**/*.mdx`, `documentation/**/*.md`
+     * Content directories: `content/**/*.md`, `guides/**/*.md`, `website/content/**/*.md`
+     * Documentation assets: `docs/**/*.png`, `docs/**/*.svg`, `docs/**/*.jpg`, `docs/**/*.gif`
+     * Code examples in docs: `docs/**/*.js`, `docs/**/*.ts` (if they're examples, not site code)
+     * API references and generated docs
+     * Root docs: `README.md` at repo root (but exclude in subdirs unless in docs/)
+
    - DENYLIST (what to exclude):
-     * Tests: `**/__tests__/**`, `**/test/**`, `**/tests/**`, `**/*.test.*`, `**/*.spec.*`, `**/*.snap`
-     * Build: `dist/**`, `build/**`, `out/**`, `target/**`, `compiled/**`
-     * Vendor: `node_modules/**`, `vendor/**`, `.venv/**`, `__pycache__/**`
-     * Docs: `docs/**`, `doc/**`, `documentation/**`, `website/**`, `examples/**`, `demos/**`, `**/*.md` (except LICENSE/NOTICE)
-     * CI: `.github/**`, `.gitlab/**`, `.circleci/**`
-     * Media/Large files: `**/*.min.*`, binaries, images, videos
+     * Website components: `docs/**/*.jsx`, `docs/**/*.tsx`, `docs/**/*.vue`, `website/components/**`
+     * Build configs: `docs/next.config.js`, `docs/docusaurus.config.js`, `website/next.config.js`
+     * Tests: `docs/**/*.test.*`, `docs/**/__tests__/**`, `docs/**/*.spec.*`, `test_*` (root-level test files)
+     * Build outputs: `docs/dist/**`, `docs/build/**`, `docs/.next/**`, `docs/.docusaurus/**`
+     * Node modules: `docs/node_modules/**`, `website/node_modules/**`, `**/node_modules/**`
+     * CI/CD: `.github/**`, `.gitlab/**`, `.circleci/**`
+     * Non-docs code: `src/**`, `lib/**`, `packages/**/src/**`, `crawl4ai/**` (source code dirs)
+     * Non-docs markdown: `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`
+     * Infrastructure at root: `Dockerfile`, `docker-compose.yml`, `.dockerignore`, `uv.lock`, `cliff.toml`, `.env*`, `MANIFEST.in`, `setup.py`, `setup.cfg`, `pyproject.toml`
+     * Other: `scripts/**`, `bench/**`, `.vscode/**`, `.devcontainer/**`, `.changeset/**`, `patches/**`
 
    4.4) Apply QUALITATIVE inclusion criteria
-   - Every file/directory decision based on: "Does this enable library-maintainer level thinking?"
-   - ✅ INCLUDE: Implementation code, internal utilities, architectural patterns, core logic
-   - ❌ EXCLUDE: Tests, docs, examples, demos, build outputs, media, vendored dependencies
-   - Size is an OUTCOME, not a constraint - the RIGHT size = whatever achieves specialist expertise
+   - Every file/directory decision based on: "Does this help an agent teach library usage?"
+   - ✅ INCLUDE: Tutorials, guides, API docs, examples, concepts, diagrams
+   - ❌ EXCLUDE: Website rendering code, build tools, tests, infrastructure
+   - Size is an OUTCOME - comprehensive docs may be large, that's okay
    - Each micro-decision should be qualitative, not quantitative
 
 5) GENERATE ARTIFACTS
@@ -138,20 +146,58 @@ Workflow Steps
 
    5.2) sparse-checkout
    - Start with allowlist patterns
-   - MANDATORY: End with global test exclusions:
+   - MANDATORY: End with global exclusions:
    ```
    # MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+   # Tests
    !**/__tests__/**
    !**/test/**
    !**/tests/**
    !**/*.test.*
    !**/*.spec.*
    !**/*.snap
-   !**/__mocks__/**
-   !**/fixtures/**
-   !docs/**
-   !doc/**
-   !documentation/**
+   !/test_*
+
+   # Build outputs and dependencies
+   !**/node_modules/**
+   !**/dist/**
+   !**/build/**
+   !**/.next/**
+   !**/.docusaurus/**
+
+   # Website code
+   !**/*.tsx
+   !**/*.jsx
+   !/website/components/**
+   !/website/src/**
+   !/website/lib/**
+
+   # Infrastructure at root
+   !/Dockerfile
+   !/docker-compose.yml
+   !/uv.lock
+   !/cliff.toml
+   !/.env*
+   !/MANIFEST.in
+   !/setup.py
+   !/setup.cfg
+   !/pyproject.toml
+
+   # Source code
+   !/src/**
+   !/lib/**
+   !/packages/**/src/**
+   !/crawl4ai/**
+
+   # CI/CD
+   !/.github/**
+   !/.gitlab/**
+   !/.circleci/**
+
+   # Non-docs markdown
+   !/CONTRIBUTING.md
+   !/CODE_OF_CONDUCT.md
+   !/SECURITY.md
    ```
 
    5.3) curation.yaml
@@ -177,12 +223,13 @@ Workflow Steps
 
    6.2) Consistency validation
    - sparse-checkout MUST be subset of keep decisions
-   - Global test exclusions MUST be present
+   - Global exclusions MUST be present
    - For each `mixed` dir: child entries MUST exist
 
    6.3) Pattern validation
    - Every keep/omit decision MUST cite a pattern
-   - No "Outside include patterns" for top-level dirs
+   - Verify docs directories are being kept
+   - Verify website infrastructure is being excluded
 
    **IF ANY VALIDATION FAILS:**
    - Print error details
@@ -198,37 +245,57 @@ Workflow Steps
 
    8.1) Test file check (MUST PASS)
    ```bash
-   find ${DEST} -type f \( -name "*.test.*" -o -name "*.spec.*" \) | wc -l
+   find ${DEST} -type f \( -name "*.test.*" -o -name "*.spec.*" -o -name "test_*" \) | wc -l
    ```
-   MUST return 0. If not, fix sparse-checkout and re-clone.
+   MUST return 0 (or very low if test files are legitimate doc examples). If not, fix sparse-checkout and re-clone.
+   NOTE: Test files WITHIN docs/ that are tutorial examples (showing how to test) are acceptable.
 
    8.2) Documentation check (MUST PASS)
    ```bash
-   find ${DEST} -type d \( -name "docs" -o -name "doc" -o -name "documentation" \) | wc -l
+   find ${DEST} -type d \( -name "docs" -o -name "documentation" -o -name "content" \) | wc -l
    ```
-   MUST return 0. Docs are extracted separately, not included in code context.
+   MUST return >0. If not, curation missed docs directories - fix patterns.
 
-   8.3) Size awareness (NOT a constraint)
+   8.3) Website code check (SHOULD PASS)
+   ```bash
+   find ${DEST} -type f \( -name "*.tsx" -o -name "*.jsx" \) | wc -l
+   ```
+   SHOULD be 0 or very low. If high, check if website components were included.
+
+   8.4) Infrastructure files check (SHOULD PASS)
+   ```bash
+   find ${DEST} -maxdepth 1 -type f \( -name "Dockerfile" -o -name "docker-compose.yml" -o -name "uv.lock" -o -name "setup.py" \) | wc -l
+   ```
+   SHOULD return 0. If not, infrastructure files were incorrectly included.
+
+   8.5) Source code check (MUST PASS)
+   ```bash
+   find ${DEST} -type d \( -name "src" -o -name "lib" \) -not -path "*/docs/*" | wc -l
+   ```
+   MUST return 0. If not, source code directories were included.
+
+   8.6) Size awareness (NOT a constraint)
    ```bash
    du -sh ${DEST}
    ```
-   Report the size. Large size is FINE if it's all implementation code.
-   Check for missed exclusions if unusually large (vendor, build, generated files).
+   Report the size. Large size is FINE if it's comprehensive documentation.
+   Check for missed exclusions if unusually large (node_modules, build outputs).
 
-   8.4) File count awareness
+   8.7) File count awareness
    ```bash
    find ${DEST} -type f | wc -l
    ```
-   Report the count. High count is FINE if files contain implementation knowledge.
+   Report the count. High count is FINE if it's complete documentation.
 
-   8.5) Top subtrees report
-   Print top 10 directories by size. Verify they contain implementation code, not excluded categories.
+   8.8) Top subtrees report
+   Print top 10 directories by size. Verify they contain documentation, not excluded categories.
 
 9) SPECIALIST READINESS CHECK
-   Ask: "Does this give a specialist agent everything needed to think like a library maintainer?"
-   - Can the specialist understand internal architecture?
-   - Are key patterns and idioms preserved?
-   - Is the API surface complete?
+   Ask: "Does this give a docs specialist agent everything needed to teach library usage?"
+   - Can the specialist explain how to use the library?
+   - Are tutorials, guides, and API docs complete?
+   - Are code examples preserved?
+   - Is website boilerplate removed?
 
    If NO to any: adjust patterns and regenerate.
 
@@ -268,11 +335,11 @@ Workflow Steps
    Average: ~${COMMITS_PER_MONTH} commits/month
 
    Re-curation recommendation:
-   - Low activity (<5 commits/month): Re-curate every 6 months
-   - Moderate activity (5-20 commits/month): Re-curate every 2-3 months
-   - High activity (>20 commits/month): Re-curate monthly
+   - Low activity (<5 commits/month): Re-curate docs every 6 months
+   - Moderate activity (5-20 commits/month): Re-curate docs every 2-3 months
+   - High activity (>20 commits/month): Re-curate docs monthly
 
-   This helps you decide when to refresh this knowledge base.
+   This helps you decide when to refresh this documentation knowledge base.
    ```
 
 10) GENERATE SPECIALIST-PROMPT.md (Multi-Agent)
@@ -293,7 +360,7 @@ Workflow Steps
      subagent_type: "general-purpose"
      description: "Generate specialist prompt focusing on usage patterns"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
 
      Focus specifically on: Common usage patterns, typical workflows, and frequent use cases.
 
@@ -306,7 +373,7 @@ Workflow Steps
      subagent_type: "general-purpose"
      description: "Generate specialist prompt focusing on troubleshooting"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
 
      Focus specifically on: Troubleshooting guidance, error handling, and edge cases.
 
@@ -319,7 +386,7 @@ Workflow Steps
      subagent_type: "general-purpose"
      description: "Generate specialist prompt focusing on integration"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
 
      Focus specifically on: Integration patterns, best practices, and ecosystem compatibility.
 
@@ -332,7 +399,7 @@ Workflow Steps
      subagent_type: "general-purpose"
      description: "Generate specialist prompt with comprehensive capability mapping"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
 
      Focus specifically on: Complete capability inventory, feature coverage, and functional boundaries.
      Use reasoning to ensure comprehensive coverage.
@@ -346,7 +413,7 @@ Workflow Steps
      subagent_type: "general-purpose"
      description: "Generate specialist prompt with precise knowledge boundaries"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
 
      Focus specifically on: What the specialist knows vs doesn't know, version coverage, and limitation acknowledgment.
      Use reasoning to define clear boundaries.
@@ -360,7 +427,7 @@ Workflow Steps
      subagent_type: "general-purpose"
      description: "Generate specialist prompt with usage scenario modeling"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
 
      Focus specifically on: Real-world usage scenarios, project contexts, and implementation guidance.
      Use reasoning to model comprehensive scenarios.
@@ -404,7 +471,7 @@ Workflow Steps
      - Capabilities must be comprehensive but realistic
      - Usage instructions must be actionable
      - Knowledge boundaries must be well-defined
-     - Must include concrete examples from the actual code
+     - Must include concrete examples from the actual docs
 
      Write the FINAL synthesized specialist prompt to:
      ${DEST}/SPECIALIST-PROMPT.md
@@ -458,29 +525,30 @@ Workflow Steps
 
 ERROR HANDLING
 --------------
-- If GitHub API is truncated: Note it, proceed, reconcile after clone
+- If GitHub API is truncated: Note it, proceed, reconcile from local clone
 - If validation fails: MUST fix and re-validate, don't proceed
 - If test files found post-clone: MUST fix sparse-checkout
-- If docs directories found post-clone: MUST fix sparse-checkout
+- If no docs directories found post-clone: MUST fix patterns
 
 SUCCESS CRITERIA
 ----------------
-✅ Zero test files in `.context/`
-✅ Zero docs/doc/documentation directories in `.context/`
+✅ Zero test files in `.knowledge/curated-docs-repo/`
+✅ At least one docs directory exists
 ✅ Canonical schema with proper reasons
 ✅ sparse-checkout has global exclusions
-✅ Specialist agent has comprehensive domain knowledge
-✅ Every included file serves the goal: "library-maintainer level thinking"
+✅ Specialist agent has comprehensive usage documentation
+✅ Every included file serves the goal: "teach library usage"
+✅ Website rendering code excluded (React components, configs)
 
 OUTPUT LOCATIONS
 ----------------
-- **Curated code**: `${DEST}/` (sparse clone)
+- **Curated docs**: `${DEST}/` (sparse clone)
 - **Planning/meta**: `${PROJECT_DIR}/` (JSON + YAML)
 - **API snapshot**: `${SNAPSHOT_DIR}/github-api-tree.json` (shared)
 
 FORBIDDEN ACTIONS
 -----------------
-- NO Markdown files in `.context/`
+- NO website code in `.knowledge/curated-docs-repo/`
 - NO custom reason strings
 - NO test files in output
 - NO asking user for paths/branches

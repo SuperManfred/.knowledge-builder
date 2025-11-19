@@ -7,13 +7,13 @@ Curates documentation from GitHub repositories into clean, comprehensive docs fo
 Invoke curation agent with:
 
 ```bash
-Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/owner/repo
+Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/owner/repo
 ```
 
 Or simply:
 
 ```bash
-Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md and curate https://github.com/owner/repo
+Read /Users/MN/GITHUB/.knowledge-builder/curated-docs-repo-builder/CURATOR-PROMPT.md and curate https://github.com/owner/repo
 ```
 
 The agent handles everything else automatically.
@@ -23,7 +23,7 @@ The agent handles everything else automatically.
 1. Checks for pristine repo clone (syncs if missing/stale)
 2. Analyzes repository structure for documentation
 3. Applies docs-specific curation criteria (keep docs content, exclude website code)
-4. Outputs comprehensive documentation to `.knowledge/curated-docs-gh/{owner}-{repo}/`
+4. Outputs comprehensive documentation to `.knowledge/curated-docs-repo/{owner}-{repo}/`
 
 ## What Gets Kept
 
@@ -44,7 +44,7 @@ The agent handles everything else automatically.
 ## Output
 
 ```
-.knowledge/curated-docs-gh/
+.knowledge/curated-docs-repo/
 ├── vercel-next.js/         # Next.js documentation
 └── unclecode-crawl4ai/     # Crawl4AI documentation
 ```

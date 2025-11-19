@@ -58,7 +58,7 @@ Each resource type serves different agent consultation patterns and requires dif
     │   ├── README.md                    # Brief usage instructions
     │   └── sync.sh                      # Script: scrape websites (httrack + crawl4ai)
     │
-    ├── curated-code-builder/            # Code curation system (current .context-builder)
+    ├── curated-code-repo-builder/            # Code curation system (current .context-builder)
     │   ├── META-BUILDER-PROMPT.md       # Instructions for improving this system
     │   ├── PROMPT.md                    # One-shot curation instructions
     │   ├── CONTEXT.md                   # Vision and goals (IMMUTABLE)
@@ -79,7 +79,7 @@ Each resource type serves different agent consultation patterns and requires dif
     │       ├── scaffold.sh
     │       └── generate-manifest.sh
     │
-    ├── curated-docs-gh-builder/         # Docs-from-GH curation system
+    ├── curated-docs-repo-builder/         # Docs-from-GH curation system
     │   ├── META-BUILDER-PROMPT.md       # Instructions for improving this system
     │   ├── PROMPT.md                    # One-shot docs curation instructions
     │   ├── CONTEXT.md                   # Vision for docs curation (IMMUTABLE)
@@ -108,7 +108,7 @@ Each resource type serves different agent consultation patterns and requires dif
 
 ```
 USER INVOKES:
-"read .curated-code-builder/PROMPT.md with https://github.com/vercel/next.js"
+"read .curated-code-repo-builder/PROMPT.md with https://github.com/vercel/next.js"
 
 ↓
 
@@ -124,22 +124,22 @@ AGENT READS PROMPT.md
 │  ├─ Analyze structure (source dirs, tests, docs, etc.)
 │  ├─ Apply qualitative criteria (keep implementation, exclude tests/docs)
 │  ├─ Generate artifacts:
-│  │  ├─ .curated-code-builder/projects/vercel-next.js/curated-tree.json
-│  │  ├─ .curated-code-builder/projects/vercel-next.js/sparse-checkout
-│  │  └─ .curated-code-builder/projects/vercel-next.js/curation.yaml
+│  │  ├─ .curated-code-repo-builder/projects/vercel-next.js/curated-tree.json
+│  │  ├─ .curated-code-repo-builder/projects/vercel-next.js/sparse-checkout
+│  │  └─ .curated-code-repo-builder/projects/vercel-next.js/curation.yaml
 │  └─ Validate against CONSTRAINTS.md
 │
-└─ Clone with sparse-checkout to .knowledge/curated-code/vercel-next.js/
+└─ Clone with sparse-checkout to .knowledge/curated-code-repo/vercel-next.js/
    └─ Post-clone verification (zero test files, zero docs dirs)
 
-OUTPUT: .knowledge/curated-code/vercel-next.js/ (minimal, code-only)
+OUTPUT: .knowledge/curated-code-repo/vercel-next.js/ (minimal, code-only)
 ```
 
 ### Workflow 2: Curate Docs from GitHub
 
 ```
 USER INVOKES:
-"read .curated-docs-gh-builder/PROMPT.md with https://github.com/vercel/next.js"
+"read .curated-docs-repo-builder/PROMPT.md with https://github.com/vercel/next.js"
 
 ↓
 
@@ -155,13 +155,13 @@ AGENT READS PROMPT.md
 │  │  ├─ KEEP: Tutorials, guides, API docs, examples in docs
 │  │  ├─ EXCLUDE: Website boilerplate, tests, build configs for docs site
 │  ├─ Generate artifacts:
-│  │  ├─ .curated-docs-gh-builder/projects/vercel-next.js/curated-tree.json
-│  │  └─ .curated-docs-gh-builder/projects/vercel-next.js/curation.yaml
+│  │  ├─ .curated-docs-repo-builder/projects/vercel-next.js/curated-tree.json
+│  │  └─ .curated-docs-repo-builder/projects/vercel-next.js/curation.yaml
 │  └─ Validate against docs-specific constraints
 │
-└─ Copy/filter docs to .knowledge/curated-docs-gh/vercel-next.js/
+└─ Copy/filter docs to .knowledge/curated-docs-repo/vercel-next.js/
 
-OUTPUT: .knowledge/curated-docs-gh/vercel-next.js/ (curated documentation)
+OUTPUT: .knowledge/curated-docs-repo/vercel-next.js/ (curated documentation)
 ```
 
 ### Workflow 3: Curate Docs from Website
@@ -266,7 +266,7 @@ OUTPUT: .knowledge/curated-docs-web/nextjs.org/ (curated web docs)
 
 ---
 
-### `.knowledge-builder/curated-code-builder/` (Migrated from `.context-builder/`)
+### `.knowledge-builder/curated-code-repo-builder/` (Migrated from `.context-builder/`)
 
 **Purpose**: Create minimal, code-only context for specialist agents
 
@@ -285,19 +285,19 @@ OUTPUT: .knowledge/curated-docs-web/nextjs.org/ (curated web docs)
 - ❌ EXCLUDE: Build outputs (dist/, build/, node_modules/)
 - ❌ EXCLUDE: Media, vendored code, compiled files
 
-**Output**: `.knowledge/curated-code/{owner}-{repo}/` (sparse checkout)
+**Output**: `.knowledge/curated-code-repo/{owner}-{repo}/` (sparse checkout)
 
-**Meta/Planning**: `.knowledge-builder/curated-code-builder/projects/{owner}-{repo}/`
+**Meta/Planning**: `.knowledge-builder/curated-code-repo-builder/projects/{owner}-{repo}/`
 
 **Migration Changes**:
-- Moved `.context-builder/` → `.knowledge-builder/curated-code-builder/`
-- Updated paths: `.context/` → `.knowledge/curated-code/`
+- Moved `.context-builder/` → `.knowledge-builder/curated-code-repo-builder/`
+- Updated paths: `.context/` → `.knowledge/curated-code-repo/`
 - Added MANIFEST.yaml check in PROMPT.md (step 0)
 - Simplified README.md
 
 ---
 
-### `.curated-docs-gh-builder/` (NEW)
+### `.curated-docs-repo-builder/` (NEW)
 
 **Purpose**: Curate documentation from GitHub repositories
 
@@ -317,14 +317,14 @@ OUTPUT: .knowledge/curated-docs-web/nextjs.org/ (curated web docs)
 
 **Philosophy**: Keep content that helps understand the library, exclude website boilerplate
 
-**Output**: `.knowledge/curated-docs-gh/{owner}-{repo}/`
+**Output**: `.knowledge/curated-docs-repo/{owner}-{repo}/`
 
-**Meta/Planning**: `.curated-docs-gh-builder/projects/{owner}-{repo}/`
+**Meta/Planning**: `.curated-docs-repo-builder/projects/{owner}-{repo}/`
 
 **Relationship to Code**: Same repo may appear in both `curated-code/` and `curated-docs-gh/`
 - Example: `vercel-next.js` could have:
-  - `.knowledge/curated-code/vercel-next.js/` (implementation)
-  - `.knowledge/curated-docs-gh/vercel-next.js/` (documentation)
+  - `.knowledge/curated-code-repo/vercel-next.js/` (implementation)
+  - `.knowledge/curated-docs-repo/vercel-next.js/` (documentation)
   - Both sourced from same `.knowledge/full-repo/vercel-next.js/`
 
 ---
@@ -406,10 +406,10 @@ A library may have docs in both places:
 
 **Applied to**:
 - `.knowledge/full-repo/{owner}-{repo}/`
-- `.knowledge/curated-code/{owner}-{repo}/`
-- `.knowledge/curated-docs-gh/{owner}-{repo}/`
-- `.curated-code-builder/projects/{owner}-{repo}/`
-- `.curated-docs-gh-builder/projects/{owner}-{repo}/`
+- `.knowledge/curated-code-repo/{owner}-{repo}/`
+- `.knowledge/curated-docs-repo/{owner}-{repo}/`
+- `.curated-code-repo-builder/projects/{owner}-{repo}/`
+- `.curated-docs-repo-builder/projects/{owner}-{repo}/`
 
 ### Websites
 
@@ -446,13 +446,13 @@ A library may have docs in both places:
 
 1. Create `.knowledge/` structure alongside existing `.context/`
 2. Build new sync systems
-3. Migrate `.context-builder/` → `.curated-code-builder/` with dual output (to both `.context/` and `.knowledge/curated-code/`)
+3. Migrate `.context-builder/` → `.curated-code-repo-builder/` with dual output (to both `.context/` and `.knowledge/curated-code-repo/`)
 4. Test with Effect-TS project
 
 ### Phase 2: Transition
 
-1. Switch all curation to output only to `.knowledge/curated-code/`
-2. Symlink `.context/` → `.knowledge/curated-code/` for backward compatibility (if needed)
+1. Switch all curation to output only to `.knowledge/curated-code-repo/`
+2. Symlink `.context/` → `.knowledge/curated-code-repo/` for backward compatibility (if needed)
 3. Remove `.context/` once agents are updated
 
 ### Phase 3: Expansion
@@ -625,7 +625,7 @@ When curation starts:
 ### Migration Succeeds When:
 
 1. Current Effect-TS project still works after migration
-2. `.context-builder/` → `.curated-code-builder/` transition is seamless
+2. `.context-builder/` → `.curated-code-repo-builder/` transition is seamless
 3. No loss of existing curation quality
 
 ---

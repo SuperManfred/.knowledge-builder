@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Scaffold a new curated docs project under .knowledge-builder/curated-docs-gh-builder/projects/<owner>-<repo>/
-# Usage: .knowledge-builder/curated-docs-gh-builder/tools/scaffold.sh <repo-url> [branch]
+# Scaffold a new curated docs project under .knowledge-builder/curated-docs-repo-builder/projects/<owner>-<repo>/
+# Usage: .knowledge-builder/curated-docs-repo-builder/tools/scaffold.sh <repo-url> [branch]
 
 if [ $# -lt 1 ]; then
   echo "Usage: $0 <repo-url> [branch]" >&2
@@ -56,4 +56,4 @@ echo "Scaffolded docs project at: $DEST_DIR"
 echo "- curation.yaml (docs-focused patterns)"
 echo "- sparse-checkout (docs-focused patterns)"
 echo "- scripts/curate.sh"
-echo "Next: run .knowledge-builder/curated-docs-gh-builder/tools/generate-manifest.sh ${OWNER}-${REPO_NAME} $BRANCH, then bash $DEST_DIR/scripts/curate.sh"
+echo "Next: run .knowledge-builder/curated-docs-repo-builder/tools/generate-manifest.sh ${OWNER}-${REPO_NAME} $BRANCH, then bash $DEST_DIR/scripts/curate.sh"

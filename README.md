@@ -21,13 +21,13 @@ Read .knowledge-builder/curated-docs-web-builder/CURATOR-PROMPT.md with WEBSITE_
 **For curated GitHub code resource:**
 
 ```
-Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
+Read .knowledge-builder/curated-code-repo-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
 ```
 
 **For curated GitHub docs resource:**
 
 ```
-Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
+Read .knowledge-builder/curated-docs-repo-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
 ```
 
 The agent will:
@@ -79,8 +79,8 @@ Tool: sync.sh                     Tool: CURATOR-PROMPT          Tool: SPECIALIST
 Output: Raw scraped data          Output: Clean docs            Output: Specialist prompt
 Location: .knowledge/             Location: .knowledge/         Location: KB/SPECIALIST-PROMPT.md
   full-docs-website/                curated-docs-web/
-  full-repo/                        curated-code/
-                                    curated-docs-gh/
+  full-repo/                        curated-code-repo/
+                                    curated-docs-repo/
 ```
 
 ---
@@ -92,12 +92,12 @@ Location: .knowledge/             Location: .knowledge/         Location: KB/SPE
 - **Source**: GitHub repository code
 - **Purpose**: Understand how a library works internally
 - **Use Case**: Fork a library, debug internals, understand architecture
-- **Output**: `.knowledge/curated-code/{owner}-{repo}/`
+- **Output**: `.knowledge/curated-code-repo/{owner}-{repo}/`
 
 **Agent Command**:
 
 ```
-Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
+Read .knowledge-builder/curated-code-repo-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/unclecode/crawl4ai
 ```
 
 ---
@@ -107,12 +107,12 @@ Read .knowledge-builder/curated-code-builder/CURATOR-PROMPT.md with REPO_URL=htt
 - **Source**: GitHub repository docs/ directory
 - **Purpose**: Learn how to use a library (from repo docs)
 - **Use Case**: Implement features, understand API, follow guides
-- **Output**: `.knowledge/curated-docs-gh/{owner}-{repo}/`
+- **Output**: `.knowledge/curated-docs-repo/{owner}-{repo}/`
 
 **Agent Command**:
 
 ```
-Read .knowledge-builder/curated-docs-gh-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
+Read .knowledge-builder/curated-docs-repo-builder/CURATOR-PROMPT.md with REPO_URL=https://github.com/vercel/next.js
 ```
 
 ---
@@ -167,8 +167,8 @@ Read .knowledge-builder/META-BUILDER-PROMPT.md
 ### Pattern 4: Browse Available Resources
 
 ```
-ls .knowledge/curated-code/        # Implementation code
-ls .knowledge/curated-docs-gh/     # GitHub documentation
+ls .knowledge/curated-code-repo/        # Implementation code
+ls .knowledge/curated-docs-repo/     # GitHub documentation
 ls .knowledge/curated-docs-web/    # Website documentation
 ```
 
@@ -227,12 +227,12 @@ The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 │   ├── playwright_scraper.py
 │   └── validate_scrapers.py
 │
-├── curated-code-builder/              ← Curate code for "how it works"
+├── curated-code-repo-builder/              ← Curate code for "how it works"
 │   ├── CURATOR-PROMPT.md
 │   ├── CONSTRAINTS.md
 │   └── CONTEXT.md
 │
-├── curated-docs-gh-builder/           ← Curate GitHub docs for "how to use"
+├── curated-docs-repo-builder/           ← Curate GitHub docs for "how to use"
 │   ├── CURATOR-PROMPT.md
 │   ├── CONSTRAINTS.md
 │   └── CONTEXT.md
@@ -245,8 +245,8 @@ The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 .knowledge/
 ├── full-repo/                         ← Raw GitHub repo clones
 ├── full-docs-website/                 ← Raw scraped websites
-├── curated-code/                      ← Clean code (implementation)
-├── curated-docs-gh/                   ← Clean docs from GitHub
+├── curated-code-repo/                      ← Clean code (implementation)
+├── curated-docs-repo/                   ← Clean docs from GitHub
 └── curated-docs-web/                  ← Clean docs from websites
     └── SPECIALIST-META-PROMPT.md      ← Generates specialist prompts
 ```
@@ -262,14 +262,14 @@ The agent has deep knowledge of RepoPrompt and can help you use it effectively.
 
 ### Curators
 
-- `curated-code-builder/CURATOR-PROMPT.md` - Curate code
-- `curated-docs-gh-builder/CURATOR-PROMPT.md` - Curate GitHub docs
+- `curated-code-repo-builder/CURATOR-PROMPT.md` - Curate code
+- `curated-docs-repo-builder/CURATOR-PROMPT.md` - Curate GitHub docs
 - `curated-docs-web-builder/CURATOR-PROMPT.md` - Curate website docs
 
 ### Specialist Generators
 
-- `.knowledge/curated-code/SPECIALIST-META-PROMPT.md`
-- `.knowledge/curated-docs-gh/SPECIALIST-META-PROMPT.md`
+- `.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md`
+- `.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md`
 - `.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md`
 
 ---

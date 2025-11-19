@@ -1,6 +1,6 @@
 # Docs-GH Curation Vision & Goals
 
-This document defines the vision, purpose, and success metrics for the GitHub documentation curation system. It is immutable by agents and represents the core intent of the system.
+This document defines the vision, purpose, and success metrics for the repository documentation curation system. It is immutable by agents and represents the core intent of the system.
 
 ## 🎯 Ultimate Goal
 **Enable AI agents to understand HOW TO USE libraries by providing clean, comprehensive documentation extracted from GitHub repositories**
