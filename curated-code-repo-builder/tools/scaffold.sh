@@ -15,7 +15,7 @@ BRANCH="${2:-main}"
 # Parse owner and repo from URL
 TRIMMED_URL="${REPO_URL%.git}"
 TRIMMED_URL="${TRIMMED_URL%/}"
-PAIR=$(printf "%s\n" "$TRIMMED_URL" | sed -E 's#.*github.com[:/]+([^/]+)/([^/]+)$#\1 \2#') || true
+.*[:/]([^/]+)/([^/]+)$#\1 \2#') || true
 OWNER=$(printf "%s" "$PAIR" | awk '{print $1}')
 REPO_NAME=$(printf "%s" "$PAIR" | awk '{print $2}')
 if [ -z "${OWNER:-}" ] || [ -z "${REPO_NAME:-}" ]; then
@@ -37,7 +37,7 @@ mkdir -p "$DEST_DIR/scripts"
 cp "$BUILDER_ROOT/_template/curation.yaml.example" "$DEST_DIR/curation.yaml"
 today=$(date +%F)
 sed -i '' \
-  -e "s#https://github.com/<owner>/<repo>.git#$REPO_URL#g" \
+  -e "s#<repo-url>#$REPO_URL#g" \
   -e "s#branch: main#branch: $BRANCH#g" \
   -e "s#date: .*#date: $today#g" \
   "$DEST_DIR/curation.yaml"
@@ -48,7 +48,7 @@ cp "$BUILDER_ROOT/_template/sparse-checkout.example" "$DEST_DIR/sparse-checkout"
 # Copy and fill script
 cp "$BUILDER_ROOT/_template/scripts/curate.sh.template" "$DEST_DIR/scripts/curate.sh"
 sed -i '' \
-  -e "s#https://github.com/<owner>/<repo>.git#$REPO_URL#g" \
+  -e "s#<repo-url>#$REPO_URL#g" \
   "$DEST_DIR/scripts/curate.sh"
 chmod +x "$DEST_DIR/scripts/curate.sh"
 

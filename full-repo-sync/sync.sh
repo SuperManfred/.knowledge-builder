@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Full Repo Sync - Maintain pristine GitHub repository clones
+# Full Repo Sync - Maintain pristine git repository clones
 # Usage: ./sync.sh <github-url> [--branch=BRANCH] [--force]
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
@@ -34,19 +34,20 @@ for arg in "$@"; do
 done
 
 if [ -z "$REPO_URL" ]; then
-  echo "Usage: $0 <github-url> [--branch=BRANCH] [--force]" >&2
+  echo "Usage: $0 <repo-url> [--branch=BRANCH] [--force]" >&2
   echo "" >&2
   echo "Examples:" >&2
   echo "  $0 https://github.com/vercel/next.js" >&2
+  echo "  $0 https://bitbucket.org/owner/repo" >&2
   echo "  $0 https://github.com/vercel/next.js --branch=canary" >&2
   echo "  $0 https://github.com/vercel/next.js --force" >&2
   exit 1
 fi
 
-# Parse owner and repo from URL
+# Parse owner and repo from URL (platform-agnostic: GitHub, Bitbucket, GitLab, etc.)
 TRIMMED_URL="${REPO_URL%.git}"
 TRIMMED_URL="${TRIMMED_URL%/}"
-PAIR=$(printf "%s\n" "$TRIMMED_URL" | sed -E 's#.*github.com[:/]+([^/]+)/([^/]+)$#\1 \2#') || true
+PAIR=$(printf "%s\n" "$TRIMMED_URL" | sed -E 's#.*[:/]([^/]+)/([^/]+?)$#\1 \2#') || true
 OWNER=$(printf "%s" "$PAIR" | awk '{print $1}')
 REPO_NAME=$(printf "%s" "$PAIR" | awk '{print $2}')
 

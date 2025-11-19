@@ -434,24 +434,56 @@ Workflow Steps
    fi
    ```
 
-   **10.5 - Final validation:**
+   **10.5 - Structural validation:**
 
    ```bash
-   # Verify specialist prompt is substantial
-   PROMPT_SIZE=$(wc -l ${DEST}/SPECIALIST-PROMPT.md | awk '{print $1}')
+   # Verify specialist prompt has required structure
+   SPECIALIST_FILE="${DEST}/SPECIALIST-PROMPT.md"
+
+   echo "Validating SPECIALIST-PROMPT.md structure..."
+
+   # Check for required sections
+   MISSING_SECTIONS=""
+   grep -q "<role>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<role> "
+   grep -q "<knowledge_base>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<knowledge_base> "
+   grep -q "<capabilities>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<capabilities> "
+   grep -q "<initialization>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<initialization> "
+
+   if [ -n "$MISSING_SECTIONS" ]; then
+       echo "❌ ERROR: SPECIALIST-PROMPT.md missing required sections: $MISSING_SECTIONS"
+       echo "The specialist prompt structure is invalid. Check synthesis output."
+       exit 1
+   fi
+
+   # Verify substantial content
+   PROMPT_SIZE=$(wc -l "$SPECIALIST_FILE" | awk '{print $1}')
    if [ $PROMPT_SIZE -lt 50 ]; then
        echo "⚠️ WARNING: SPECIALIST-PROMPT.md seems too short (${PROMPT_SIZE} lines)"
        echo "Consider reviewing the synthesis quality"
    fi
 
+   echo "✅ SPECIALIST-PROMPT.md structure validated"
    echo "✅ Multi-agent specialist prompt generation complete!"
    echo "📍 Final prompt: ${DEST}/SPECIALIST-PROMPT.md"
+   ```
+
+   **10.6 - Update manifest:**
+
+   ```bash
+   # Update knowledge base manifest
+   HAS_SPECIALIST=$([ -f "${DEST}/SPECIALIST-PROMPT.md" ] && echo "true" || echo "false")
+   /Users/MN/GITHUB/.knowledge-builder/tools/update-manifest.sh \
+       "code_repos" \
+       "${REPO_NAME}" \
+       "curated-code-repo/${REPO_NAME}" \
+       "${HAS_SPECIALIST}"
    ```
 
    Print completion:
    ```
    ✅ CURATION COMPLETE
    ✅ SPECIALIST-PROMPT.md GENERATED (6-agent ensemble + synthesis)
+   ✅ MANIFEST UPDATED
 
    Resource ready: ${DEST}/
    ```

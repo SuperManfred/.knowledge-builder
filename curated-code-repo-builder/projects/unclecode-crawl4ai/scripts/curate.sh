@@ -10,7 +10,7 @@ BUILDER_ROOT="$(cd "$PROJECT_DIR/../.." && pwd)"
 ROOT_PARENT="$(cd "$BUILDER_ROOT/.." && pwd)"
 CONTEXT_ROOT="$ROOT_PARENT/.context"
 # Derive OWNER-REPO from REPO URL
-_pair=$(printf "%s\n" "$REPO" | sed -E 's#.*github.com[:/]+([^/]+)/([^/.]+)(\.git)?/?$#\1 \2#')
+.*[:/]([^/]+)/([^/.]+)(\.git)?/?$#\1 \2#')
 OWNER=${OWNER:-$(printf "%s" "$_pair" | awk '{print $1}')}
 REPO_NAME=${REPO_NAME:-$(printf "%s" "$_pair" | awk '{print $2}')}
 DEST="${DEST:-$CONTEXT_ROOT/${OWNER}-${REPO_NAME}}"
