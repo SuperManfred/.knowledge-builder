@@ -178,6 +178,61 @@ files: $(find ${OUTPUT_DIR} -name "*.md" -not -path "*/.curation/*" | wc -l)
 EOF
 ```
 
+### Step 8: Generate SPECIALIST-PROMPT.md (Multi-Agent)
+
+**8.1 - Spawn 6 generators in parallel:**
+
+Use Task tool to spawn 6 sub-agents in a SINGLE message (parallel execution):
+- Agents 1-3: model: "sonnet", prompt: "Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md for ${DOMAIN}"
+- Agents 4-6: model: "opus", prompt: "Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md for ${DOMAIN}"
+
+Each agent generates their version of SPECIALIST-PROMPT.md.
+
+**8.2 - Spawn evaluator:**
+
+Use Task tool with model: "opus" and prompt:
+```
+You are synthesizing the best SPECIALIST-PROMPT.md from 6 independent versions.
+
+SONNET VERSION 1:
+${sonnet_1_output}
+
+SONNET VERSION 2:
+${sonnet_2_output}
+
+SONNET VERSION 3:
+${sonnet_3_output}
+
+OPUS VERSION 1:
+${opus_1_output}
+
+OPUS VERSION 2:
+${opus_2_output}
+
+OPUS VERSION 3:
+${opus_3_output}
+
+Analyze all 6 versions and create the FINAL SPECIALIST-PROMPT.md by taking the best parts from each. Write to: /Users/MN/GITHUB/.knowledge/curated-docs-web/${DOMAIN}/SPECIALIST-PROMPT.md
+```
+
+**8.3 - Verify final output:**
+
+```bash
+ls -lh ${OUTPUT_DIR}/SPECIALIST-PROMPT.md
+```
+
+**8.4 - Clean up intermediate files:**
+
+Delete any temporary/intermediate specialist prompt files created by the 6 agents (they likely wrote to temp locations or included their outputs in responses - no cleanup needed if outputs were just in agent responses).
+
+Print completion:
+```
+✅ CURATION COMPLETE
+✅ SPECIALIST-PROMPT.md GENERATED (6 agents synthesized by evaluator)
+
+Resource ready: /Users/MN/GITHUB/.knowledge/curated-docs-web/${DOMAIN}/
+```
+
 ---
 
 ## Quality Gates

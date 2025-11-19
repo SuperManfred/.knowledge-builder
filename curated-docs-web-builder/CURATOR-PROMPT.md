@@ -942,3 +942,195 @@ FORBIDDEN ACTIONS
 - NO asking user for paths/URLs
 - NO proceeding past failed validation
 - NO using only one source if both have valuable content
+
+STEP 10: MULTI-AGENT SPECIALIST PROMPT GENERATION
+==================================================
+
+**CRITICAL**: This step MUST be performed after validation passes.
+
+10.1) Create temporary directory for proposals
+```bash
+mkdir -p ${DEST}/.curation/specialist-proposals
+```
+
+10.2) Launch 6 parallel agents to generate proposals
+
+Invoke ALL 6 agents in a single message (parallel execution):
+
+```
+Task 1 (Sonnet - Usage Patterns):
+  model: "sonnet"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt focusing on usage patterns"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+
+  Focus specifically on: Common usage patterns, typical workflows, and frequent use cases.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${DEST}/.curation/specialist-proposals/proposal-1-sonnet-usage.md
+  """
+
+Task 2 (Sonnet - Troubleshooting):
+  model: "sonnet"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt focusing on troubleshooting"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+
+  Focus specifically on: Troubleshooting guidance, error handling, and edge cases.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${DEST}/.curation/specialist-proposals/proposal-2-sonnet-troubleshooting.md
+  """
+
+Task 3 (Sonnet - Integration):
+  model: "sonnet"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt focusing on integration"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+
+  Focus specifically on: Integration patterns, best practices, and ecosystem compatibility.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${DEST}/.curation/specialist-proposals/proposal-3-sonnet-integration.md
+  """
+
+Task 4 (Opus - Comprehensive Capabilities):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt with comprehensive capability mapping"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+
+  Focus specifically on: Complete capability inventory, feature coverage, and functional boundaries.
+  Use reasoning to ensure comprehensive coverage.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${DEST}/.curation/specialist-proposals/proposal-4-opus-capabilities.md
+  """
+
+Task 5 (Opus - Knowledge Boundaries):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt with precise knowledge boundaries"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+
+  Focus specifically on: What the specialist knows vs doesn't know, version coverage, and limitation acknowledgment.
+  Use reasoning to define clear boundaries.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${DEST}/.curation/specialist-proposals/proposal-5-opus-boundaries.md
+  """
+
+Task 6 (Opus - Usage Scenarios):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt with usage scenario modeling"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+
+  Focus specifically on: Real-world usage scenarios, project contexts, and implementation guidance.
+  Use reasoning to model comprehensive scenarios.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${DEST}/.curation/specialist-proposals/proposal-6-opus-scenarios.md
+  """
+```
+
+10.3) Synthesize with evaluator (7th agent)
+
+After ALL 6 agents complete, invoke the synthesis agent:
+
+```
+Task 7 (Opus - Synthesis):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Synthesize final specialist prompt from 6 proposals"
+  prompt: """
+  You have 6 specialist prompt proposals in:
+  ${DEST}/.curation/specialist-proposals/
+
+  Read all 6 proposals:
+  - proposal-1-sonnet-usage.md
+  - proposal-2-sonnet-troubleshooting.md
+  - proposal-3-sonnet-integration.md
+  - proposal-4-opus-capabilities.md
+  - proposal-5-opus-boundaries.md
+  - proposal-6-opus-scenarios.md
+
+  Your synthesis task:
+  1. Identify the BEST elements from each proposal
+  2. Combine complementary sections (don't duplicate)
+  3. Choose the clearest wording when multiple versions exist
+  4. Ensure comprehensive coverage without redundancy
+  5. Preserve unique insights and specific examples
+
+  Quality criteria:
+  - Role definition must be crystal clear
+  - Knowledge base contents must be accurately described
+  - Capabilities must be comprehensive but realistic
+  - Usage instructions must be actionable
+  - Knowledge boundaries must be well-defined
+  - Must include concrete examples from the actual docs
+
+  Write the FINAL synthesized specialist prompt to:
+  ${DEST}/SPECIALIST-PROMPT.md
+
+  After writing, report which elements you took from which proposals.
+  """
+```
+
+10.4) Automatic cleanup of proposals
+
+After synthesis completes successfully:
+
+```bash
+# Verify final SPECIALIST-PROMPT.md exists
+if [ -f "${DEST}/SPECIALIST-PROMPT.md" ]; then
+    echo "✅ SPECIALIST-PROMPT.md generated successfully"
+
+    # Archive proposals (optional - comment out if not wanted)
+    tar -czf ${DEST}/.curation/specialist-proposals-archive.tar.gz \
+        -C ${DEST}/.curation specialist-proposals/
+
+    # Clean up proposal files
+    rm -rf ${DEST}/.curation/specialist-proposals/
+    echo "✅ Proposal files cleaned up (archived to specialist-proposals-archive.tar.gz)"
+else
+    echo "❌ ERROR: SPECIALIST-PROMPT.md not found! Keeping proposals for debugging."
+    echo "Check ${DEST}/.curation/specialist-proposals/ for the 6 proposals"
+    exit 1
+fi
+```
+
+10.5) Final validation
+
+```bash
+# Verify specialist prompt is substantial
+PROMPT_SIZE=$(wc -l ${DEST}/SPECIALIST-PROMPT.md | awk '{print $1}')
+if [ $PROMPT_SIZE -lt 50 ]; then
+    echo "⚠️ WARNING: SPECIALIST-PROMPT.md seems too short (${PROMPT_SIZE} lines)"
+    echo "Consider reviewing the synthesis quality"
+fi
+
+echo "✅ Multi-agent specialist prompt generation complete!"
+echo "📍 Final prompt: ${DEST}/SPECIALIST-PROMPT.md"
+```
+
+SUCCESS CRITERIA (UPDATED)
+---------------------------
+✅ Zero navigation components (headers, footers, sidebars)
+✅ Zero analytics/tracking scripts
+✅ Zero marketing pages (pricing, enterprise)
+✅ At least some documentation pages exist (HTML or markdown)
+✅ Canonical schema with proper reasons
+✅ selection-manifest.json has all copy operations
+✅ Specialist agent has comprehensive usage documentation
+✅ Every included file serves the goal: "teach library usage from official docs"
+✅ Website infrastructure excluded (node_modules, webpack, build tools)
+✅ Both httrack AND crawl4ai sources utilized (or justified why only one)
+✅ **SPECIALIST-PROMPT.md generated via 6-agent ensemble + synthesis**
+✅ **Proposal files automatically cleaned up**
