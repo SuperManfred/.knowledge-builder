@@ -180,57 +180,183 @@ EOF
 
 ### Step 8: Generate SPECIALIST-PROMPT.md (Multi-Agent)
 
-**8.1 - Spawn 6 generators in parallel:**
-
-Use Task tool to spawn 6 sub-agents in a SINGLE message (parallel execution):
-- Agents 1-3: model: "sonnet", prompt: "Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md for ${DOMAIN}"
-- Agents 4-6: model: "opus", prompt: "Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md for ${DOMAIN}"
-
-Each agent generates their version of SPECIALIST-PROMPT.md.
-
-**8.2 - Spawn evaluator:**
-
-Use Task tool with model: "opus" and prompt:
-```
-You are synthesizing the best SPECIALIST-PROMPT.md from 6 independent versions.
-
-SONNET VERSION 1:
-${sonnet_1_output}
-
-SONNET VERSION 2:
-${sonnet_2_output}
-
-SONNET VERSION 3:
-${sonnet_3_output}
-
-OPUS VERSION 1:
-${opus_1_output}
-
-OPUS VERSION 2:
-${opus_2_output}
-
-OPUS VERSION 3:
-${opus_3_output}
-
-Analyze all 6 versions and create the FINAL SPECIALIST-PROMPT.md by taking the best parts from each. Write to: /Users/MN/GITHUB/.knowledge/curated-docs-web/${DOMAIN}/SPECIALIST-PROMPT.md
-```
-
-**8.3 - Verify final output:**
+**8.1 - Create proposals directory:**
 
 ```bash
-ls -lh ${OUTPUT_DIR}/SPECIALIST-PROMPT.md
+mkdir -p ${OUTPUT_DIR}/.curation/specialist-proposals
 ```
 
-**8.4 - Clean up intermediate files:**
+**8.2 - Launch 6 parallel agents to generate proposals:**
 
-Delete any temporary/intermediate specialist prompt files created by the 6 agents (they likely wrote to temp locations or included their outputs in responses - no cleanup needed if outputs were just in agent responses).
+Invoke ALL 6 agents in a single message (parallel execution):
+
+```
+Task 1 (Sonnet - Usage Patterns):
+  model: "sonnet"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt focusing on usage patterns"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${OUTPUT_DIR}
+
+  Focus specifically on: Common usage patterns, typical workflows, and frequent use cases.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-1-sonnet-usage.md
+  """
+
+Task 2 (Sonnet - Troubleshooting):
+  model: "sonnet"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt focusing on troubleshooting"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${OUTPUT_DIR}
+
+  Focus specifically on: Troubleshooting guidance, error handling, and edge cases.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-2-sonnet-troubleshooting.md
+  """
+
+Task 3 (Sonnet - Integration):
+  model: "sonnet"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt focusing on integration"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${OUTPUT_DIR}
+
+  Focus specifically on: Integration patterns, best practices, and ecosystem compatibility.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-3-sonnet-integration.md
+  """
+
+Task 4 (Opus - Comprehensive Capabilities):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt with comprehensive capability mapping"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${OUTPUT_DIR}
+
+  Focus specifically on: Complete capability inventory, feature coverage, and functional boundaries.
+  Use reasoning to ensure comprehensive coverage.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-4-opus-capabilities.md
+  """
+
+Task 5 (Opus - Knowledge Boundaries):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt with precise knowledge boundaries"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${OUTPUT_DIR}
+
+  Focus specifically on: What the specialist knows vs doesn't know, version coverage, and limitation acknowledgment.
+  Use reasoning to define clear boundaries.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-5-opus-boundaries.md
+  """
+
+Task 6 (Opus - Usage Scenarios):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Generate specialist prompt with usage scenario modeling"
+  prompt: """
+  Read /Users/MN/GITHUB/.knowledge/curated-docs-web/SPECIALIST-META-PROMPT.md with KB_PATH=${OUTPUT_DIR}
+
+  Focus specifically on: Real-world usage scenarios, project contexts, and implementation guidance.
+  Use reasoning to model comprehensive scenarios.
+
+  Write your complete SPECIALIST-PROMPT.md proposal to:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-6-opus-scenarios.md
+  """
+```
+
+**8.3 - Synthesize with evaluator (7th agent):**
+
+After ALL 6 agents complete, invoke the synthesis agent:
+
+```
+Task 7 (Opus - Synthesis):
+  model: "opus"
+  subagent_type: "general-purpose"
+  description: "Synthesize final specialist prompt from 6 proposals"
+  prompt: """
+  You have 6 specialist prompt proposals in:
+  ${OUTPUT_DIR}/.curation/specialist-proposals/
+
+  Read all 6 proposals:
+  - proposal-1-sonnet-usage.md
+  - proposal-2-sonnet-troubleshooting.md
+  - proposal-3-sonnet-integration.md
+  - proposal-4-opus-capabilities.md
+  - proposal-5-opus-boundaries.md
+  - proposal-6-opus-scenarios.md
+
+  Your synthesis task:
+  1. Identify the BEST elements from each proposal
+  2. Combine complementary sections (don't duplicate)
+  3. Choose the clearest wording when multiple versions exist
+  4. Ensure comprehensive coverage without redundancy
+  5. Preserve unique insights and specific examples
+
+  Quality criteria:
+  - Role definition must be crystal clear
+  - Knowledge base contents must be accurately described
+  - Capabilities must be comprehensive but realistic
+  - Usage instructions must be actionable
+  - Knowledge boundaries must be well-defined
+  - Must include concrete examples from the actual docs
+
+  Write the FINAL synthesized specialist prompt to:
+  ${OUTPUT_DIR}/SPECIALIST-PROMPT.md
+
+  After writing, report which elements you took from which proposals.
+  """
+```
+
+**8.4 - Automatic cleanup:**
+
+```bash
+# Verify final SPECIALIST-PROMPT.md exists
+if [ -f "${OUTPUT_DIR}/SPECIALIST-PROMPT.md" ]; then
+    echo "✅ SPECIALIST-PROMPT.md generated successfully"
+
+    # Archive proposals
+    tar -czf ${OUTPUT_DIR}/.curation/specialist-proposals-archive.tar.gz \
+        -C ${OUTPUT_DIR}/.curation specialist-proposals/
+
+    # Clean up proposal files
+    rm -rf ${OUTPUT_DIR}/.curation/specialist-proposals/
+    echo "✅ Proposal files cleaned up (archived to specialist-proposals-archive.tar.gz)"
+else
+    echo "❌ ERROR: SPECIALIST-PROMPT.md not found! Keeping proposals for debugging."
+    echo "Check ${OUTPUT_DIR}/.curation/specialist-proposals/ for the 6 proposals"
+    exit 1
+fi
+```
+
+**8.5 - Final validation:**
+
+```bash
+# Verify specialist prompt is substantial
+PROMPT_SIZE=$(wc -l ${OUTPUT_DIR}/SPECIALIST-PROMPT.md | awk '{print $1}')
+if [ $PROMPT_SIZE -lt 50 ]; then
+    echo "⚠️ WARNING: SPECIALIST-PROMPT.md seems too short (${PROMPT_SIZE} lines)"
+    echo "Consider reviewing the synthesis quality"
+fi
+
+echo "✅ Multi-agent specialist prompt generation complete!"
+echo "📍 Final prompt: ${OUTPUT_DIR}/SPECIALIST-PROMPT.md"
+```
 
 Print completion:
 ```
 ✅ CURATION COMPLETE
-✅ SPECIALIST-PROMPT.md GENERATED (6 agents synthesized by evaluator)
+✅ SPECIALIST-PROMPT.md GENERATED (6-agent ensemble + synthesis)
 
-Resource ready: /Users/MN/GITHUB/.knowledge/curated-docs-web/${DOMAIN}/
+Resource ready: ${OUTPUT_DIR}/
 ```
 
 ---
