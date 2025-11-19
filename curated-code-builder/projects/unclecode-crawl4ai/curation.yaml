@@ -1,0 +1,35 @@
+repo: unclecode/crawl4ai
+branch: main
+commit: 40173eeb7374dd5d3ab84b355b28e88d43703ee0
+date: 2025-11-09
+keep:
+  - crawl4ai/
+  - pyproject.toml
+  - setup.py
+  - setup.cfg
+  - requirements.txt
+  - LICENSE
+  - MANIFEST.in
+exclude:
+  - __tests__
+  - /test/
+  - /tests/
+  - .test.
+  - .spec.
+  - .snap
+  - __mocks__
+  - /fixtures/
+  - docs/
+  - /doc/
+  - /documentation/
+  - .md
+  - examples/
+  - /demos/
+  - .github/
+  - deploy/
+  - __pycache__
+  - .pyc
+  - .env
+  - ' copy.'
+  - .back.
+  - .backup.

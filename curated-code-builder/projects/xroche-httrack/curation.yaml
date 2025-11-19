@@ -1,0 +1,33 @@
+repo: xroche/httrack
+branch: master
+commit: 748c35de7858ead963daf1393ad023d75b7820c2
+date: 2025-11-09
+
+keep:
+  - src/**/*.c
+  - src/**/*.h
+  - src/minizip/**
+  - src/proxy/**
+  - configure.ac
+  - Makefile.am
+
+exclude:
+  - libtest/**
+  - html/**
+  - man/**
+  - tests/**
+  - debian/**
+  - lang/**
+  - templates/**
+  - docs/**
+  - doc/**
+  - documentation/**
+  - '**/__tests__/**'
+  - '**/test/**'
+  - '**/tests/**'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/*.snap'
+  - '**/__mocks__/**'
+  - '**/fixtures/**'
+  - '**/*.md'

@@ -1,0 +1,99 @@
+# HTTrack Documentation Curation
+# Include documentation files and directories
+
+# Documentation directories
+html/**
+man/**
+templates/**
+
+# Root documentation files
+README.md
+README
+history.txt
+greetings.txt
+license.txt
+gpl-fr.txt
+httrack-doc.html
+AUTHORS
+COPYING
+
+# MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+# Tests
+!**/__tests__/**
+!**/test/**
+!**/tests/**
+!**/*.test.*
+!**/*.spec.*
+!**/*.snap
+!/test_*
+
+# Build outputs and dependencies
+!**/node_modules/**
+!**/dist/**
+!**/build/**
+!**/.next/**
+!**/.docusaurus/**
+
+# Website code
+!**/*.tsx
+!**/*.jsx
+!/website/components/**
+!/website/src/**
+!/website/lib/**
+
+# Infrastructure at root
+!/Dockerfile
+!/docker-compose.yml
+!/uv.lock
+!/cliff.toml
+!/.env*
+!/MANIFEST.in
+!/setup.py
+!/setup.cfg
+!/pyproject.toml
+
+# Source code
+!/src/**
+!/lib/**
+!/packages/**/src/**
+!/crawl4ai/**
+!/libtest/**
+
+# CI/CD
+!/.github/**
+!/.gitlab/**
+!/.circleci/**
+
+# Non-docs markdown
+!/CONTRIBUTING.md
+!/CODE_OF_CONDUCT.md
+!/SECURITY.md
+
+# Build system
+!**/*.am
+!**/*.in
+!/configure*
+!/config.*
+!/compile
+!/depcomp
+!/install-sh
+!/ltmain.sh
+!/missing
+
+# Packaging
+!/debian/**
+
+# Internationalization (not documentation)
+!/lang/**
+!/lang.def
+!/lang.indexes
+
+# Build/install files
+!/ChangeLog
+!/NEWS
+!/INSTALL
+!/INSTALL.Linux
+!/.gitmodules
+
+# Git
+!/.git/**

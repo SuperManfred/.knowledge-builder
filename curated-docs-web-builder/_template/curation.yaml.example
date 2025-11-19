@@ -1,0 +1,91 @@
+domain: example.com
+url: https://example.com/docs
+scraped_at: 2025-01-09T12:00:00Z  # From MANIFEST.yaml
+curation_date: 2025-01-09  # YYYY-MM-DD
+sources: [httrack, crawl4ai]
+
+keep:
+  # httrack - Documentation pages
+  - httrack/*/docs/**/*.html
+  - httrack/*/documentation/**/*.html
+  - httrack/*/guides/**/*.html
+  - httrack/*/tutorials/**/*.html
+  - httrack/*/api/**/*.html
+  - httrack/*/reference/**/*.html
+
+  # httrack - Documentation assets
+  - httrack/*/docs/**/*.png
+  - httrack/*/docs/**/*.jpg
+  - httrack/*/docs/**/*.svg
+  - httrack/*/docs/**/*.gif
+  - httrack/*/images/**/*.{png,jpg,svg,gif,webp}
+  - httrack/*/assets/docs/**/*
+
+  # httrack - Code examples (if clearly docs, not website code)
+  - httrack/*/docs/examples/**/*.{js,ts,py,go,rs}
+
+  # crawl4ai - Pre-filtered content
+  - crawl4ai/content.md
+  - crawl4ai/docs/**/*.md
+  - crawl4ai/metadata.json
+
+exclude:
+  # Website navigation and chrome
+  - "**/header.html"
+  - "**/footer.html"
+  - "**/nav*.html"
+  - "**/sidebar*.html"
+  - "**/breadcrumb*.html"
+  - "**/menu*.html"
+
+  # Website infrastructure
+  - "**/_next/**"
+  - "**/.next/**"
+  - "**/node_modules/**"
+  - "**/webpack/**"
+  - "**/.docusaurus/**"
+  - "**/dist/**"
+  - "**/build/**"
+  - "**/.cache/**"
+  - "**/.nuxt/**"
+  - "**/.vuepress/**"
+
+  # Analytics and tracking
+  - "**/analytics*.js"
+  - "**/gtag*.js"
+  - "**/tracking*.js"
+  - "**/google-analytics*.js"
+  - "**/cookie*.js"
+  - "**/consent*.js"
+  - "**/tag-manager*.js"
+
+  # Website components and interactivity
+  - "**/search*.js"
+  - "**/theme*.js"
+  - "**/dark-mode*.js"
+  - "**/light-mode*.js"
+  - "**/announcement*.js"
+  - "**/banner*.js"
+  - "**/popup*.js"
+  - "**/modal*.js"
+
+  # Marketing and non-docs pages
+  - "**/pricing/**"
+  - "**/enterprise/**"
+  - "**/about/**"
+  - "**/careers/**"
+  - "**/contact/**"
+  - "**/team/**"
+  - "**/customers/**"
+  - "**/case-studies/**"
+  - "**/blog/**"
+  - "**/news/**"
+  - "**/press/**"
+
+  # SEO and marketing assets
+  - "**/seo*.js"
+  - "**/meta*.js"
+  - "**/og-image*.png"
+  - "**/landing/**"
+  - "**/marketing/**"
+  - "**/campaigns/**"

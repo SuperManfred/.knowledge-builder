@@ -1,0 +1,224 @@
+{
+  "domain": "repoprompt.com",
+  "url": "https://repoprompt.com/docs",
+  "scraped_at": "2025-11-09T02:23:17Z",
+  "curation_date": "2025-11-09",
+  "sources_used": [
+    "playwright"
+  ],
+  "copy_operations": [
+    {
+      "source_path": "playwright/applying-changes/apply-mode.md",
+      "dest_path": "applying-changes/apply-mode.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/changelog/version-1-0.md",
+      "dest_path": "changelog/version-1-0.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/chat-mode/multi-file-edits.md",
+      "dest_path": "chat-mode/multi-file-edits.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/compose-mode/composing-prompts.md",
+      "dest_path": "compose-mode/composing-prompts.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/compose-mode/filtering-files.md",
+      "dest_path": "compose-mode/filtering-files.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/compose-mode/searching-files.md",
+      "dest_path": "compose-mode/searching-files.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/compose-mode/storing-prompts.md",
+      "dest_path": "compose-mode/storing-prompts.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/core-concepts/code-maps.md",
+      "dest_path": "core-concepts/code-maps.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/core-concepts/multiple-workspaces.md",
+      "dest_path": "core-concepts/multiple-workspaces.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/core-concepts/selection-methods.md",
+      "dest_path": "core-concepts/selection-methods.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/external-integration/apply-mode.md",
+      "dest_path": "external-integration/apply-mode.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq-troubleshooting/manage-subscription.md",
+      "dest_path": "faq-troubleshooting/manage-subscription.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq-troubleshooting/mcp-troubleshooting.md",
+      "dest_path": "faq-troubleshooting/mcp-troubleshooting.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq-troubleshooting/pay-for-services.md",
+      "dest_path": "faq-troubleshooting/pay-for-services.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq-troubleshooting/prompt-caching.md",
+      "dest_path": "faq-troubleshooting/prompt-caching.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq-troubleshooting/solo-project.md",
+      "dest_path": "faq-troubleshooting/solo-project.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq-troubleshooting/windows-linux.md",
+      "dest_path": "faq-troubleshooting/windows-linux.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/faq/cursor-windsurf-difference.md",
+      "dest_path": "faq/cursor-windsurf-difference.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/file-selection/context-builder.md",
+      "dest_path": "file-selection/context-builder.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/getting-started/installation.md",
+      "dest_path": "getting-started/installation.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/overview/cursor-windsurf-difference.md",
+      "dest_path": "overview/cursor-windsurf-difference.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/overview/what-is-repo-prompt.md",
+      "dest_path": "overview/what-is-repo-prompt.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/pro-features/context-builder.md",
+      "dest_path": "pro-features/context-builder.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/pro-features/mcp-integration.md",
+      "dest_path": "pro-features/mcp-integration.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/pro-features/pro-mode.md",
+      "dest_path": "pro-features/pro-mode.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/quick-start/getting-started.md",
+      "dest_path": "quick-start/getting-started.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/quick-start/installation.md",
+      "dest_path": "quick-start/installation.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/quick-start/navigating-file-tree.md",
+      "dest_path": "quick-start/navigating-file-tree.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/quick-start/opening-workspace.md",
+      "dest_path": "quick-start/opening-workspace.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/setup-configuration/api-keys.md",
+      "dest_path": "setup-configuration/api-keys.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/setup-configuration/supported-models.md",
+      "dest_path": "setup-configuration/supported-models.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/workspace-management/file-operations.md",
+      "dest_path": "workspace-management/file-operations.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/workspace-management/file-watching.md",
+      "dest_path": "workspace-management/file-watching.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    },
+    {
+      "source_path": "playwright/workspace-management/managing-workspaces.md",
+      "dest_path": "workspace-management/managing-workspaces.md",
+      "reason": "Included by pattern 'playwright/**/*.md'",
+      "source": "playwright"
+    }
+  ],
+  "statistics": {
+    "total_files": 34,
+    "from_httrack": 0,
+    "from_crawl4ai": 0,
+    "from_playwright": 34,
+    "markdown_files": 34,
+    "images": 0,
+    "code_examples": 0
+  }
+}

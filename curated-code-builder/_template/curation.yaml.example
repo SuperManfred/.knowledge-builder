@@ -1,0 +1,41 @@
+repo: https://github.com/<owner>/<repo>.git
+branch: main
+date: 2025-08-28  # YYYY-MM-DD
+
+keep:
+  # Runtime internals (minimal defaults)
+  - src/**
+  - lib/**
+  - packages/<core-package>/src/**
+
+  # Optional text-only docs and root metadata (uncomment if desired)
+  # - docs/**/*.md
+  # - docs/**/*.mdx
+  # - README.md
+  # - LICENSE
+  # - package.json
+
+exclude:
+  - examples/**
+  - test/**
+  - '**/__tests__/**'
+  - '**/tests/**'
+  - '**/test/**'
+  - '**/fixtures/**'
+  - '**/mocks/**'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/*.snap'
+  - .github/**
+  - scripts/**
+  - bench/**
+  - apps/**
+  - .vscode/**
+  - .devcontainer/**
+  - .changeset/**
+  - patches/**
+  - dist/**            # generated
+  - build/**           # generated
+  - '**/compiled/**'   # vendored bundles
+  - docs/app/**
+  - docs/**/*.{png,jpg,jpeg,gif,svg,webp,mp4}

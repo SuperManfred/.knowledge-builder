@@ -1,0 +1,41 @@
+repo: xroche/httrack
+branch: master
+commit: 748c35de7858ead963daf1393ad023d75b7820c2
+date: 2025-11-09
+keep:
+  - html/**
+  - man/**
+  - templates/**
+  - README.md
+  - README
+  - history.txt
+  - greetings.txt
+  - license.txt
+  - gpl-fr.txt
+  - httrack-doc.html
+  - AUTHORS
+  - COPYING
+exclude:
+  - "**/.git/**"
+  - "**/src/**"
+  - "**/tests/**"
+  - "**/libtest/**"
+  - "**/debian/**"
+  - "**/m4/**"
+  - "**/*.am"
+  - "**/*.in"
+  - configure*
+  - config.*
+  - compile
+  - depcomp
+  - install-sh
+  - ltmain.sh
+  - missing
+  - .gitmodules
+  - lang/**
+  - lang.def
+  - lang.indexes
+  - ChangeLog
+  - NEWS
+  - INSTALL
+  - INSTALL.Linux

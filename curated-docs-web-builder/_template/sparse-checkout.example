@@ -1,0 +1,81 @@
+# Documentation-focused sparse checkout
+# Keep comprehensive documentation, exclude source code and infrastructure
+
+# Documentation directories
+/docs/**/*.md
+/docs/**/*.mdx
+/documentation/**/*.md
+/content/**/*.md
+/guides/**/*.md
+/website/content/**/*.md
+
+# Documentation assets
+/docs/**/*.png
+/docs/**/*.jpg
+/docs/**/*.jpeg
+/docs/**/*.gif
+/docs/**/*.svg
+/docs/**/*.webp
+
+# Code examples within docs
+/docs/**/examples/**
+/docs/**/snippets/**
+
+# Root documentation
+/README.md
+/CHANGELOG.md
+
+# API reference
+/docs/api/**
+/docs/reference/**
+
+# MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+# Tests
+!**/__tests__/**
+!**/test/**
+!**/tests/**
+!**/*.test.*
+!**/*.spec.*
+!**/*.snap
+!/test_*
+
+# Build outputs
+!**/node_modules/**
+!**/dist/**
+!**/build/**
+!**/.next/**
+!**/.docusaurus/**
+
+# Website code
+!**/*.tsx
+!**/*.jsx
+!/website/components/**
+!/website/src/**
+!/website/lib/**
+
+# Infrastructure at root
+!/Dockerfile
+!/docker-compose.yml
+!/uv.lock
+!/cliff.toml
+!/.env*
+!/MANIFEST.in
+!/setup.py
+!/setup.cfg
+!/pyproject.toml
+
+# Source code
+!/src/**
+!/lib/**
+!/packages/**/src/**
+!/crawl4ai/**
+
+# CI/CD
+!/.github/**
+!/.gitlab/**
+!/.circleci/**
+
+# Non-docs markdown
+!/CONTRIBUTING.md
+!/CODE_OF_CONDUCT.md
+!/SECURITY.md

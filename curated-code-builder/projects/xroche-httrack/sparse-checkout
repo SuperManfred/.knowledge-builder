@@ -1,0 +1,29 @@
+# Core source code
+src/**/*.c
+src/**/*.h
+src/minizip/**
+src/proxy/**
+
+# Build configuration
+configure.ac
+Makefile.am
+
+# MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+!libtest/**
+!html/**
+!man/**
+!tests/**
+!debian/**
+!lang/**
+!templates/**
+!**/__tests__/**
+!**/test/**
+!**/tests/**
+!**/*.test.*
+!**/*.spec.*
+!**/*.snap
+!**/__mocks__/**
+!**/fixtures/**
+!docs/**
+!doc/**
+!documentation/**

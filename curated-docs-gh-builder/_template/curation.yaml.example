@@ -1,0 +1,107 @@
+repo: https://github.com/<owner>/<repo>.git
+branch: main
+date: 2025-11-09  # YYYY-MM-DD
+
+keep:
+  # Documentation directories
+  - docs/**/*.md
+  - docs/**/*.mdx
+  - documentation/**/*.md
+  - content/**/*.md
+  - guides/**/*.md
+  - website/content/**/*.md
+
+  # Documentation assets
+  - docs/**/*.png
+  - docs/**/*.jpg
+  - docs/**/*.jpeg
+  - docs/**/*.gif
+  - docs/**/*.svg
+  - docs/**/*.webp
+
+  # Code examples within docs (tutorial code)
+  - docs/**/examples/**
+  - docs/**/snippets/**
+
+  # Root documentation
+  - README.md
+  - CHANGELOG.md
+
+  # API reference and generated docs
+  - docs/api/**
+  - docs/reference/**
+
+exclude:
+  # Source code directories
+  - src/**
+  - lib/**
+  - packages/**/src/**
+  - crawl4ai/**
+
+  # Website rendering code
+  - docs/**/*.jsx
+  - docs/**/*.tsx
+  - docs/**/*.vue
+  - docs/**/*.svelte
+  - website/components/**
+  - website/src/**
+  - website/lib/**
+
+  # Build configurations
+  - docs/next.config.js
+  - docs/docusaurus.config.js
+  - website/next.config.js
+  - website/docusaurus.config.js
+
+  # Tests
+  - test/**
+  - tests/**
+  - '**/__tests__/**'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/*.snap'
+  - test_*
+
+  # Build outputs
+  - docs/dist/**
+  - docs/build/**
+  - docs/.next/**
+  - docs/.docusaurus/**
+  - website/dist/**
+  - website/build/**
+  - website/.next/**
+
+  # Dependencies
+  - '**/node_modules/**'
+  - docs/node_modules/**
+  - website/node_modules/**
+
+  # Infrastructure files at root
+  - Dockerfile
+  - docker-compose.yml
+  - .dockerignore
+  - uv.lock
+  - cliff.toml
+  - .env*
+  - MANIFEST.in
+  - setup.py
+  - setup.cfg
+  - pyproject.toml
+
+  # CI/CD
+  - .github/**
+  - .gitlab/**
+  - .circleci/**
+
+  # Non-docs markdown
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - SECURITY.md
+
+  # Other
+  - scripts/**
+  - bench/**
+  - .vscode/**
+  - .devcontainer/**
+  - .changeset/**
+  - patches/**

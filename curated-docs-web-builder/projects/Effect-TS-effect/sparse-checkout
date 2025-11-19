@@ -1,0 +1,11 @@
+# Include only core runtime/build sources (minimal defaults)
+/src/**
+/lib/**
+/packages/<core-package>/src/**
+
+# Optional docs and root metadata (uncomment if desired)
+# /docs/**/*.md
+# /docs/**/*.mdx
+# /README.md
+# /LICENSE
+# /package.json

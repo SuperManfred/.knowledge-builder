@@ -1,0 +1,6568 @@
+{
+  "repo": "unclecode/crawl4ai",
+  "branch": "main",
+  "commit": "40173eeb7374dd5d3ab84b355b28e88d43703ee0",
+  "truncated": false,
+  "entries": [
+    {
+      "path": ".claude/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern '.claude/'"
+      ]
+    },
+    {
+      "path": ".claude/settings.local.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.claude/'"
+      ]
+    },
+    {
+      "path": ".env.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.env'"
+      ]
+    },
+    {
+      "path": ".gitattributes",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.gitattributes'"
+      ]
+    },
+    {
+      "path": ".github/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/DISCUSSION_TEMPLATE/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/DISCUSSION_TEMPLATE/feature-requests.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/pull_request_template.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": ".github/workflows/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/docker-release.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/docs/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/docs/ARCHITECTURE.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/docs/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/docs/WORKFLOW_REFERENCE.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/main.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/release.yml.backup",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".github/workflows/test-release.yml.disabled",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.github/'"
+      ]
+    },
+    {
+      "path": ".gitignore",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.gitignore'"
+      ]
+    },
+    {
+      "path": "CHANGELOG.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "CONTRIBUTORS.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "Dockerfile",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'Dockerfile'"
+      ]
+    },
+    {
+      "path": "JOURNAL.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "LICENSE",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'LICENSE'"
+      ]
+    },
+    {
+      "path": "MANIFEST.in",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'MANIFEST.in'"
+      ]
+    },
+    {
+      "path": "MISSION.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "PROGRESSIVE_CRAWLING.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "README-first.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "ROADMAP.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "SPONSORS.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "cliff.toml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'cliff.toml'"
+      ]
+    },
+    {
+      "path": "crawl4ai/",
+      "node": "dir",
+      "decision": "mixed",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/__version__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/adaptive_crawler copy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern ' copy.'"
+      ]
+    },
+    {
+      "path": "crawl4ai/adaptive_crawler.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_configs.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_crawler_strategy.back.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.back.'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_crawler_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_database.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_dispatcher.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_logger.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_url_seeder.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/async_webcrawler.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/browser_adapter.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/browser_manager.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/browser_profiler.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/cache_context.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/chunking_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/cli.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/components/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/components/crawler_monitor.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/config.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/content_filter_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/content_scraping_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/amazon_product/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/amazon_product/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/amazon_product/crawler.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/google_search/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/google_search/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/google_search/crawler.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/crawlers/google_search/script.js",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/base_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/bff_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/bfs_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/crazy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/dfs_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/filters.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/deep_crawling/scorers.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/docker_client.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/extraction_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/__main__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/_typing.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/cli.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/config.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/elements.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/html2text/utils.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/hub.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/install.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/js_snippet/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/js_snippet/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/js_snippet/navigator_overrider.js",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/js_snippet/remove_overlay_elements.js",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/js_snippet/update_image_dimensions.js",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/cli.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/crawler_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/database.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/docs_manager.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/llmtxt.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/version_manager.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/legacy/web_crawler.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/link_preview.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/markdown_generation_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/migrations.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/model_loader.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/models.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/processors/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/processors/pdf/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/processors/pdf/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/processors/pdf/processor.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/processors/pdf/utils.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/prompts.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/proxy_strategy.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/script/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/script/__init__.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/script/c4a_compile.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/script/c4a_result.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/script/c4ai_script.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/ssl_certificate.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/table_extraction.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/types.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/user_agent_generator.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "crawl4ai/utils.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'crawl4ai/'"
+      ]
+    },
+    {
+      "path": "deploy/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/.dockerignore",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/.llm.env.example",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "deploy/docker/WEBHOOK_EXAMPLES.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "deploy/docker/api.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/auth.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/c4ai-code-context.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "deploy/docker/c4ai-doc-context.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "deploy/docker/config.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/crawler_pool.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/hook_manager.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/job.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/mcp_bridge.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/requirements.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/schemas.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/server.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/static/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/static/playground/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/static/playground/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/supervisord.conf",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/utils.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "deploy/docker/webhook.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'deploy/'"
+      ]
+    },
+    {
+      "path": "docker-compose.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docker-compose.yml'"
+      ]
+    },
+    {
+      "path": "docs/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/iseeyou/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/iseeyou/llms-full.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/Crawl4ai_Linkedin_Data_Discovery_Part_1.ipynb",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/Crawl4ai_Linkedin_Data_Discovery_Part_2.ipynb",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/c4ai_discover.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/c4ai_insights.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/samples/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/samples/companies.jsonl",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/samples/people.jsonl",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/schemas/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/schemas/company_card.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/schemas/people_card.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/snippets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/snippets/company.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/snippets/people.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/templates/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/templates/ai.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/apps/linkdin/templates/graph_view_template.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/pitch-dark.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/pitch-dark.svg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/powered-by-dark.svg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/powered-by-disco.svg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/powered-by-light.svg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/assets/powered-by-night.svg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/release-v0.7.0.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/release-v0.7.1.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/release-v0.7.3.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/release-v0.7.4.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/release-v0.7.5.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/blog/release-v0.7.6.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/codebase/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/codebase/browser.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/codebase/cli.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/deprecated/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/deprecated/docker-deployment.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/README_BUILTIN_BROWSER.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/advanced_configuration.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/basic_usage.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/custom_strategies.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/embedding_configuration.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/embedding_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/embedding_vs_statistical.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/export_import_kb.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/adaptive_crawling/llm_config_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/amazon_product_extraction_direct_url.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/amazon_product_extraction_using_hooks.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/amazon_product_extraction_using_use_javascript.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/arun_vs_arun_many.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/audio.mp3",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/basic.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/cosine_extraction.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/css_js.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/css_selector.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/exec_script.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/instagram_grid_result.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/llm_extraction.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/semantic_extraction_cosine.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/semantic_extraction_llm.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/virtual_scroll_append_only.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/virtual_scroll_instagram_grid.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/virtual_scroll_news_feed.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/assets/virtual_scroll_twitter_like.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/async_webcrawler_multiple_urls_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/browser_optimization_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/builtin_browser_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/amazon_r2d2_search.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/extracted_products.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/generated_product_schema.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/generated_search_script.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/header.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/amazon_example/product.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/api_usage_examples.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/c4a_script_hello_world.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/c4a_script_hello_world_error.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/demo_c4a_crawl4ai.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/generate_script_hello_world.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/extracted_repositories.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/generated_result_schema.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/generated_search_script.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/github_search_crawler.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/result.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/github_search/search_form.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/add_to_cart.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/advanced_control_flow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/conditional_login.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/data_extraction.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/fill_contact.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/load_more_content.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/login_flow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/multi_step_workflow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/navigate_tabs.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/quick_login.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/responsive_actions.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/scroll_and_click.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/search_product.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/simple_form.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/script_samples/smart_form_fill.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/DankMono-Bold.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/DankMono-Italic.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/DankMono-Regular.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/app.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/app.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/blockly-manager.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/blockly-theme.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/c4a-blocks.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/c4a-generator.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/assets/styles.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/blockly-demo.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/playground/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/playground/app.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/playground/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/playground/styles.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/requirements.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/scripts/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/scripts/01-basic-interaction.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/scripts/02-login-flow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/scripts/03-infinite-scroll.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/scripts/04-multi-step-form.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/scripts/05-complex-workflow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/server.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/c4a_script/tutorial/test_blockly.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/chainlit.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/browser.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/crawler.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/css_schema.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/extract.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/extract_css.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/cli/llm_schema.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/crawlai_vs_firecrawl.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/crawler_monitor_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/crypto_analysis_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/deepcrawl_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/demo_multi_config_clean.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/dispatcher_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker/demo_docker_api.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker/demo_docker_polling.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_client_hooks_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_config_obj.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_hooks_examples.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_python_rest_api.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_python_sdk.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/docker_webhook_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/extraction_strategies_examples.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/full_page_screenshot_and_pdf_export.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/hello_world.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/hello_world_undetected.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/hooks_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/identity_based_browsing.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/language_support_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/link_head_extraction_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/llm_extraction_openai_pricing.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/llm_markdown_generator.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/llm_table_extraction_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/markdown/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/markdown/content_source_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/markdown/content_source_short_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/network_console_capture_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/proxy_rotation_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/quickstart.ipynb",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/quickstart.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/quickstart_examples_set_1.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/quickstart_examples_set_2.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/regex_extraction_quickstart.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/research_assistant.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/rest_call.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/sample_ecommerce.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/scraping_strategies_performance.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/serp_api_project_11_feb.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/session_id_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/simple_anti_bot_examples.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/ssl_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/stealth_mode_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/stealth_mode_quick_start.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/stealth_test_simple.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/storage_state_tutorial.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/summarize_page.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/table_extraction_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/tutorial_dynamic_clicks.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/tutorial_v0.5.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/undetectability/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/undetectability/undetected_basic_test.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/undetectability/undetected_bot_test.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/undetectability/undetected_cloudflare_test.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/undetectability/undetected_vs_regular_comparison.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/undetected_simple_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/Crawl4AI_URL_Seeder_Tutorial.ipynb",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/bbc_sport_research_assistant.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/convert_tutorial_to_colab.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/tutorial_url_seeder.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/url_seeder_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/url_seeder/url_seeder_quick_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/use_geo_location.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/virtual_scroll_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/.gitignore",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/api_server.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/app.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/assets/crawl4ai_logo.jpg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/requirements.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/static/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/static/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/static/script.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/static/styles.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/test_api.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/test_models.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/examples/website-to-api/web_scraper_lib.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/adaptive-strategies.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/advanced-features.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/crawl-dispatcher.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/file-downloading.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/hooks-auth.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/identity-based-crawling.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/lazy-loading.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/multi-url-crawling.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/network-console-capture.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/pdf-parsing.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/proxy-security.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/session-management.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/ssl-certificate.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/undetected-browser.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/advanced/virtual-scroll.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/adaptive-crawler.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/arun.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/arun_many.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/async-webcrawler.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/c4a-script-reference.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/crawl-result.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/digest.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/parameters.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/api/strategies.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/assets/DankMono-Bold.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/assets/DankMono-Italic.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/assets/DankMono-Regular.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/DankMono-Bold.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/DankMono-Italic.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/DankMono-Regular.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/app.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/app.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/blockly-manager.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/blockly-theme.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/c4a-blocks.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/c4a-generator.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/assets/styles.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/blockly-demo.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/playground/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/playground/app.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/playground/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/playground/styles.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/requirements.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/scripts/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/scripts/01-basic-interaction.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/scripts/02-login-flow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/scripts/03-infinite-scroll.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/scripts/04-multi-step-form.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/scripts/05-complex-workflow.c4a",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/server.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/c4a-script/test_blockly.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/assets/DankMono-Bold.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/assets/DankMono-Italic.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/assets/DankMono-Regular.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/assistant.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/background/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/background/service-worker.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/click2crawl.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/content.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/contentAnalyzer.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/markdownConverter.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/markdownExtraction.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/markdownPreviewModal.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/overlay.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/scriptBuilder.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/shared/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/content/shared/utils.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/crawl4ai-assistant-v1.2.1.zip",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/crawl4ai-assistant-v1.3.0.zip",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/icons/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/icons/favicon.ico",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/icons/icon-128.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/icons/icon-16.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/icons/icon-48.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/libs/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/libs/marked.min.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/manifest.json",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/icons/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/icons/favicon.ico",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/icons/icon-128.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/icons/icon-16.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/icons/icon-48.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/popup.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/popup.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/crawl4ai-assistant/popup/popup.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/index.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/llmtxt/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/llmtxt/build.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/llmtxt/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/llmtxt/llmtxt.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/llmtxt/llmtxt.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/apps/llmtxt/why.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/ask_ai/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/ask_ai/ask-ai.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/ask_ai/ask-ai.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/ask_ai/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/DankMono-Bold.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/DankMono-Italic.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/DankMono-Regular.woff2",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/Monaco.woff",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/copy_code.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/crawl4ai-skill.zip",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/dmvendor.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/docs.zip",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/feedback-overrides.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/floating_ask_ai_button.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/github_stats.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/gtag.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/highlight.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/highlight.min.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/highlight_init.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/images/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/images/dispatcher.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/images/logo.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/layout.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/cli.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/config_objects.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/deep_crawl_advanced_filters_scorers.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/deep_crawling.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/docker.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/extraction-llm.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/extraction-no-llm.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/http_based_crawler_strategy.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/installation.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/llms-diagram.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/multi_urls_crawling.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/simple_crawling.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/diagrams/url_seeder.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/cli.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/config_objects.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/deep_crawl_advanced_filters_scorers.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/deep_crawling.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/docker.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/extraction-llm.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/extraction-no-llm.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/http_based_crawler_strategy.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/installation.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/llms-full-v0.1.1.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/llms-full.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/multi_urls_crawling.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/simple_crawling.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/llm.txt/txt/url_seeder.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/mobile_menu.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/page_actions.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/page_actions.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/selection_ask_ai.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/styles.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/test/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern '/test/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/test/toc.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '/test/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/assets/toc.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/basic/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/basic/installation.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/articles/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/articles/adaptive-crawling-revolution.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/articles/dockerize_hooks.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/articles/llm-context-revolution.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/articles/virtual-scroll-revolution.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/index.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/index.md.bak",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.4.0.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.4.1.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.4.2.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.5.0.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.6.0.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.7.0.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.7.1.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.7.2.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.7.3.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/0.7.6.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/v0.4.3b1.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/blog/releases/v0.7.5.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/branding/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/branding/index.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/complete-sdk-reference.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/adaptive-crawling.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/ask-ai.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/browser-crawler-config.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/c4a-script.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/cache-modes.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/cli.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/content-selection.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/crawler-result.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/deep-crawling.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/docker-deployment.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/examples.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/fit-markdown.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/installation.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/link-media.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/llmtxt.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/local-files.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/markdown-generation.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/page-interaction.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/quickstart.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/simple-crawling.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/table_extraction.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/core/url-seeding.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/extraction/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/extraction/chunking.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/extraction/clustring-strategies.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/extraction/llm-strategies.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/extraction/no-llm-strategies.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/favicon.ico",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/img/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/img/favicon-32x32.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/img/favicon-x-32x32.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/img/favicon.ico",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/index.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/admin/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/admin/admin.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/admin/admin.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/admin/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/app-detail.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/app-detail.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/app-detail.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/.env.example",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/config.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/database.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/dummy_data.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/requirements.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/schema.yaml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/server.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/uploads/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/backend/uploads/.gitignore",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/app-detail.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/app-detail.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/app-detail.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/marketplace.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/frontend/marketplace.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/marketplace.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/marketplace/marketplace.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/migration/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/migration/table_extraction_v073.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/migration/webscraping-strategy-migration.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/overrides/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/md_v2/overrides/main.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/Crawl4AI_v0.3.72_Release_Announcement.ipynb",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/crawl4ai_v0_7_0_showcase.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/demo_v0.7.0.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/demo_v0.7.5.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/demo_v0.7.6.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/v0.3.74.overview.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/v0.7.5_docker_hooks_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/v0.7.5_video_walkthrough.ipynb",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/v0_4_24_walkthrough.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/v0_4_3b2_features_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/releases_review/v0_7_0_features_demo.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/snippets/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/snippets/deep_crawl/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/snippets/deep_crawl/1.intro.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/snippets/deep_crawl/2.filters.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/tutorials/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "docs/tutorials/coming_soon.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'docs/'"
+      ]
+    },
+    {
+      "path": "mkdocs.yml",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'mkdocs.yml'"
+      ]
+    },
+    {
+      "path": "prompts/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "prompts/prompt_net_requests.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "pyproject.toml",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'pyproject.toml'"
+      ]
+    },
+    {
+      "path": "requirements.txt",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'requirements.txt'"
+      ]
+    },
+    {
+      "path": "setup.cfg",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'setup.cfg'"
+      ]
+    },
+    {
+      "path": "setup.py",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'setup.py'"
+      ]
+    },
+    {
+      "path": "test_llm_webhook_feature.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "test_webhook_implementation.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/WEBHOOK_TEST_README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "tests/__init__.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/compare_performance.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/test_adaptive_crawler.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/test_confidence_debug.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/test_embedding_performance.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/test_embedding_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/adaptive/test_llm_embedding.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/sample_wikipedia.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_0.4.2_browser_manager.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_0.4.2_config_params.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_async_doanloader.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_basic_crawling.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_caching.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_chunking_and_extraction_strategies.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_content_extraction.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_content_filter_bm25.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_content_filter_prune.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_content_scraper_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_crawler_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_database_operations.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_dispatchers.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_edge_cases.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_error_handling.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_evaluation_scraping_methods_performance.configs.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_markdown_genertor.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_parameters_and_options.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_performance.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async/test_screenshot.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async_assistant/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async_assistant/test_extract_pipeline.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/async_assistant/test_extract_pipeline_v2.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/docker/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/docker/__init__.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/docker/test_docker_browser.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/manager/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/manager/demo_browser_manager.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_browser_manager.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_builtin_browser.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_builtin_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_cdp_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_combined.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_launch_standalone.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_parallel_crawling.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_playwright_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/browser/test_profiles.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/check_dependencies.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/cli/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/cli/test_cli.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/deep_crwaling/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/deep_crwaling/test_filter.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/simple_api_test.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_config_object.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_docker.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_dockerclient.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_filter_deep_crawl.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_hooks_client.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_hooks_comprehensive.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_hooks_utility.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_llm_params.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_rest_api_deep_crawl.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_serialization.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_server.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_server_requests.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker/test_server_token.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/docker_example.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/generate_dummy_site.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_acyn_crawl_wuth_http_crawler_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_advanced_deep_crawl.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_async_crawler_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_async_markdown_generator.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_async_url_seeder_bm25.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_async_webcrawler.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_bff_scoring.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_cache_context.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_content_source_parameter.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_crawlers.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_deep_crawl.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_deep_crawl_filters.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_deep_crawl_scorers.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_download_file.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_http_crawler_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_llm_filter.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_max_scroll.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_mhtml.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_network_console_capture.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_persistent_context.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_robot_parser.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_schema_builder.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_stream.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_stream_dispatch.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/test_url_pattern.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/general/tets_robot.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/hub/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/hub/test_simple.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/loggers/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/loggers/test_logger.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/mcp/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/mcp/test_mcp_socket.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/mcp/test_mcp_sse.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern '.md'"
+      ]
+    },
+    {
+      "path": "tests/memory/benchmark_report.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/cap_test.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/requirements.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/run_benchmark.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_crawler_monitor.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_dispatcher_stress.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_docker_config_gen.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_stress_api.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_stress_api_xs.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_stress_docker_api.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/memory/test_stress_sdk.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/profiler/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/profiler/test_create_profile.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/profiler/test_keyboard_handle.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/proxy/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/proxy/test_proxy_config.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/proxy/test_proxy_deprecation.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/releases/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/releases/test_release_0.6.4.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/releases/test_release_0.7.0.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_arun_many.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_cli_docs.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_config_matching_only.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_config_selection.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_docker.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_docker_api_with_llm_provider.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_link_extractor.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_llm_simple_url.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_llmtxt.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_main.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_memory_macos.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_multi_config.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_normalize_url.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_preserve_https_for_internal_links.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_scraping_strategy.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_virtual_scroll.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_web_crawler.py",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "tests/test_webhook_feature.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "uv.lock",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'uv.lock'"
+      ]
+    }
+  ]
+}

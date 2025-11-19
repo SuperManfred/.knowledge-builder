@@ -1,0 +1,3240 @@
+{
+  "repo": "xroche/httrack",
+  "branch": "master",
+  "commit": "748c35de7858ead963daf1393ad023d75b7820c2",
+  "truncated": false,
+  "entries": [
+    {
+      "path": ".gitmodules",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "AUTHORS",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "COPYING",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "ChangeLog",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "INSTALL",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "INSTALL.Linux",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "Makefile.am",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'Makefile.am'"
+      ]
+    },
+    {
+      "path": "Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "NEWS",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "README",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "README.md",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "compile",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "config.guess",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "config.h.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "config.sub",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "configure",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "configure.ac",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'configure.ac'"
+      ]
+    },
+    {
+      "path": "debian/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'debian'"
+      ]
+    },
+    {
+      "path": "debian/changelog",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/compat",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/control",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/copyright",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/httrack-doc.doc-base",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/httrack-doc.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/httrack-doc.lintian-overrides",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/libhttrack-dev.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/libhttrack-dev.lintian-overrides",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/libhttrack-swf1.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/libhttrack2.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/libhttrack2.lintian-overrides",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/proxytrack.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/rules",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/source/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/source/format",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "debian/source/lintian-overrides",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "debian/source/options",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "debian/watch",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/webhttrack-common.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/webhttrack-common.lintian-overrides",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/webhttrack.files",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "debian/webhttrack.lintian-overrides",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'debian/**'"
+      ]
+    },
+    {
+      "path": "depcomp",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "gpl-fr.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "greetings.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "history.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'html'"
+      ]
+    },
+    {
+      "path": "html/Makefile.am",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/abuse.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/addurl.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/cache.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/cmddoc.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/contact.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/dev.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/div/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/div/search.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/faq.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/fcguide.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/filters.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/httrack.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/httrack.man.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/images/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/images/bg_rings.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/images/header_title_4.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/images/screenshot_01.jpg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/images/screenshot_01b.jpg",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/img/addurl1.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/addurl2.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/addurl3.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/addurl4.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/addurl5.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/backblue.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/fade.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/httrack.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap1_a.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap1_b.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap1_c.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap2_a.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap2_b.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap3_a.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap4_a.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap5_a.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_a.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_b.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_c.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d2.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d3.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d4.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d5.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d6.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d7.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_d8.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_e.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_f.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_g.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_g2.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_g3.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_h.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_i.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_j.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/img/snap9_k.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/library.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/options.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/overview.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/plug.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/plug_330.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/scripting.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/server/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/server/about.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/addurl.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/16x16/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/16x16/httrack.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/32x32/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/32x32/httrack.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/48x48/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/48x48/httrack.png",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/WebHTTrack-Websites.desktop",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/WebHTTrack.desktop",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/httrack16x16.xpm",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/httrack32x32.xpm",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/div/httrack48x48.xpm",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/error.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/exit.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/file.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/finished.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/help.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/images/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/images/bg_rings.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/images/fade.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/images/header_title_4.gif",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/index.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option1.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option10.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option11.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option2.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option2b.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option3.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option4.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option5.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option6.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option7.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option8.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/option9.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/ping.js",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/refresh.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/step2.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/step3.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/step4.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/server/style.css",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "html/shelldoc.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/start.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step1.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step2.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step3.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step4.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step5.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt1.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt10.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt11.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt2.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt3.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt4.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt5.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt6.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt7.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt8.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "html/step9_opt9.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'html/**'"
+      ]
+    },
+    {
+      "path": "httrack-doc.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "install-sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "lang.def",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "lang.indexes",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "lang/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'lang'"
+      ]
+    },
+    {
+      "path": "lang/Bulgarian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Castellano.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Cesky.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Chinese-BIG5.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Chinese-Simplified.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Croatian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Dansk.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Deutsch.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Eesti.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/English.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Finnish.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Francais.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Greek.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Italiano.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Japanese.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Macedonian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Magyar.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Makefile.am",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Nederlands.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Norsk.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Polski.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Portugues-Brasil.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Portugues.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Romanian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Russian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Slovak.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Slovenian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Svenska.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Turkish.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Ukrainian.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "lang/Uzbek.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'lang/**'"
+      ]
+    },
+    {
+      "path": "libtest/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'libtest'"
+      ]
+    },
+    {
+      "path": "libtest/Makefile.am",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-baselinks.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-changecontent.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-contentfilter.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-displayheader.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-filename.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-filename2.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-filenameiisbug.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-listlinks.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-log.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/callbacks-example-simple.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/example-main.c",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/example-main.h",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/libtest.mak",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/libtest.vcproj",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "libtest/readme.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'libtest/**'"
+      ]
+    },
+    {
+      "path": "license.txt",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "ltmain.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "m4/",
+      "node": "dir",
+      "decision": "mixed",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "m4/Makefile.am",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'Makefile.am'"
+      ]
+    },
+    {
+      "path": "m4/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "m4/check_zlib.m4",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "m4/snprintf.m4",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "m4/visibility.m4",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "man/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'man'"
+      ]
+    },
+    {
+      "path": "man/Makefile.am",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'man/**'"
+      ]
+    },
+    {
+      "path": "man/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'man/**'"
+      ]
+    },
+    {
+      "path": "man/htsserver.1",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'man/**'"
+      ]
+    },
+    {
+      "path": "man/httrack.1",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'man/**'"
+      ]
+    },
+    {
+      "path": "man/proxytrack.1",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'man/**'"
+      ]
+    },
+    {
+      "path": "man/webhttrack.1",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'man/**'"
+      ]
+    },
+    {
+      "path": "missing",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/",
+      "node": "dir",
+      "decision": "mixed",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/Makefile.am",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'Makefile.am'"
+      ]
+    },
+    {
+      "path": "src/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/coucal",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/hts-indextmpl.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsalias.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsalias.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsarrays.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsback.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsback.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsbase.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsbasenet.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsbasiccharsets.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/htsbauth.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsbauth.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htscache.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htscache.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htscatchurl.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htscatchurl.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htscharset.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htscharset.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htscodepages.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsconcat.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsconfig.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htscore.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htscore.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htscoremain.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htscoremain.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsdefines.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsencoding.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsencoding.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsentities.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsentities.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/htsfilters.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsfilters.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsftp.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsftp.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsglobal.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htshash.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htshash.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htshelp.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htshelp.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsindex.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsindex.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsjava.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsjava.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsjava.vcproj",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/htslib.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htslib.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsmd5.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsmd5.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsmodules.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsmodules.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsname.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsname.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsnet.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsopt.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsparse.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsparse.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsrobots.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsrobots.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htssafe.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsserver.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsserver.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsstrings.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsthread.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsthread.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htstools.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htstools.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htsweb.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htsweb.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htswizard.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htswizard.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htswrap.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htswrap.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/htszlib.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/htszlib.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/httrack-library.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/httrack.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/httrack.dsp",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/httrack.dsw",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/httrack.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/httrack.vcproj",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/libhttrack.dsp",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/libhttrack.dsw",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/libhttrack.vcproj",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/md5.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/md5.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/MiniZip64_Changes.txt",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/MiniZip64_info.txt",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/crypt.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/ioapi.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/minizip/ioapi.c.diff",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/ioapi.c.orig",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/ioapi.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/ioapi.h.diff",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/ioapi.h.orig",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/iowin32.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/minizip/iowin32.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/mztools.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/minizip/mztools.c.diff",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/mztools.c.orig",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/mztools.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/unzip.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/minizip/unzip.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/zip.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/minizip/zip.c.diff",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/zip.c.orig",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/zip.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/minizip/zip.h.diff",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/minizip/zip.h.orig",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/minizip/**'"
+      ]
+    },
+    {
+      "path": "src/murmurhash3.h.orig",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/proxy/",
+      "node": "dir",
+      "decision": "keep_all",
+      "reasons": [
+        "Included by pattern 'src/proxy/**'"
+      ]
+    },
+    {
+      "path": "src/proxy/AUTHORS",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/proxy/**'"
+      ]
+    },
+    {
+      "path": "src/proxy/COPYING",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/proxy/**'"
+      ]
+    },
+    {
+      "path": "src/proxy/changelog.txt",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/proxy/**'"
+      ]
+    },
+    {
+      "path": "src/proxy/main.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/proxy/proxystrings.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/proxy/proxytrack.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/proxy/proxytrack.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/proxy/proxytrack.vcproj",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/proxy/**'"
+      ]
+    },
+    {
+      "path": "src/proxy/store.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/proxy/store.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/punycode.c",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.c'"
+      ]
+    },
+    {
+      "path": "src/punycode.h",
+      "node": "file",
+      "decision": "keep",
+      "reasons": [
+        "Included by pattern 'src/**/*.h'"
+      ]
+    },
+    {
+      "path": "src/webhttrack",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/webhttrack.dsp",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/webhttrack.dsw",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "src/webhttrack.vcproj",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Outside include patterns"
+      ]
+    },
+    {
+      "path": "templates/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'templates'"
+      ]
+    },
+    {
+      "path": "templates/Makefile.am",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/index-body.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/index-footer.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/index-header.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/topindex-body.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/topindex-bodycat.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/topindex-footer.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "templates/topindex-header.html",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'templates/**'"
+      ]
+    },
+    {
+      "path": "tests/",
+      "node": "dir",
+      "decision": "omit_all",
+      "reasons": [
+        "Excluded by pattern 'tests'"
+      ]
+    },
+    {
+      "path": "tests/00_runnable.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/01_engine-charset.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/01_engine-entities.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/01_engine-hashtable.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/01_engine-idna.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/01_engine-simplify.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/10_crawl-simple.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/11_crawl-cookies.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/11_crawl-idna.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/11_crawl-international.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/11_crawl-longurl.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/11_crawl-parsing.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/12_crawl_https.test",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/Makefile.am",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/Makefile.in",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/check-network.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/crawl-test.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    },
+    {
+      "path": "tests/run-all-tests.sh",
+      "node": "file",
+      "decision": "omit",
+      "reasons": [
+        "Excluded by pattern 'tests/**'"
+      ]
+    }
+  ]
+}
