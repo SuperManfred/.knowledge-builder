@@ -1,0 +1,111 @@
+repo: https://github.com/vercel/next.js
+branch: canary
+commit: 18213e397dc3dfd3d72fb7045d4ba170b2dd0cf3
+date: 2025-11-20
+
+# Next.js 16 + App Router Focused Curation
+# Goal: 10x engineer specialist for cutting-edge Next.js patterns
+# Focus: Server Components, Server Actions, caching, performance, security
+
+keep:
+  # App Router Core (user's primary focus)
+  - packages/next/src/server/app-render/**
+  - packages/next/src/server/route-modules/app-route/**
+  - packages/next/src/server/route-modules/app-page/**
+  - packages/next/src/client/components/**
+
+  # Next.js 16 Features (cutting edge)
+  - packages/next/src/server/use-cache/**              # 'use cache' directive
+  - packages/next/src/server/lib/incremental-cache/**  # Cache infrastructure
+  - packages/next/src/server/lib/cache-handlers/**
+  - packages/next/src/server/lib/*revalidate*.ts       # revalidateTag/updateTag
+  - packages/next/src/server/lib/implicit-tags.ts
+  - packages/next/src/server/lib/router-utils/cache-life-type-utils.ts
+  - packages/next/src/server/web/**                     # proxy.ts, middleware
+
+  # Build System (Turbopack, etc.)
+  - packages/next/src/build/**
+  - packages/next/src/shared/**
+  - packages/next/src/lib/**
+  - packages/next/src/client/**
+
+  # Server Core
+  - packages/next/src/server/base-server.ts
+  - packages/next/src/server/base-http/**
+  - packages/next/src/server/dev/**
+  - packages/next/src/server/async-storage/**
+  - packages/next/src/server/stream-utils/**
+  - packages/next/src/server/normalizers/**
+  - packages/next/src/server/route-matchers/**
+  - packages/next/src/server/route-matcher-managers/**
+  - packages/next/src/server/route-matcher-providers/**
+  - packages/next/src/server/mcp/**                     # MCP integration (Next.js 16)
+
+  # Root manifests
+  - package.json
+  - turbo.json
+  - pnpm-workspace.yaml
+  - LICENSE
+
+exclude:
+  # Tests (largest - 67MB)
+  - test/**
+  - '**/__tests__/**'
+  - '**/tests/**'
+  - '**/test/**'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/*.snap'
+  - '**/fixtures/**'
+  - '**/mocks/**'
+
+  # Examples & Docs (40MB)
+  - examples/**
+  - docs/**
+  - bench/**
+  - benchmarks/**
+
+  # Pages Router (user doesn't use)
+  - packages/next/src/server/route-modules/pages/**
+  - packages/next/src/server/route-modules/pages-api/**
+
+  # Build Artifacts & Vendored (be specific - don't match src/build/)
+  - dist/**
+  - build/**
+  - out/**
+  - node_modules/**
+  - .next/**
+  - packages/next/dist/**
+  - packages/next/build/**
+  - packages/*/dist/**
+  - '**/node_modules/**'
+  - packages/next/src/compiled/**
+
+  # CI/Config/Dev
+  - .github/**
+  - .devcontainer/**
+  - .vscode/**
+  - .changeset/**
+  - scripts/**
+  - patches/**
+  - .husky/**
+  - .cargo/**
+  - .config/**
+
+  # Monorepo workspaces (not Next.js framework)
+  - apps/**
+  - crates/**
+  - rspack/**
+  - turbopack/**
+  - contributing/**
+  - errors/**
+  - test-config-errors/**
+
+  # Media
+  - '**/*.{png,jpg,jpeg,gif,svg,webp,mp4,ico,woff,woff2,ttf,eot}'
+
+  # Docs (except LICENSE)
+  - '**/*.md'
+  - '**/*.mdx'
+  - README.md
+  - CONTRIBUTING.md

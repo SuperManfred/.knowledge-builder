@@ -47,7 +47,7 @@ fi
 # Parse owner and repo from URL (platform-agnostic: GitHub, Bitbucket, GitLab, etc.)
 TRIMMED_URL="${REPO_URL%.git}"
 TRIMMED_URL="${TRIMMED_URL%/}"
-PAIR=$(printf "%s\n" "$TRIMMED_URL" | sed -E 's#.*[:/]([^/]+)/([^/]+?)$#\1 \2#') || true
+PAIR=$(printf "%s\n" "$TRIMMED_URL" | sed -E 's#.*[:/]([^/]+)/([^/]+)$#\1 \2#') || true
 OWNER=$(printf "%s" "$PAIR" | awk '{print $1}')
 REPO_NAME=$(printf "%s" "$PAIR" | awk '{print $2}')
 

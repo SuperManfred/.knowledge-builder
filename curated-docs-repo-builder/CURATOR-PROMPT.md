@@ -11,7 +11,53 @@ MANDATORY READS (Before Starting)
 
 ACKNOWLEDGEMENT (Required)
 - Before any action, print EXACTLY this single line:
-  ACK: ReadConstraints→Scaffold→Snapshot→Analyze→Derive→Validate→Clone→Verify
+  ACK: ReadConstraints→Scaffold→Snapshot→Analyze→Derive→Validate→Clone→Verify→SpecialistGen
+
+CRITICAL PHILOSOPHY: INVISIBLE 10X ENGINEER EXPERTISE
+------------------------------------------------------
+**Goal:** Create specialist knowledge that makes ANY agent function like a 10x engineer with deep internalized expertise for using this library/framework.
+
+**The Nightmare to Avoid:**
+- ❌ Abstracting/paraphrasing documentation into summaries
+- ❌ Creating a specialist that *sounds* knowledgeable but works from vibes
+- ❌ Q&A knowledge base that requires prompting for every decision
+- ❌ Navigation guide focused on "where things are" instead of "how to build optimally"
+
+**What We're Building:**
+- ✅ Curated documentation preserves ALL usage guidance verbatim
+- ✅ Specialist prompt creates INVISIBLE 10X ENGINEER EXPERTISE
+- ✅ Agent reads detailed spec → automatically knows optimal usage patterns
+- ✅ Agent makes implementation decisions instinctively, without prompting
+- ✅ Agent applies latest patterns by default, optimizing for best practices
+
+**How 10x Engineers Use Libraries (from docs):**
+- Read requirement → automatically recognize which features/APIs apply
+- Instinctively structure implementation using framework patterns
+- Make integration decisions without conscious thought
+- Apply best practices by default
+- Stay on cutting edge (stable + canary/beta patterns)
+
+**The Specialist Prompt Creates This Invisible Expertise.**
+
+When agent reads detailed spec (GitHub issue/PR comment):
+- ✅ Automatically recognizes optimal usage patterns
+- ✅ Instinctively applies framework best practices
+- ✅ Naturally chooses correct APIs/features
+- ✅ Defaults to latest/recommended approaches
+- ✅ Makes decisions without being prompted
+
+**The Test:**
+Can agent read complex spec and implement correctly without being told:
+- "Use feature X here"
+- "Apply pattern Y"
+- "Follow best practice Z"
+
+If YES (makes optimal decisions automatically) → Specialist created invisible expertise
+If NO (needs prompting for usage decisions) → Specialist failed
+
+**Size Philosophy:**
+Size is an OUTCOME of qualitative decisions, NOT a constraint.
+If it's documentation that creates 10x engineer instincts for library usage, KEEP IT.
 
 CRITICAL INVARIANTS (From CONSTRAINTS.md)
 ------------------------------------------
@@ -342,7 +388,14 @@ Workflow Steps
    This helps you decide when to refresh this documentation knowledge base.
    ```
 
-10) GENERATE SPECIALIST-PROMPT.md (Multi-Agent)
+10) GENERATE SPECIALIST-PROMPT.md (RepoPrompt-Enhanced Multi-Agent)
+
+   **CRITICAL PHILOSOPHY:**
+   - Specialist prompt creates INVISIBLE 10X ENGINEER EXPERTISE
+   - Agent reads spec → automatically knows optimal library usage
+   - Agent makes implementation decisions instinctively, without prompting
+   - NO abstraction/paraphrasing of documentation
+   - Curated docs ARE the knowledge base (preserved verbatim)
 
    **10.1 - Create proposals directory:**
 
@@ -350,90 +403,205 @@ Workflow Steps
    mkdir -p ${DEST}/.curation/specialist-proposals
    ```
 
-   **10.2 - Launch 6 parallel agents to generate proposals:**
+   **10.1.5 - Prepare metadata context:**
+
+   ```bash
+   # Set curation date
+   CURATION_DATE=$(date -u +"%Y-%m-%d")
+
+   # Create metadata for agents
+   METADATA_CONTEXT="
+   === KNOWLEDGE FRESHNESS PROTOCOL ===
+
+   MUST include in SPECIALIST-PROMPT.md <metadata> section:
+
+   **Curated:** ${CURATION_DATE}
+   **Source:** ${FULL_REPO_PATH}
+   **Curated Resource:** ${DEST}
+
+   **When to access pristine source:**
+   When specialist needs unabstracted view or finds curation unclear:
+   - Check pristine source at ${FULL_REPO_PATH}
+   - Access full documentation tree, all examples, complete guides
+   - Useful for understanding excluded website code or build configurations
+   - See full documentation structure before curation
+
+   **Knowledge Freshness Protocol:**
+
+   IMPORTANT: This documentation was curated on ${CURATION_DATE}.
+
+   Before implementing any feature:
+   1. Check CHANGELOG.md or releases since ${CURATION_DATE}
+   2. If significant changes found (new APIs, breaking changes, major features):
+      - STOP and discuss with user: \"The documentation has changed significantly since curation (${CURATION_DATE}). Should we re-curate first, or proceed with current knowledge?\"
+      - User decides: re-curate vs. proceed anyway
+   3. If no relevant changes, proceed with implementation
+
+   Don't guess or assume - always check changelog first, then collaborate with user on the decision.
+   "
+
+   echo "$METADATA_CONTEXT"
+   ```
+
+   **10.2 - Launch 6 parallel agents (ALL ANALYZING SAME DOCUMENTATION):**
+
+   **CRITICAL: All 6 agents must read RepoPrompt specialist first:**
+   ```
+   Read: /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+   ```
+
+   **PHILOSOPHY:**
+   - All agents analyze SAME full documentation independently
+   - Goal: Create INVISIBLE 10X ENGINEER EXPERTISE for library usage
+   - NOT navigation guide, NOT Q&A knowledge base
+   - Focus: What makes agent automatically choose optimal usage patterns
 
    Invoke ALL 6 agents in a single message (parallel execution):
 
    ```
-   Task 1 (Sonnet - Usage Patterns):
+   Task 1 (Haiku - Independent Analysis):
+     model: "haiku"
+     subagent_type: "general-purpose"
+     description: "Generate specialist prompt - independent perspective 1"
+     prompt: """
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+
+     You are analyzing curated documentation to create specialist expertise for using this library.
+
+     CRITICAL PHILOSOPHY:
+     Create INVISIBLE 10X ENGINEER EXPERTISE - not a navigation guide.
+
+     What 10x engineers internalize from docs:
+     - Read requirement → automatically know which features/APIs to use
+     - Recognize usage patterns instinctively (not consciously)
+     - Make integration decisions by default (not when prompted)
+     - Apply latest features automatically (stable + canary/beta)
+     - Follow best practices unconsciously
+
+     The Nightmare to Avoid:
+     - ❌ Q&A knowledge base: "When should you use X?"
+     - ❌ Navigation guide: "Feature X is documented in page Y"
+     - ❌ Concept explainer: "This library provides..."
+     - ❌ Paraphrased summaries of docs
+
+     What You're Building:
+     - ✅ Deep internalized usage patterns
+     - ✅ Automatic decision-making for library usage
+     - ✅ Instinctive best practice awareness
+     - ✅ Cutting-edge pattern knowledge (canary/beta included)
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
+
+     Analyze the ENTIRE documentation asking:
+     "What does a 10x engineer internalize to use this library optimally without conscious thought?"
+
+     Focus areas:
+     - Usage pattern recognition: "For requirement X, automatically use API Y"
+     - Automatic best practices: "This naturally follows pattern Z"
+     - Cutting-edge awareness: "Latest approach is W (including canary/beta)"
+     - Integration instincts: "These decisions are automatic"
+     - Framework patterns: "This naturally fits usage pattern"
+
+     Write your complete SPECIALIST-PROMPT.md proposal to:
+     ${DEST}/.curation/specialist-proposals/proposal-1-sonnet-independent.md
+     """
+
+   Task 2 (Haiku - Independent Analysis):
+     model: "haiku"
+     subagent_type: "general-purpose"
+     description: "Generate specialist prompt - independent perspective 2"
+     prompt: """
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+
+     [Same philosophy as Task 1]
+
+     Independently analyze what creates 10x engineer instincts for using this library.
+     Focus on invisible expertise that makes optimal usage decisions automatic.
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
+
+     Write your complete SPECIALIST-PROMPT.md proposal to:
+     ${DEST}/.curation/specialist-proposals/proposal-2-sonnet-independent.md
+     """
+
+   Task 3 (Sonnet - Independent Analysis):
      model: "sonnet"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt focusing on usage patterns"
+     description: "Generate specialist prompt - independent perspective 3"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: Common usage patterns, typical workflows, and frequent use cases.
+     [Same philosophy as Task 1]
+
+     Independently analyze what creates 10x engineer instincts for using this library.
+     Focus on invisible expertise that makes optimal usage decisions automatic.
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-1-sonnet-usage.md
+     ${DEST}/.curation/specialist-proposals/proposal-3-sonnet-independent.md
      """
 
-   Task 2 (Sonnet - Troubleshooting):
+   Task 4 (Sonnet - Deep Expertise Analysis):
      model: "sonnet"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt focusing on troubleshooting"
+     description: "Generate specialist prompt - deep reasoning perspective 1"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: Troubleshooting guidance, error handling, and edge cases.
+     [Same philosophy as Task 1, with Opus-level deep reasoning]
+
+     Use deep reasoning to identify:
+     - Core usage patterns that become instinctive
+     - Integration decisions that happen automatically
+     - Best practices internalized by experts
+     - Cutting-edge patterns (stable + canary/beta) and when to adopt
+     - What makes library usage "just work" on first try
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-2-sonnet-troubleshooting.md
+     ${DEST}/.curation/specialist-proposals/proposal-4-opus-deep.md
      """
 
-   Task 3 (Sonnet - Integration):
-     model: "sonnet"
-     subagent_type: "general-purpose"
-     description: "Generate specialist prompt focusing on integration"
-     prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
-
-     Focus specifically on: Integration patterns, best practices, and ecosystem compatibility.
-
-     Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-3-sonnet-integration.md
-     """
-
-   Task 4 (Opus - Comprehensive Capabilities):
+   Task 5 (Opus - Deep Expertise Analysis):
      model: "opus"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt with comprehensive capability mapping"
+     description: "Generate specialist prompt - deep reasoning perspective 2"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: Complete capability inventory, feature coverage, and functional boundaries.
-     Use reasoning to ensure comprehensive coverage.
+     [Same philosophy as Task 4]
+
+     Deep analysis of what creates invisible 10x engineer expertise for library usage.
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-4-opus-capabilities.md
+     ${DEST}/.curation/specialist-proposals/proposal-5-opus-deep.md
      """
 
-   Task 5 (Opus - Knowledge Boundaries):
+   Task 6 (Opus - Deep Expertise Analysis):
      model: "opus"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt with precise knowledge boundaries"
+     description: "Generate specialist prompt - deep reasoning perspective 3"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: What the specialist knows vs doesn't know, version coverage, and limitation acknowledgment.
-     Use reasoning to define clear boundaries.
+     [Same philosophy as Task 4]
+
+     Deep analysis of what creates invisible 10x engineer expertise for library usage.
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-5-opus-boundaries.md
-     """
-
-   Task 6 (Opus - Usage Scenarios):
-     model: "opus"
-     subagent_type: "general-purpose"
-     description: "Generate specialist prompt with usage scenario modeling"
-     prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-docs-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
-
-     Focus specifically on: Real-world usage scenarios, project contexts, and implementation guidance.
-     Use reasoning to model comprehensive scenarios.
-
-     Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-6-opus-scenarios.md
+     ${DEST}/.curation/specialist-proposals/proposal-6-opus-deep.md
      """
    ```
 
@@ -442,41 +610,90 @@ Workflow Steps
    After ALL 6 agents complete, invoke the synthesis agent:
 
    ```
-   Task 7 (Opus - Synthesis):
-     model: "opus"
+   Task 7 (Synthesis with Consensus Finding):
      subagent_type: "general-purpose"
-     description: "Synthesize final specialist prompt from 6 proposals"
+     description: "Synthesize final specialist prompt from 6 independent analyses"
      prompt: """
-     You have 6 specialist prompt proposals in:
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+
+     You have 6 independent specialist prompt proposals from agents analyzing the SAME documentation.
+
+     Read all 6 proposals in:
      ${DEST}/.curation/specialist-proposals/
 
-     Read all 6 proposals:
-     - proposal-1-sonnet-usage.md
-     - proposal-2-sonnet-troubleshooting.md
-     - proposal-3-sonnet-integration.md
-     - proposal-4-opus-capabilities.md
-     - proposal-5-opus-boundaries.md
-     - proposal-6-opus-scenarios.md
+     Files:
+     - proposal-1-sonnet-independent.md
+     - proposal-2-sonnet-independent.md
+     - proposal-3-sonnet-independent.md
+     - proposal-4-opus-deep.md
+     - proposal-5-opus-deep.md
+     - proposal-6-opus-deep.md
 
      Your synthesis task:
-     1. Identify the BEST elements from each proposal
-     2. Combine complementary sections (don't duplicate)
-     3. Choose the clearest wording when multiple versions exist
-     4. Ensure comprehensive coverage without redundancy
-     5. Preserve unique insights and specific examples
+     1. **Find CONSENSUS:** What do multiple agents agree on? (High signal)
+     2. **Identify UNIQUE INSIGHTS:** What did only one agent notice? (Potentially valuable)
+     3. **Choose CLEAREST WORDING:** When multiple agents describe same thing, pick best phrasing
+     4. **Ensure COMPREHENSIVE COVERAGE:** Combine complementary sections without duplication
+     5. **Preserve USAGE KNOWLEDGE:** Keep internalized patterns, not just descriptions
+     6. **Maintain INVISIBLE EXPERTISE FOCUS:** Create 10x engineer instincts, not Q&A database
+
+     CRITICAL PHILOSOPHY (enforce in synthesis):
+     Create INVISIBLE 10X ENGINEER EXPERTISE for library usage:
+     - Agent reads spec → automatically knows optimal usage patterns
+     - Instinctive feature/API selection (not conscious decisions)
+     - Automatic best practice awareness
+     - Cutting-edge pattern knowledge (stable + canary/beta)
+     - NEVER abstract/paraphrase documentation
+     - Curated docs are ground truth (preserved verbatim)
+
+     What to AVOID in synthesis:
+     - ❌ Q&A format: "When should you...?"
+     - ❌ Navigation focus: "Feature X is in docs/Y.md"
+     - ❌ Concept explanations: "This library allows you to..."
+     - ❌ Abstract summaries that lose documentation reality
+
+     What to CREATE:
+     - ✅ Usage pattern recognition: "For requirement X, instinctively use API Y"
+     - ✅ Automatic decisions: "This naturally follows framework pattern Z"
+     - ✅ Cutting-edge awareness: "Latest approach is W (canary/beta)"
+     - ✅ Best practice instincts: "By default, structure usage like this"
 
      Quality criteria:
-     - Role definition must be crystal clear
-     - Knowledge base contents must be accurately described
-     - Capabilities must be comprehensive but realistic
-     - Usage instructions must be actionable
-     - Knowledge boundaries must be well-defined
-     - Must include concrete examples from the actual docs
+     - Role definition: 10x engineer specialist for library usage
+     - Knowledge base: What curated docs preserve (verbatim guidance)
+     - Internalized expertise: Usage patterns that become automatic
+     - Implementation instincts: What agent does by default
+     - Cutting-edge awareness: Latest patterns (stable + canary/beta)
+     - Best practice defaults: What experts do automatically
+     - Knowledge boundaries: Clear scope and limitations
+
+     Required structure (use XML tags):
+     - <role>: 10x engineer specialist for using this library
+     - <knowledge_base>: Curated docs structure and what they preserve
+     - <metadata>: Curation date, source paths, freshness protocol
+     - <internalized_expertise>: Usage patterns that become automatic
+     - <implementation_instincts>: What agent does by default
+     - <cutting_edge>: Latest patterns including canary/beta
+     - <initialization>: How specialist agent bootstraps
+
+     CRITICAL: <metadata> section MUST include:
+     - Curation date (YYYY-MM-DD)
+     - Source and curated resource paths
+     - Knowledge Freshness Protocol:
+       * Check CHANGELOG.md since curation date before implementing
+       * If significant changes found, discuss with user: re-curate or proceed?
+       * Collaborative decision, not automated cadence
 
      Write the FINAL synthesized specialist prompt to:
      ${DEST}/SPECIALIST-PROMPT.md
 
-     After writing, report which elements you took from which proposals.
+     After writing, report:
+     - Consensus patterns found across proposals
+     - Unique insights included from single agents
+     - Elements taken from which proposals
+     - Token count of final specialist prompt
+     - Validation: Does this create invisible 10x engineer expertise for library usage?
+     - Confirmation: Metadata section included with all required fields?
      """
    ```
 
@@ -513,13 +730,28 @@ Workflow Steps
    MISSING_SECTIONS=""
    grep -q "<role>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<role> "
    grep -q "<knowledge_base>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<knowledge_base> "
-   grep -q "<capabilities>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<capabilities> "
+   grep -q "<metadata>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<metadata> "
+   grep -q "<internalized_expertise>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<internalized_expertise> "
    grep -q "<initialization>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<initialization> "
 
    if [ -n "$MISSING_SECTIONS" ]; then
        echo "❌ ERROR: SPECIALIST-PROMPT.md missing required sections: $MISSING_SECTIONS"
        echo "The specialist prompt structure is invalid. Check synthesis output."
        exit 1
+   fi
+
+   # Check for required metadata fields
+   echo "Validating metadata section..."
+   METADATA_SECTION=$(sed -n '/<metadata>/,/<\/metadata>/p' "$SPECIALIST_FILE")
+
+   MISSING_METADATA=""
+   echo "$METADATA_SECTION" | grep -q "Curated.*202[0-9]" || MISSING_METADATA="${MISSING_METADATA}curation-date "
+   echo "$METADATA_SECTION" | grep -iq "changelog\|freshness.*protocol" || MISSING_METADATA="${MISSING_METADATA}changelog-protocol "
+   echo "$METADATA_SECTION" | grep -iq "discuss.*user\|collaborate.*user" || MISSING_METADATA="${MISSING_METADATA}user-collaboration "
+
+   if [ -n "$MISSING_METADATA" ]; then
+       echo "⚠️ WARNING: Metadata section missing fields: $MISSING_METADATA"
+       echo "Specialist should include curation date and Knowledge Freshness Protocol"
    fi
 
    # Verify substantial content
@@ -529,8 +761,49 @@ Workflow Steps
        echo "Consider reviewing the synthesis quality"
    fi
 
+   echo "Checking for anti-patterns and expertise indicators..."
+
+   # Check for Q&A anti-patterns (wrong approach - questions require prompting)
+   QUESTION_COUNT=$(grep -iE "when should you|how do you|what is the|why use|should i|can i|do i need" "$SPECIALIST_FILE" | wc -l)
+   if [ $QUESTION_COUNT -gt 5 ]; then
+       echo "⚠️ WARNING: Q&A-style language detected (${QUESTION_COUNT} instances)"
+       echo "Specialist should create internalized knowledge, not answer questions"
+       echo "This suggests prompt is oriented toward Q&A interaction rather than invisible expertise"
+   fi
+
+   # Check for navigation anti-patterns (wrong focus - file locations)
+   NAVIGATION_COUNT=$(grep -iE "located in|found in|check.*file|see.*\.md:" "$SPECIALIST_FILE" | wc -l)
+   if [ $NAVIGATION_COUNT -gt 10 ]; then
+       echo "⚠️ WARNING: Navigation/location focus detected (${NAVIGATION_COUNT} instances)"
+       echo "Specialist should guide usage decisions, not documentation navigation"
+       echo "This suggests prompt is a docs navigation guide rather than 10x engineer expertise"
+   fi
+
+   # Check for abstraction anti-patterns (wrong content - paraphrasing)
+   ABSTRACTION_COUNT=$(grep -iE "allows you to|enables you to|provides|offers|supports" "$SPECIALIST_FILE" | wc -l)
+   if [ $ABSTRACTION_COUNT -gt 10 ]; then
+       echo "⚠️ WARNING: High abstraction language count (${ABSTRACTION_COUNT} instances)"
+       echo "Verify prompt preserves documentation reality, not just describes capabilities"
+   fi
+
+   # Check for expertise indicators (correct approach - internalized knowledge)
+   EXPERTISE_COUNT=$(grep -iE "automatically|instinctively|naturally|by default|optimal pattern|internalized" "$SPECIALIST_FILE" | wc -l)
+   if [ $EXPERTISE_COUNT -lt 5 ]; then
+       echo "⚠️ WARNING: Low invisible expertise language (${EXPERTISE_COUNT} instances)"
+       echo "Specialist should describe automatic/instinctive decision-making for library usage"
+       echo "This suggests prompt may not create 10x engineer expertise"
+   fi
+
+   # Check for cutting-edge awareness
+   CUTTING_EDGE_COUNT=$(grep -iE "canary|beta|latest|cutting.edge|newest" "$SPECIALIST_FILE" | wc -l)
+   if [ $CUTTING_EDGE_COUNT -lt 2 ]; then
+       echo "⚠️ WARNING: Limited cutting-edge pattern awareness (${CUTTING_EDGE_COUNT} instances)"
+       echo "Specialist should include latest/canary/beta usage patterns"
+   fi
+
+   echo ""
    echo "✅ SPECIALIST-PROMPT.md structure validated"
-   echo "✅ Multi-agent specialist prompt generation complete!"
+   echo "✅ RepoPrompt-enhanced multi-agent specialist prompt generation complete!"
    echo "📍 Final prompt: ${DEST}/SPECIALIST-PROMPT.md"
    ```
 
@@ -568,8 +841,14 @@ SUCCESS CRITERIA
 ✅ At least one docs directory exists
 ✅ Canonical schema with proper reasons
 ✅ sparse-checkout has global exclusions
-✅ Specialist agent has comprehensive usage documentation
-✅ Every included file serves the goal: "teach library usage"
+✅ Specialist creates INVISIBLE 10X ENGINEER EXPERTISE for library usage
+✅ Agent reads spec → automatically knows optimal usage patterns
+✅ Agent makes implementation decisions instinctively, without prompting
+✅ Specialist includes cutting-edge patterns (stable + canary/beta)
+✅ 6-agent consensus achieved in synthesis
+✅ Every included file creates deep internalized usage expertise
+✅ Documentation preserved verbatim, no paraphrasing
+✅ NOT a Q&A database or navigation guide
 ✅ Website rendering code excluded (React components, configs)
 
 OUTPUT LOCATIONS

@@ -17,6 +17,50 @@
 
 ---
 
+## CRITICAL PHILOSOPHY: INVISIBLE 10X ENGINEER EXPERTISE
+
+**Goal:** Create specialist knowledge that makes ANY agent function like a 10x engineer with deep internalized expertise for using this tool/framework.
+
+**The Nightmare to Avoid:**
+- ❌ Abstracting/paraphrasing documentation into summaries
+- ❌ Creating a specialist that *sounds* knowledgeable but works from vibes
+- ❌ Q&A knowledge base that requires prompting for every decision
+- ❌ Navigation guide focused on "where things are" instead of "how to build optimally"
+
+**What We're Building:**
+- ✅ Curated documentation preserves ALL usage guidance verbatim
+- ✅ Specialist prompt creates INVISIBLE 10X ENGINEER EXPERTISE
+- ✅ Agent reads detailed spec → automatically knows optimal usage patterns
+- ✅ Agent makes implementation decisions instinctively, without prompting
+- ✅ Agent applies latest patterns by default, optimizing for best practices
+
+**How 10x Engineers Use Tools (from docs):**
+- Read requirement → automatically recognize which features apply
+- Instinctively structure implementation using tool patterns
+- Make integration decisions without conscious thought
+- Apply best practices by default
+- Stay on cutting edge
+
+**The Specialist Prompt Creates This Invisible Expertise.**
+
+When agent reads detailed spec:
+- ✅ Automatically recognizes optimal usage patterns
+- ✅ Instinctively applies framework best practices
+- ✅ Naturally chooses correct features
+- ✅ Defaults to latest/recommended approaches
+- ✅ Makes decisions without being prompted
+
+**The Test:**
+Can agent read complex spec and implement correctly without being told:
+- "Use feature X here"
+- "Apply pattern Y"
+- "Follow best practice Z"
+
+If YES (makes optimal decisions automatically) → Specialist created invisible expertise
+If NO (needs prompting for usage decisions) → Specialist failed
+
+---
+
 ## Paths (computed from WEBSITE_URL)
 
 ```bash
@@ -186,13 +230,53 @@ EOF
 mkdir -p ${OUTPUT_DIR}/.curation/specialist-proposals
 ```
 
+**8.1.5 - Prepare metadata context:**
+
+```bash
+# Set curation date
+CURATION_DATE=$(date -u +"%Y-%m-%d")
+
+# Create metadata for agents
+METADATA_CONTEXT="
+=== KNOWLEDGE FRESHNESS PROTOCOL ===
+
+MUST include in SPECIALIST-PROMPT.md <metadata> section:
+
+**Curated:** ${CURATION_DATE}
+**Source:** ${FULL_WEBSITE_PATH}
+**Curated Resource:** ${OUTPUT_DIR}
+
+**When to access pristine source:**
+When specialist needs unabstracted view or finds curation unclear:
+- Check full scraped website at ${FULL_WEBSITE_PATH}
+- Access all pages, navigation structure, complete documentation
+- Useful for seeing excluded website chrome, navigation, or full page context
+- See complete documentation before extraction/cleanup
+
+**Knowledge Freshness Protocol:**
+
+IMPORTANT: This website documentation was curated on ${CURATION_DATE}.
+
+Before implementing any feature:
+1. Check website for version updates or \"last updated\" date
+2. If website has been significantly updated since ${CURATION_DATE}:
+   - STOP and discuss with user: \"The website has been updated since curation (${CURATION_DATE}). Should we re-curate first, or proceed with current knowledge?\"
+   - User decides: re-curate vs. proceed anyway
+3. If no relevant changes, proceed with implementation
+
+Don't guess or assume - always check for updates first, then collaborate with user on the decision.
+"
+
+echo "$METADATA_CONTEXT"
+```
+
 **8.2 - Launch 6 parallel agents to generate proposals:**
 
 Invoke ALL 6 agents in a single message (parallel execution):
 
 ```
-Task 1 (Sonnet - Usage Patterns):
-  model: "sonnet"
+Task 1 (Haiku - Usage Patterns):
+  model: "haiku"
   subagent_type: "general-purpose"
   description: "Generate specialist prompt focusing on usage patterns"
   prompt: """
@@ -204,8 +288,8 @@ Task 1 (Sonnet - Usage Patterns):
   ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-1-sonnet-usage.md
   """
 
-Task 2 (Sonnet - Troubleshooting):
-  model: "sonnet"
+Task 2 (Haiku - Troubleshooting):
+  model: "haiku"
   subagent_type: "general-purpose"
   description: "Generate specialist prompt focusing on troubleshooting"
   prompt: """
@@ -230,8 +314,8 @@ Task 3 (Sonnet - Integration):
   ${OUTPUT_DIR}/.curation/specialist-proposals/proposal-3-sonnet-integration.md
   """
 
-Task 4 (Opus - Comprehensive Capabilities):
-  model: "opus"
+Task 4 (Sonnet - Comprehensive Capabilities):
+  model: "sonnet"
   subagent_type: "general-purpose"
   description: "Generate specialist prompt with comprehensive capability mapping"
   prompt: """
@@ -278,8 +362,7 @@ Task 6 (Opus - Usage Scenarios):
 After ALL 6 agents complete, invoke the synthesis agent:
 
 ```
-Task 7 (Opus - Synthesis):
-  model: "opus"
+Task 7 (Synthesis):
   subagent_type: "general-purpose"
   description: "Synthesize final specialist prompt from 6 proposals"
   prompt: """

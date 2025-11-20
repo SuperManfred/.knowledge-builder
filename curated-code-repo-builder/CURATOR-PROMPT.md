@@ -1,38 +1,123 @@
-One-Shot Specialist Curation Prompt
-====================================
+RepoPrompt-Enhanced Repository Curation Prompt
+================================================
 
 MISSION
 -------
 Create a minimal, code-only knowledge base for ONE specialist AI agent from a GitHub repository.
+**Enhanced with RepoPrompt capabilities for superior specialist prompt generation.**
 
-MANDATORY READS (Before Starting)
+PREREQUISITE: GAIN REPOPROMPT SUPERPOWERS
+------------------------------------------
+**CRITICAL: Execute these steps BEFORE anything else:**
+
+1. **Read RepoPrompt Specialist Knowledge**
+   ```
+   Read: /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+   ```
+   This gives you RepoPrompt expertise: Context Builder, MCP tools, Code Maps, workflow patterns.
+
+2. **Verify MCP Connection (MANDATORY - EARLY EXIT IF FAILS)**
+   ```
+   Call: mcp__RepoPrompt__list_models
+   ```
+
+   **IF THIS CALL FAILS:**
+   ```
+   ❌ FATAL ERROR: RepoPrompt MCP Server NOT Connected
+
+   This curation prompt REQUIRES RepoPrompt MCP to be available.
+   The enhanced specialist prompt generation depends on:
+   - RepoPrompt workspace access
+   - Code structure analysis (codemaps)
+   - Full context selection
+   - Token statistics
+
+   REQUIRED ACTION:
+   1. Ensure RepoPrompt MCP server is running
+   2. Verify MCP connection in your environment
+   3. Confirm mcp__RepoPrompt__* tools are accessible
+   4. Re-run this curation after connection is established
+
+   CANNOT PROCEED WITHOUT REPOPROMPT MCP.
+   Workflow terminated.
+   ```
+   **STOP EXECUTION. DO NOT PROCEED TO STEP 3.**
+
+   **IF CALL SUCCEEDS:**
+   Continue to step 3.
+
+3. **Acknowledge Readiness**
+   Print EXACTLY this line:
+   ```
+   ✅ REPOPROMPT-ENHANCED CURATOR READY
+   ACK: RepoPrompt→ReadConstraints→Scaffold→Snapshot→Analyze→Derive→Validate→Clone→Verify→SpecialistGen
+   ```
+
+MANDATORY READS (After RepoPrompt Setup)
+-----------------------------------------
 - `/Users/MN/GITHUB/.knowledge-builder/curated-code-repo-builder/CONTEXT.md` — Vision and goals
 - `/Users/MN/GITHUB/.knowledge-builder/curated-code-repo-builder/CONSTRAINTS.md` — Invariants and rules you MUST follow
 
-ACKNOWLEDGEMENT (Required)
-- Before any action, print EXACTLY this single line:
-  ACK: ReadConstraints→Scaffold→Snapshot→Analyze→Derive→Validate→Clone→Verify
+CRITICAL PHILOSOPHY: INVISIBLE 10X ENGINEER EXPERTISE
+------------------------------------------------------
+**Goal:** Create specialist knowledge that makes ANY agent function like a 10x engineer with deep internalized expertise.
 
-CRITICAL INVARIANTS (From CONSTRAINTS.md)
-------------------------------------------
-1. `.knowledge/curated-code-repo/` contains ONLY code (no docs, tests, or meta files)
-2. Each curated repo serves ONE specialist agent exclusively
-3. Schema MUST be canonical (see section 4)
-4. Reasons MUST be one of three exact formats (see section 4.1)
-5. NO test files in output (validated post-clone)
-6. Size is an OUTCOME of qualitative decisions, NOT a constraint
+**The Nightmare to Avoid:**
+- ❌ Abstracting/paraphrasing source code into natural language summaries
+- ❌ Creating a specialist that *sounds* authoritative but works from vibes
+- ❌ Losing implementation ground truth in favor of descriptions
+- ❌ Q&A knowledge base that requires prompting for every decision
+- ❌ Navigation guide focused on "where things are" instead of "how to build optimally"
+
+**What We're Building:**
+- ✅ Curated code preserves ALL implementation details verbatim
+- ✅ Specialist prompt creates INVISIBLE 10X ENGINEER EXPERTISE
+- ✅ Agent reads detailed spec → automatically knows optimal implementation approach
+- ✅ Agent makes architectural decisions instinctively, without prompting
+- ✅ Agent applies latest patterns by default, optimizing for performance/security
+
+**How 10x Engineers Work:**
+- Read business requirement
+- Automatically recognize which patterns apply
+- Instinctively structure for optimal implementation
+- Make technical decisions without conscious thought
+- Apply best practices by default
+- Stay on cutting edge (stable + canary/beta patterns)
+
+**The Specialist Prompt Creates This Invisible Expertise.**
+
+When agent reads detailed spec (GitHub issue/PR comment):
+- ✅ Automatically recognizes optimal patterns to apply
+- ✅ Instinctively structures code for performance/security
+- ✅ Naturally applies caching, pre-rendering, optimization
+- ✅ Defaults to latest/best practices
+- ✅ Makes decisions without being prompted
+
+**The Test:**
+Can agent read complex spec and implement correctly without being told:
+- "Use pattern X here"
+- "Add optimization Y"
+- "This should be structured as Z"
+
+If YES (makes optimal decisions automatically) → Specialist created invisible expertise
+If NO (needs prompting for technical decisions) → Specialist failed
+
+**Size Philosophy:**
+Size is an OUTCOME of qualitative decisions, NOT a constraint.
+If it's implementation code that creates 10x engineer instincts, KEEP IT.
 
 Inputs
 ------
 - REPO_URL: GitHub URL (e.g., `https://github.com/<owner>/<repo>`)
 
 **IMPORTANT: All paths in this prompt are ABSOLUTE paths starting with /**
+
 Derived Paths (compute, don't ask)
 -----------------------------------
 - BUILDER_ROOT = `/Users/MN/GITHUB/.knowledge-builder/curated-code-repo-builder`
 - KNOWLEDGE_ROOT = `/Users/MN/GITHUB/.knowledge`
 - FULL_REPO_DIR = `${KNOWLEDGE_ROOT}/full-repo`
-- CURATED_CODE_REPO_DIR = `${KNOWLEDGE_ROOT}/curated-code`
+- CURATED_CODE_REPO_DIR = `${KNOWLEDGE_ROOT}/curated-code-repo`
 - OWNER, REPO = parse from REPO_URL (lowercase, hyphenated)
 - REPO_NAME = `${OWNER}-${REPO}`
 - DEST = `${CURATED_CODE_REPO_DIR}/${REPO_NAME}`
@@ -74,6 +159,19 @@ Workflow Steps
    - If local clone has issues: Step 0 should have ensured pristine clone exists
 
 4) ANALYZE & DERIVE PATTERNS
+
+   **4.0) RepoPrompt Repository Survey (Optional Enhancement)**
+
+   You CAN optionally use RepoPrompt to enhance understanding:
+   ```
+   - Open ${FULL_REPO_PATH} as RepoPrompt workspace
+   - Call: mcp__RepoPrompt__get_file_tree (type="files", mode="auto")
+   - Call: mcp__RepoPrompt__get_code_structure (scope="paths", paths=[${FULL_REPO_PATH}])
+   - Note: Files with codemaps (+) are parseable code in supported languages
+   - This can validate your pattern decisions but is NOT required
+   ```
+
+   **Why optional:** The existing pattern-based approach works well. RepoPrompt can validate but shouldn't replace qualitative judgment.
 
    4.1) Compute sizes
    - Calculate directory sizes from tree
@@ -275,145 +373,360 @@ Workflow Steps
    This helps you decide when to refresh this knowledge base.
    ```
 
-10) GENERATE SPECIALIST-PROMPT.md (Multi-Agent)
+10) GENERATE SPECIALIST-PROMPT.md (RepoPrompt-Enhanced Multi-Agent)
 
-   **10.1 - Create proposals directory:**
+   **CRITICAL PHILOSOPHY:**
+   - Specialist prompt creates INVISIBLE 10X ENGINEER EXPERTISE
+   - Agent reads spec → automatically knows optimal implementation
+   - Agent makes decisions instinctively, without prompting
+   - NO abstraction/paraphrasing of implementation
+   - Curated code IS the knowledge base (preserved verbatim)
+
+   **10.1 - Open curated repository in RepoPrompt:**
+
+   ```bash
+   # Create RepoPrompt workspace for curated repo
+   # Use MCP tools to prepare context
+   ```
+
+   Call MCP tools:
+   ```
+   mcp__RepoPrompt__manage_workspaces(action="list")
+   # Note current workspaces
+
+   # If needed, open ${DEST} as workspace (via RepoPrompt UI or URL scheme)
+   # repoprompt://open?workspace=${DEST}
+   ```
+
+   **10.2 - Prepare full context for all agents:**
+
+   ```
+   # Select ALL curated files (this is the full knowledge base)
+   mcp__RepoPrompt__manage_selection(
+     op="set",
+     paths=["${DEST}"],
+     mode="full"
+   )
+
+   # Get code structure (codemaps for all files)
+   mcp__RepoPrompt__get_code_structure(
+     scope="selected",
+     max_results=1000
+   )
+
+   # Get hierarchical understanding
+   mcp__RepoPrompt__list_codemaps_tree()
+
+   # Check token stats
+   mcp__RepoPrompt__token_stats()
+
+   # Preview what agents will receive
+   mcp__RepoPrompt__get_prompt_preview()
+   ```
+
+   **CRITICAL: All 6 agents get the SAME FULL CONTEXT**
+   - Same workspace
+   - Same file selection
+   - Same code maps + full content
+   - Goal: 6 independent perspectives on SAME ground truth → consensus
+
+   **10.2.5 - Prepare metadata context:**
+
+   ```bash
+   # Set curation date
+   CURATION_DATE=$(date -u +"%Y-%m-%d")
+
+   # Create metadata for agents
+   METADATA_CONTEXT="
+   === KNOWLEDGE FRESHNESS PROTOCOL ===
+
+   MUST include in SPECIALIST-PROMPT.md <metadata> section:
+
+   **Curated:** ${CURATION_DATE}
+   **Source:** ${FULL_REPO_PATH}
+   **Curated Resource:** ${DEST}
+
+   **When to access pristine source:**
+   When specialist needs unabstracted view or finds curation unclear:
+   - Check pristine source at ${FULL_REPO_PATH}
+   - Particularly useful when curation excluded 95%+ of files and context seems missing
+   - Access full commit history, all files, complete implementation
+   - Examples: understanding test patterns, seeing excluded examples, checking build configs
+
+   **Knowledge Freshness Protocol:**
+
+   IMPORTANT: This knowledge base was curated on ${CURATION_DATE}.
+
+   Before implementing any feature:
+   1. Check CHANGELOG.md or releases since ${CURATION_DATE}
+   2. If significant changes found (new APIs, breaking changes, major features):
+      - STOP and discuss with user: \"The codebase has changed significantly since curation (${CURATION_DATE}). Should we re-curate first, or proceed with current knowledge?\"
+      - User decides: re-curate vs. proceed anyway
+   3. If no relevant changes, proceed with implementation
+
+   Don't guess or assume - always check changelog first, then collaborate with user on the decision.
+   "
+
+   echo "$METADATA_CONTEXT"
+   ```
+
+   **10.3 - Create proposals directory:**
 
    ```bash
    mkdir -p ${DEST}/.curation/specialist-proposals
    ```
 
-   **10.2 - Launch 6 parallel agents to generate proposals:**
+   **10.4 - Launch 6 parallel agents (ALL ANALYZING SAME CODEBASE):**
+
+   **CRITICAL: All 6 agents must read RepoPrompt specialist first:**
+   ```
+   Read: /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+   ```
+
+   **PHILOSOPHY:**
+   - All agents analyze SAME full codebase independently
+   - Goal: Create INVISIBLE 10X ENGINEER EXPERTISE
+   - NOT navigation guide, NOT Q&A knowledge base
+   - Focus: What makes agent automatically choose optimal patterns
 
    Invoke ALL 6 agents in a single message (parallel execution):
 
    ```
-   Task 1 (Sonnet - Usage Patterns):
+   Task 1 (Haiku - Independent Analysis):
+     model: "haiku"
+     subagent_type: "general-purpose"
+     description: "Generate specialist prompt - independent perspective 1"
+     prompt: """
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+
+     You are analyzing a curated code repository to create specialist expertise.
+
+     CRITICAL PHILOSOPHY:
+     Create INVISIBLE 10X ENGINEER EXPERTISE - not a navigation guide.
+
+     What 10x engineers internalize:
+     - Read business spec → automatically know optimal implementation
+     - Recognize patterns instinctively (not consciously)
+     - Make architectural decisions by default (not when prompted)
+     - Apply latest features automatically (stable + canary/beta)
+     - Optimize for performance/security unconsciously
+
+     The Nightmare to Avoid:
+     - ❌ Q&A knowledge base: "When should you use X?"
+     - ❌ Navigation guide: "Feature X is in src/Y/Z.ts:145"
+     - ❌ Concept explainer: "This framework provides..."
+     - ❌ Paraphrased summaries of what code does
+
+     What You're Building:
+     - ✅ Deep internalized patterns
+     - ✅ Automatic decision-making expertise
+     - ✅ Instinctive optimization awareness
+     - ✅ Cutting-edge pattern knowledge (canary/beta included)
+
+     Context available via RepoPrompt:
+     - Workspace: ${DEST}
+     - Full curated codebase selected
+     - Code maps for API structure
+     - Full source for implementation reality
+
+     REQUIRED METADATA:
+     ${METADATA_CONTEXT}
+
+     MUST include this metadata in your proposal:
+     - Curation date
+     - Knowledge Freshness Protocol (check CHANGELOG, discuss with user if significant changes)
+
+     Analyze the ENTIRE codebase asking:
+     "What does a 10x engineer internalize to build features optimally without conscious thought?"
+
+     Focus areas:
+     - Pattern recognition: "Given spec X, automatically apply pattern Y"
+     - Automatic optimization: "This naturally gets cached/pre-rendered/optimized"
+     - Cutting-edge awareness: "Latest pattern for this is Z (including canary/beta)"
+     - Implementation instincts: "These decisions are automatic, not questioned"
+     - Performance implications: "This choice affects performance how?"
+     - Security considerations: "What's secure by default?"
+     - Staleness awareness: "Check changelog since curation for latest features"
+
+     Write your complete SPECIALIST-PROMPT.md proposal to:
+     ${DEST}/.curation/specialist-proposals/proposal-1-sonnet-independent.md
+     """
+
+   Task 2 (Haiku - Independent Analysis):
+     model: "haiku"
+     subagent_type: "general-purpose"
+     description: "Generate specialist prompt - independent perspective 2"
+     prompt: """
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+
+     [Same philosophy as Task 1]
+
+     Independently analyze what creates 10x engineer instincts.
+     Focus on invisible expertise that makes optimal decisions automatic.
+
+     Write your complete SPECIALIST-PROMPT.md proposal to:
+     ${DEST}/.curation/specialist-proposals/proposal-2-sonnet-independent.md
+     """
+
+   Task 3 (Sonnet - Independent Analysis):
      model: "sonnet"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt focusing on usage patterns"
+     description: "Generate specialist prompt - independent perspective 3"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: Common usage patterns, typical workflows, and frequent use cases.
+     [Same philosophy as Task 1]
+
+     Independently analyze what creates 10x engineer instincts.
+     Focus on invisible expertise that makes optimal decisions automatic.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-1-sonnet-usage.md
+     ${DEST}/.curation/specialist-proposals/proposal-3-sonnet-independent.md
      """
 
-   Task 2 (Sonnet - Troubleshooting):
+   Task 4 (Sonnet - Deep Expertise Analysis):
      model: "sonnet"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt focusing on troubleshooting"
+     description: "Generate specialist prompt - deep reasoning perspective 1"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: Troubleshooting guidance, error handling, and edge cases.
+     [Same philosophy as Task 1, with Opus-level deep reasoning]
+
+     Use deep reasoning to identify:
+     - Core patterns that become instinctive
+     - Architectural decisions that happen automatically
+     - Performance/security considerations internalized by experts
+     - Cutting-edge patterns (stable + canary/beta) and when to adopt
+     - What makes implementation "just work" on first try
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-2-sonnet-troubleshooting.md
+     ${DEST}/.curation/specialist-proposals/proposal-4-opus-deep.md
      """
 
-   Task 3 (Sonnet - Integration):
-     model: "sonnet"
-     subagent_type: "general-purpose"
-     description: "Generate specialist prompt focusing on integration"
-     prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
-
-     Focus specifically on: Integration patterns, best practices, and ecosystem compatibility.
-
-     Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-3-sonnet-integration.md
-     """
-
-   Task 4 (Opus - Comprehensive Capabilities):
+   Task 5 (Opus - Deep Expertise Analysis):
      model: "opus"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt with comprehensive capability mapping"
+     description: "Generate specialist prompt - deep reasoning perspective 2"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: Complete capability inventory, feature coverage, and functional boundaries.
-     Use reasoning to ensure comprehensive coverage.
+     [Same philosophy as Task 4]
+
+     Deep analysis of what creates invisible 10x engineer expertise.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-4-opus-capabilities.md
+     ${DEST}/.curation/specialist-proposals/proposal-5-opus-deep.md
      """
 
-   Task 5 (Opus - Knowledge Boundaries):
+   Task 6 (Opus - Deep Expertise Analysis):
      model: "opus"
      subagent_type: "general-purpose"
-     description: "Generate specialist prompt with precise knowledge boundaries"
+     description: "Generate specialist prompt - deep reasoning perspective 3"
      prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Focus specifically on: What the specialist knows vs doesn't know, version coverage, and limitation acknowledgment.
-     Use reasoning to define clear boundaries.
+     [Same philosophy as Task 4]
+
+     Deep analysis of what creates invisible 10x engineer expertise.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-5-opus-boundaries.md
-     """
-
-   Task 6 (Opus - Usage Scenarios):
-     model: "opus"
-     subagent_type: "general-purpose"
-     description: "Generate specialist prompt with usage scenario modeling"
-     prompt: """
-     Read /Users/MN/GITHUB/.knowledge/curated-code-repo/SPECIALIST-META-PROMPT.md with KB_PATH=${DEST}
-
-     Focus specifically on: Real-world usage scenarios, project contexts, and implementation guidance.
-     Use reasoning to model comprehensive scenarios.
-
-     Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-6-opus-scenarios.md
+     ${DEST}/.curation/specialist-proposals/proposal-6-opus-deep.md
      """
    ```
 
-   **10.3 - Synthesize with evaluator (7th agent):**
+   **10.5 - Synthesize with evaluator (7th agent):**
 
    After ALL 6 agents complete, invoke the synthesis agent:
 
    ```
-   Task 7 (Opus - Synthesis):
-     model: "opus"
+   Task 7 (Synthesis with Consensus Finding):
      subagent_type: "general-purpose"
-     description: "Synthesize final specialist prompt from 6 proposals"
+     description: "Synthesize final specialist prompt from 6 independent analyses"
      prompt: """
-     You have 6 specialist prompt proposals in:
+     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+
+     You have 6 independent specialist prompt proposals from agents analyzing the SAME codebase.
+
+     Read all 6 proposals in:
      ${DEST}/.curation/specialist-proposals/
 
-     Read all 6 proposals:
-     - proposal-1-sonnet-usage.md
-     - proposal-2-sonnet-troubleshooting.md
-     - proposal-3-sonnet-integration.md
-     - proposal-4-opus-capabilities.md
-     - proposal-5-opus-boundaries.md
-     - proposal-6-opus-scenarios.md
+     Files:
+     - proposal-1-sonnet-independent.md
+     - proposal-2-sonnet-independent.md
+     - proposal-3-sonnet-independent.md
+     - proposal-4-opus-deep.md
+     - proposal-5-opus-deep.md
+     - proposal-6-opus-deep.md
 
      Your synthesis task:
-     1. Identify the BEST elements from each proposal
-     2. Combine complementary sections (don't duplicate)
-     3. Choose the clearest wording when multiple versions exist
-     4. Ensure comprehensive coverage without redundancy
-     5. Preserve unique insights and specific examples
+     1. **Find CONSENSUS:** What do multiple agents agree on? (High signal)
+     2. **Identify UNIQUE INSIGHTS:** What did only one agent notice? (Potentially valuable)
+     3. **Choose CLEAREST WORDING:** When multiple agents describe same thing, pick best phrasing
+     4. **Ensure COMPREHENSIVE COVERAGE:** Combine complementary sections without duplication
+     5. **Preserve PATTERN KNOWLEDGE:** Keep internalized expertise, not just descriptions
+     6. **Maintain INVISIBLE EXPERTISE FOCUS:** Create 10x engineer instincts, not Q&A database
+
+     CRITICAL PHILOSOPHY (enforce in synthesis):
+     Create INVISIBLE 10X ENGINEER EXPERTISE:
+     - Agent reads spec → automatically knows optimal implementation
+     - Instinctive pattern recognition (not conscious decisions)
+     - Automatic optimization awareness (performance/security by default)
+     - Cutting-edge pattern knowledge (stable + canary/beta)
+     - NEVER abstract/paraphrase implementations
+     - Curated code is ground truth (preserved verbatim)
+
+     What to AVOID in synthesis:
+     - ❌ Q&A format: "When should you...?"
+     - ❌ Navigation focus: "Feature X is in file Y"
+     - ❌ Concept explanations: "This allows you to..."
+     - ❌ Abstract summaries that lose implementation reality
+
+     What to CREATE:
+     - ✅ Pattern recognition: "For requirement X, instinctively apply pattern Y"
+     - ✅ Automatic decisions: "This naturally gets optimized/cached/pre-rendered"
+     - ✅ Cutting-edge awareness: "Latest approach is Z (canary/beta)"
+     - ✅ Performance/security instincts: "By default, do X for security"
 
      Quality criteria:
-     - Role definition must be crystal clear
-     - Knowledge base contents must be accurately described
-     - Capabilities must be comprehensive but realistic
-     - Usage instructions must be actionable
-     - Knowledge boundaries must be well-defined
-     - Must include concrete examples from the actual code
+     - Role definition: 10x engineer specialist in this domain
+     - Knowledge base: What curated code preserves (verbatim implementation)
+     - Internalized expertise: Patterns that become automatic
+     - Implementation instincts: Decisions made without prompting
+     - Cutting-edge awareness: Latest patterns (stable + canary/beta)
+     - Performance/security defaults: What experts do automatically
+     - Knowledge boundaries: Clear scope and limitations
+
+     Required structure (use XML tags):
+     - <role>: 10x engineer specialist identity
+     - <knowledge_base>: Curated code structure and what it preserves
+     - <metadata>: Curation date, activity level, staleness check instructions
+     - <internalized_expertise>: Patterns and decisions that become automatic
+     - <implementation_instincts>: What agent does by default
+     - <cutting_edge>: Latest patterns including canary/beta
+     - <initialization>: How specialist agent bootstraps
+
+     CRITICAL: <metadata> section MUST include:
+     - Curation date (YYYY-MM-DD)
+     - Knowledge Freshness Protocol:
+       * Check CHANGELOG.md since curation date before implementing
+       * If significant changes found, discuss with user: re-curate or proceed?
+       * Collaborative decision, not automated cadence
 
      Write the FINAL synthesized specialist prompt to:
      ${DEST}/SPECIALIST-PROMPT.md
 
-     After writing, report which elements you took from which proposals.
+     After writing, report:
+     - Consensus patterns found across proposals
+     - Unique insights included from single agents
+     - Elements taken from which proposals
+     - Token count of final specialist prompt
+     - Validation: Does this create invisible 10x engineer expertise?
+     - Confirmation: Metadata section included with all required fields?
      """
    ```
 
-   **10.4 - Automatic cleanup:**
+   **10.6 - Automatic cleanup:**
 
    ```bash
    # Verify final SPECIALIST-PROMPT.md exists
@@ -434,7 +747,7 @@ Workflow Steps
    fi
    ```
 
-   **10.5 - Structural validation:**
+   **10.7 - Structural validation:**
 
    ```bash
    # Verify specialist prompt has required structure
@@ -446,13 +759,28 @@ Workflow Steps
    MISSING_SECTIONS=""
    grep -q "<role>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<role> "
    grep -q "<knowledge_base>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<knowledge_base> "
-   grep -q "<capabilities>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<capabilities> "
+   grep -q "<metadata>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<metadata> "
+   grep -q "<internalized_expertise>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<internalized_expertise> "
    grep -q "<initialization>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<initialization> "
 
    if [ -n "$MISSING_SECTIONS" ]; then
        echo "❌ ERROR: SPECIALIST-PROMPT.md missing required sections: $MISSING_SECTIONS"
        echo "The specialist prompt structure is invalid. Check synthesis output."
        exit 1
+   fi
+
+   # Check for required metadata fields
+   echo "Validating metadata section..."
+   METADATA_SECTION=$(sed -n '/<metadata>/,/<\/metadata>/p' "$SPECIALIST_FILE")
+
+   MISSING_METADATA=""
+   echo "$METADATA_SECTION" | grep -q "Curated.*202[0-9]" || MISSING_METADATA="${MISSING_METADATA}curation-date "
+   echo "$METADATA_SECTION" | grep -iq "changelog\|freshness.*protocol" || MISSING_METADATA="${MISSING_METADATA}changelog-protocol "
+   echo "$METADATA_SECTION" | grep -iq "discuss.*user\|collaborate.*user" || MISSING_METADATA="${MISSING_METADATA}user-collaboration "
+
+   if [ -n "$MISSING_METADATA" ]; then
+       echo "⚠️ WARNING: Metadata section missing fields: $MISSING_METADATA"
+       echo "Specialist should include curation date and Knowledge Freshness Protocol"
    fi
 
    # Verify substantial content
@@ -462,12 +790,53 @@ Workflow Steps
        echo "Consider reviewing the synthesis quality"
    fi
 
+   echo "Checking for anti-patterns and expertise indicators..."
+
+   # Check for Q&A anti-patterns (wrong approach - questions require prompting)
+   QUESTION_COUNT=$(grep -iE "when should you|how do you|what is the|why use|should i|can i|do i need" "$SPECIALIST_FILE" | wc -l)
+   if [ $QUESTION_COUNT -gt 5 ]; then
+       echo "⚠️ WARNING: Q&A-style language detected (${QUESTION_COUNT} instances)"
+       echo "Specialist should create internalized knowledge, not answer questions"
+       echo "This suggests prompt is oriented toward Q&A interaction rather than invisible expertise"
+   fi
+
+   # Check for navigation anti-patterns (wrong focus - file locations)
+   NAVIGATION_COUNT=$(grep -iE "located in|found in|check.*file|see.*\.ts:|\.tsx:|\.js:|\.jsx:" "$SPECIALIST_FILE" | wc -l)
+   if [ $NAVIGATION_COUNT -gt 10 ]; then
+       echo "⚠️ WARNING: Navigation/location focus detected (${NAVIGATION_COUNT} instances)"
+       echo "Specialist should guide implementation decisions, not file navigation"
+       echo "This suggests prompt is a codebase navigation guide rather than 10x engineer expertise"
+   fi
+
+   # Check for abstraction anti-patterns (wrong content - paraphrasing)
+   ABSTRACTION_COUNT=$(grep -iE "allows you to|enables you to|provides|offers|supports" "$SPECIALIST_FILE" | wc -l)
+   if [ $ABSTRACTION_COUNT -gt 10 ]; then
+       echo "⚠️ WARNING: High abstraction language count (${ABSTRACTION_COUNT} instances)"
+       echo "Verify prompt preserves implementation reality, not just describes capabilities"
+   fi
+
+   # Check for expertise indicators (correct approach - internalized knowledge)
+   EXPERTISE_COUNT=$(grep -iE "automatically|instinctively|naturally|by default|optimal pattern|internalized" "$SPECIALIST_FILE" | wc -l)
+   if [ $EXPERTISE_COUNT -lt 5 ]; then
+       echo "⚠️ WARNING: Low invisible expertise language (${EXPERTISE_COUNT} instances)"
+       echo "Specialist should describe automatic/instinctive decision-making"
+       echo "This suggests prompt may not create 10x engineer expertise"
+   fi
+
+   # Check for cutting-edge awareness
+   CUTTING_EDGE_COUNT=$(grep -iE "canary|beta|latest|cutting.edge|newest" "$SPECIALIST_FILE" | wc -l)
+   if [ $CUTTING_EDGE_COUNT -lt 2 ]; then
+       echo "⚠️ WARNING: Limited cutting-edge pattern awareness (${CUTTING_EDGE_COUNT} instances)"
+       echo "Specialist should include latest/canary/beta patterns"
+   fi
+
+   echo ""
    echo "✅ SPECIALIST-PROMPT.md structure validated"
-   echo "✅ Multi-agent specialist prompt generation complete!"
+   echo "✅ RepoPrompt-enhanced multi-agent specialist prompt generation complete!"
    echo "📍 Final prompt: ${DEST}/SPECIALIST-PROMPT.md"
    ```
 
-   **10.6 - Update manifest:**
+   **10.8 - Update manifest:**
 
    ```bash
    # Update knowledge base manifest
@@ -481,39 +850,87 @@ Workflow Steps
 
    Print completion:
    ```
-   ✅ CURATION COMPLETE
-   ✅ SPECIALIST-PROMPT.md GENERATED (6-agent ensemble + synthesis)
+   ✅ CURATION COMPLETE (RepoPrompt-Enhanced)
+   ✅ SPECIALIST-PROMPT.md GENERATED (6-agent consensus + Opus synthesis)
    ✅ MANIFEST UPDATED
+
+   🎯 Enhancement Summary:
+   - All 6 agents analyzed SAME full codebase
+   - Synthesis found consensus across independent perspectives
+   - Navigation-focused (points to actual code, no abstraction)
+   - God-like intuition for finding implementations
 
    Resource ready: ${DEST}/
    ```
 
 ERROR HANDLING
 --------------
+- If RepoPrompt MCP not available: EARLY EXIT at prerequisite step 2 with fatal error message
 - If GitHub API is truncated: Note it, proceed, reconcile after clone
 - If validation fails: MUST fix and re-validate, don't proceed
 - If test files found post-clone: MUST fix sparse-checkout
 - If docs directories found post-clone: MUST fix sparse-checkout
+- If specialist prompt has abstraction anti-patterns: WARN but don't block
 
 SUCCESS CRITERIA
 ----------------
-✅ Zero test files in `.context/`
-✅ Zero docs/doc/documentation directories in `.context/`
+✅ Zero test files in curated output
+✅ Zero docs/doc/documentation directories in curated output
 ✅ Canonical schema with proper reasons
 ✅ sparse-checkout has global exclusions
-✅ Specialist agent has comprehensive domain knowledge
-✅ Every included file serves the goal: "library-maintainer level thinking"
+✅ Specialist creates INVISIBLE 10X ENGINEER EXPERTISE
+✅ Agent reads spec → automatically knows optimal implementation
+✅ Agent makes decisions instinctively, without prompting
+✅ Specialist includes cutting-edge patterns (stable + canary/beta)
+✅ 6-agent consensus achieved in synthesis
+✅ Every included file creates deep internalized expertise
+✅ Implementation preserved verbatim, no paraphrasing
+✅ NOT a Q&A database or navigation guide
+
+REPOPROMPT ADVANTAGES SUMMARY
+------------------------------
+**Where RepoPrompt transforms the workflow:**
+
+1. **Step 4 (Optional):** Validate patterns with code structure
+   - Files with codemaps = actual code in supported languages
+   - Built-in qualitative filter for "what's implementation?"
+
+2. **Step 10 (Critical):** Enhanced specialist prompt generation
+   - All 6 agents get SAME full context via RepoPrompt workspace
+   - Code Maps for API structure understanding (60-80% token efficiency)
+   - Full source for implementation reality
+   - `list_codemaps_tree` for hierarchical architecture
+   - Token stats to validate curation quality
+   - Consensus from independent analyses of same ground truth
+
+3. **Invisible Expertise Creation:**
+   - All agents have RepoPrompt capabilities for deep analysis
+   - Can analyze patterns that create automatic decision-making
+   - Identify what makes implementation "just work" on first try
+   - Focus on internalized knowledge, not navigation
+
+4. **Quality Validation:**
+   - Code Maps confirm API surface completeness
+   - Token stats ensure reasonable context size
+   - Structural validation via codemaps (not just path patterns)
+   - Anti-pattern detection (Q&A, navigation, abstraction)
+   - Expertise indicator validation
 
 OUTPUT LOCATIONS
 ----------------
-- **Curated code**: `${DEST}/` (sparse clone)
+- **Curated code**: `${DEST}/` (sparse clone, implementation only)
 - **Planning/meta**: `${PROJECT_DIR}/` (JSON + YAML)
 - **API snapshot**: `${SNAPSHOT_DIR}/github-api-tree.json` (shared)
+- **Specialist prompt**: `${DEST}/SPECIALIST-PROMPT.md` (invisible 10x engineer expertise)
+- **Proposals archive**: `${DEST}/.curation/specialist-proposals-archive.tar.gz`
 
 FORBIDDEN ACTIONS
 -----------------
-- NO Markdown files in `.context/`
-- NO custom reason strings
+- NO Markdown files in curated output (except SPECIALIST-PROMPT.md at root)
+- NO custom reason strings (use exact 3 formats)
 - NO test files in output
+- NO docs in output
 - NO asking user for paths/branches
 - NO proceeding past failed validation
+- NO abstracting/paraphrasing implementations in specialist prompt
+- NO partitioning agent attention (all 6 get same full context)

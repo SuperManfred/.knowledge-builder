@@ -1,0 +1,89 @@
+# Next.js 16 + App Router Sparse Checkout
+# Generated: 2025-11-20
+# Commit: 18213e397dc3dfd3d72fb7045d4ba170b2dd0cf3
+
+# Start with nothing
+/*
+!/*
+
+# App Router Core
+packages/next/src/server/app-render/**
+packages/next/src/server/route-modules/app-route/**
+packages/next/src/server/route-modules/app-page/**
+packages/next/src/client/components/**
+
+# Next.js 16 Features
+packages/next/src/server/use-cache/**
+packages/next/src/server/lib/incremental-cache/**
+packages/next/src/server/lib/cache-handlers/**
+packages/next/src/server/lib/*revalidate*.ts
+packages/next/src/server/lib/implicit-tags.ts
+packages/next/src/server/lib/router-utils/cache-life-type-utils.ts
+packages/next/src/server/web/**
+
+# Build & Core
+packages/next/src/build/**
+packages/next/src/shared/**
+packages/next/src/lib/**
+packages/next/src/client/**
+
+# Server Core
+packages/next/src/server/base-server.ts
+packages/next/src/server/base-http/**
+packages/next/src/server/dev/**
+packages/next/src/server/async-storage/**
+packages/next/src/server/stream-utils/**
+packages/next/src/server/normalizers/**
+packages/next/src/server/route-matchers/**
+packages/next/src/server/route-matcher-managers/**
+packages/next/src/server/route-matcher-providers/**
+packages/next/src/server/mcp/**
+
+# Root manifests
+package.json
+turbo.json
+pnpm-workspace.yaml
+LICENSE
+
+# MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+!**/__tests__/**
+!**/test/**
+!**/tests/**
+!**/*.test.*
+!**/*.spec.*
+!**/*.snap
+!**/__mocks__/**
+!**/fixtures/**
+!test/**
+!examples/**
+!docs/**
+!bench/**
+!benchmarks/**
+!packages/next/src/server/route-modules/pages/**
+!packages/next/src/server/route-modules/pages-api/**
+!dist/**
+!build/**
+!out/**
+!packages/next/dist/**
+!packages/next/build/**
+!packages/*/dist/**
+!**/node_modules/**
+!packages/next/src/compiled/**
+!.github/**
+!.devcontainer/**
+!.vscode/**
+!.changeset/**
+!scripts/**
+!patches/**
+!.cargo/**
+!.config/**
+!apps/**
+!crates/**
+!rspack/**
+!turbopack/**
+!contributing/**
+!errors/**
+!test-config-errors/**
+!**/*.md
+!**/*.mdx
+!README.md

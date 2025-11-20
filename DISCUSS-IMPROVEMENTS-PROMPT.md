@@ -40,8 +40,8 @@ Read these files to fully understand the system architecture:
 
 **Builder Systems (read all three):**
 
-- `.knowledge-builder/curated-code-builder/CONTEXT.md` - Vision for code curation
-- `.knowledge-builder/curated-code-builder/CONSTRAINTS.md` - Rules for code curation
+- `.knowledge-builder/curated-code-repo-builder/CONTEXT.md` - Vision for code curation
+- `.knowledge-builder/curated-code-repo-builder/CONSTRAINTS.md` - Rules for code curation
 - `.knowledge-builder/curated-docs-gh-builder/CONTEXT.md` - Vision for GitHub docs
 - `.knowledge-builder/curated-docs-gh-builder/CONSTRAINTS.md` - Rules for GitHub docs
 - `.knowledge-builder/curated-docs-web-builder/CONTEXT.md` - Vision for web docs

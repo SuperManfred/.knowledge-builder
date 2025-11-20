@@ -34,7 +34,7 @@ Each resource type serves different agent consultation patterns and requires dif
 │   │   ├── react.dev/                   # Full scrape of react.dev
 │   │   └── {domain}/                    # Pattern: domain name
 │   │
-│   ├── curated-code/                    # Curated code (current .context)
+│   ├── curated-code-repo/               # Curated code (current .context)
 │   │   ├── vercel-next.js/              # Minimal code-only for next.js specialist
 │   │   ├── facebook-react/              # Minimal code-only for react specialist
 │   │   └── {owner}-{repo}/              # Same naming as full-repo
@@ -321,7 +321,7 @@ OUTPUT: .knowledge/curated-docs-web/nextjs.org/ (curated web docs)
 
 **Meta/Planning**: `.curated-docs-repo-builder/projects/{owner}-{repo}/`
 
-**Relationship to Code**: Same repo may appear in both `curated-code/` and `curated-docs-gh/`
+**Relationship to Code**: Same repo may appear in both `curated-code-repo/` and `curated-docs-repo/`
 - Example: `vercel-next.js` could have:
   - `.knowledge/curated-code-repo/vercel-next.js/` (implementation)
   - `.knowledge/curated-docs-repo/vercel-next.js/` (documentation)
@@ -366,8 +366,8 @@ A single project (e.g., Next.js) may have:
 ```
 .knowledge/
 ├── full-repo/vercel-next.js/          # Pristine clone (shared source)
-├── curated-code/vercel-next.js/       # Code curation
-└── curated-docs-gh/vercel-next.js/    # Docs curation
+├── curated-code-repo/vercel-next.js/  # Code curation
+└── curated-docs-repo/vercel-next.js/  # Docs curation
 
 # Both curations source from same full-repo clone
 ```
@@ -432,7 +432,7 @@ A library may have docs in both places:
 **Note**: How specialist agents USE these resources is NOT the concern of this system. This system only PRODUCES the resources.
 
 **Examples of agent usage** (for context, not implementation):
-- Single specialist: "nextjs-agent" loads `curated-code/vercel-next.js/`
+- Single specialist: "nextjs-agent" loads `curated-code-repo/vercel-next.js/`
 - Dual consultation: Code agent + Docs agent both answer, then synthesize
 - Pristine reference: Agent checks `full-repo/` for ground truth when uncertain
 
