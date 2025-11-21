@@ -48,10 +48,24 @@ if [ -z "$LAST_SYNC" ]; then
   exec "$SYNC_SCRIPT" "$REPO_URL"
 fi
 
-# Calculate days since sync (macOS compatible)
-LAST_SYNC_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%SZ" "$LAST_SYNC" "+%s" 2>/dev/null || echo "0")
+# Calculate days since sync (portable: macOS & Linux)
+# Detect OS and use appropriate date command
+if date --version >/dev/null 2>&1; then
+  # GNU date (Linux)
+  LAST_SYNC_EPOCH=$(date -d "$LAST_SYNC" "+%s" 2>/dev/null || echo "0")
+else
+  # BSD date (macOS)
+  LAST_SYNC_EPOCH=$(date -j -f "%Y-%m-%dT%H:%M:%SZ" "$LAST_SYNC" "+%s" 2>/dev/null || echo "0")
+fi
+
 NOW_EPOCH=$(date "+%s")
 DAYS_OLD=$(( (NOW_EPOCH - LAST_SYNC_EPOCH) / 86400 ))
+
+# Fallback if date parsing failed
+if [ "$LAST_SYNC_EPOCH" -eq 0 ]; then
+  echo "⚠️  Could not parse date: $LAST_SYNC - syncing to be safe"
+  exec "$SYNC_SCRIPT" "$REPO_URL"
+fi
 
 echo "Last synced: $LAST_SYNC ($DAYS_OLD days ago)"
 

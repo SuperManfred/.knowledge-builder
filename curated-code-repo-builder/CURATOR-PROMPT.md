@@ -156,75 +156,33 @@ If it's implementation code that creates 10x engineer instincts, KEEP IT.
    - Run: `${BUILDER_ROOT}/tools/scaffold.sh ${REPO_URL} ${BRANCH}`
    - Move output to `${PROJECT_DIR}`
 
-3. FETCH API SNAPSHOT
+3-4. SNAPSHOT & CHUNKING (Automated)
 
-   - Use local pristine clone from `${FULL_REPO_PATH}`
-   - Generate tree from local repository and save to file:
-     ```bash
-     cd ${FULL_REPO_PATH}
-     git ls-tree -r -t --full-tree HEAD > ${SNAPSHOT_DIR}/github-api-tree.txt
-     ```
-   - If local clone has issues: Step 0 should have ensured pristine clone exists
-
-4. ANALYZE & DERIVE PATTERNS
-
-   **4.0) Pre-filter git tree (bash)**
-
-   Reduce tree size before pattern analysis to improve agent performance:
+   **Execute preparation script (deterministic snapshot + chunking):**
 
    ```bash
-   # Count total entries
-   TOTAL_ENTRIES=$(wc -l < ${SNAPSHOT_DIR}/github-api-tree.txt)
-
-   # Pre-filter: Remove obvious non-code patterns
-   grep -vE '(node_modules/|\.git/|dist/|build/|\.next/|\.cache/|vendor/|__pycache__/|\.min\.|\.map$|\.png$|\.jpg$|\.svg$|\.ico$|\.woff|\.ttf)' \
-     ${SNAPSHOT_DIR}/github-api-tree.txt > ${SNAPSHOT_DIR}/filtered-tree.txt
-
-   FILTERED_ENTRIES=$(wc -l < ${SNAPSHOT_DIR}/filtered-tree.txt)
-   REDUCTION_PCT=$(( (TOTAL_ENTRIES - FILTERED_ENTRIES) * 100 / TOTAL_ENTRIES ))
-
-   echo "Pre-filter: ${TOTAL_ENTRIES} → ${FILTERED_ENTRIES} entries (${REDUCTION_PCT}% reduction)"
+   /Users/MN/GITHUB/.knowledge-builder/tools/prepare-analysis.sh ${FULL_REPO_PATH} ${SNAPSHOT_DIR}
    ```
 
-   **4.1) Calculate agent distribution**
+   This script automatically performs:
+   - **Step 3:** Generate git tree snapshot from pristine clone
+   - **Step 4.0:** Pre-filter tree (remove build artifacts, media files, docs)
+   - **Step 4.1:** Calculate agent distribution (~100k tokens/agent, max 10 agents)
+   - **Step 4.2:** Split filtered tree into chunks for parallel analysis
 
-   Target ~100k tokens per agent (50% of 200k limit for safety):
+   **Script outputs:**
+   - `${SNAPSHOT_DIR}/github-api-tree.txt` - Full repository tree
+   - `${SNAPSHOT_DIR}/filtered-tree.txt` - Pre-filtered tree
+   - `${SNAPSHOT_DIR}/tree-chunk-*` - Chunks for parallel analysis
+   - `${SNAPSHOT_DIR}/analysis-metadata.txt` - Metadata (agent count, entries, repo type)
 
-   ```bash
-   # Estimate: ~20 tokens per tree entry (path + metadata)
-   # Target: 5000 entries per agent = ~100k tokens
-   ENTRIES_PER_AGENT=5000
+   **After script completes, launch pattern analysis agents:**
 
-   NUM_AGENTS=$(( (FILTERED_ENTRIES + ENTRIES_PER_AGENT - 1) / ENTRIES_PER_AGENT ))
-
-   # Cap at 10 agents max (for repos >50k entries)
-   if [ $NUM_AGENTS -gt 10 ]; then
-     NUM_AGENTS=10
-     ENTRIES_PER_AGENT=$(( (FILTERED_ENTRIES + NUM_AGENTS - 1) / NUM_AGENTS ))
-   fi
-
-   echo "Will launch ${NUM_AGENTS} pattern analysis agents (${ENTRIES_PER_AGENT} entries each)"
-   ```
-
-   **4.2) Split tree and launch pattern analysis agents**
-
-   Launch multiple Haiku agents in parallel to analyze patterns:
-
-   ```bash
-   # Split filtered tree into chunks
-   split -l $ENTRIES_PER_AGENT ${SNAPSHOT_DIR}/filtered-tree.txt ${SNAPSHOT_DIR}/tree-chunk-
-
-   # Create results directory
-   mkdir -p ${SNAPSHOT_DIR}/pattern-analysis
-
-   # NOTE: Curator will now spawn pattern analysis subagents
-   # Each subagent reads: PATTERN-ANALYSIS-SUBAGENT-INSTRUCTIONS.md
-   # Each analyzes one chunk and returns pattern recommendations
-   ```
+   Read `${SNAPSHOT_DIR}/analysis-metadata.txt` to get `num_agents`, then:
 
    **Agent Spawning (Task tool with model="haiku"):**
 
-   - For each tree chunk, spawn a subagent with:
+   - For each tree chunk (`tree-chunk-*`), spawn a subagent with:
      - `subagent_type: "general-purpose"`
      - `model: "haiku"`
      - Prompt: "Read PATTERN-ANALYSIS-SUBAGENT-INSTRUCTIONS.md, then analyze tree chunk ${chunk_file} for patterns. Return structured recommendations."
@@ -364,11 +322,26 @@ If it's implementation code that creates 10x engineer instincts, KEEP IT.
    - Regenerate artifacts (curated-tree.json, sparse-checkout, curation.yaml)
    - Re-run validation script before proceeding
 
-7. CLONE WITH SPARSE CHECKOUT
+7. CLONE WITH SPARSE CHECKOUT (Automated)
 
-   - Clone to `${DEST}` using generated sparse-checkout
-   - Depth=1, blobless for efficiency
-   - Update if already exists
+   **Execute sparse clone script (deterministic git operations):**
+
+   ```bash
+   /Users/MN/GITHUB/.knowledge-builder/tools/sparse-clone.sh ${REPO_URL} ${DEST} ${PROJECT_DIR}/sparse-checkout
+   ```
+
+   This script automatically:
+   - Detects initial clone vs update
+   - Configures sparse-checkout patterns
+   - Performs optimized clone (--filter=blob:none --depth=1)
+   - Applies sparse-checkout to working tree
+   - Verifies clone success
+
+   **Script handles:**
+   - Network failures (clear error messages with troubleshooting)
+   - Authentication issues (checks for private repos)
+   - Update existing clones (reset + clean)
+   - Verification (ensures files checked out)
 
 8. POST-CLONE VERIFICATION
 
