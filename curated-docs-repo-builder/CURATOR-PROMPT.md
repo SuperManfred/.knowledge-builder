@@ -120,18 +120,80 @@ Workflow Steps
 
 4) ANALYZE & DERIVE PATTERNS
 
-   4.1) Compute sizes
-   - Calculate directory sizes from tree
-   - Identify largest subtrees and files
-   - Focus on documentation directories
+   **4.0) Pre-filter git tree (bash)**
 
-   4.2) Identify documentation directories
-   - Common patterns: `docs/`, `documentation/`, `website/`, `content/`, `guides/`
-   - Look for markdown/MDX files
-   - Identify docs-specific assets (images, diagrams)
-   - Navigation files within docs (for structure understanding)
+   Reduce tree size before pattern analysis to improve agent performance:
 
-   4.3) Build explicit patterns
+   ```bash
+   # Count total entries
+   TOTAL_ENTRIES=$(wc -l < ${SNAPSHOT_DIR}/github-api-tree.txt)
+
+   # Pre-filter: Remove obvious non-documentation patterns
+   grep -vE '(node_modules/|\.git/|dist/|build/|\.next/|\.docusaurus/|\.cache/|vendor/|__pycache__/|\.min\.|\.map$|\.woff|\.ttf|\.eot|package-lock\.json|yarn\.lock|pnpm-lock\.yaml)' \
+     ${SNAPSHOT_DIR}/github-api-tree.txt > ${SNAPSHOT_DIR}/filtered-tree.txt
+
+   FILTERED_ENTRIES=$(wc -l < ${SNAPSHOT_DIR}/filtered-tree.txt)
+   REDUCTION_PCT=$(echo "scale=1; ($TOTAL_ENTRIES - $FILTERED_ENTRIES) * 100 / $TOTAL_ENTRIES" | bc)
+
+   echo "Pre-filter: ${TOTAL_ENTRIES} → ${FILTERED_ENTRIES} entries (${REDUCTION_PCT}% reduction)"
+   ```
+
+   **4.1) Calculate agent distribution**
+
+   Target ~100k tokens per agent (50% of 200k limit for safety):
+
+   ```bash
+   # Estimate: ~20 tokens per tree entry (path + metadata)
+   # Target: 5000 entries per agent = ~100k tokens
+   ENTRIES_PER_AGENT=5000
+
+   NUM_AGENTS=$(echo "($FILTERED_ENTRIES + $ENTRIES_PER_AGENT - 1) / $ENTRIES_PER_AGENT" | bc)
+
+   # Cap at 10 agents max (for repos >50k entries)
+   if [ $NUM_AGENTS -gt 10 ]; then
+     NUM_AGENTS=10
+     ENTRIES_PER_AGENT=$(echo "($FILTERED_ENTRIES + $NUM_AGENTS - 1) / $NUM_AGENTS" | bc)
+   fi
+
+   echo "Will launch ${NUM_AGENTS} pattern analysis agents (${ENTRIES_PER_AGENT} entries each)"
+   ```
+
+   **4.2) Split tree and launch pattern analysis agents**
+
+   Launch multiple Haiku agents in parallel to analyze patterns:
+
+   ```bash
+   # Split filtered tree into chunks
+   split -l $ENTRIES_PER_AGENT ${SNAPSHOT_DIR}/filtered-tree.txt ${SNAPSHOT_DIR}/tree-chunk-
+
+   # Create results directory
+   mkdir -p ${SNAPSHOT_DIR}/pattern-analysis
+
+   # NOTE: Curator will now spawn pattern analysis subagents
+   # Each subagent reads: PATTERN-ANALYSIS-SUBAGENT-INSTRUCTIONS.md
+   # Each analyzes one chunk and returns pattern recommendations
+   ```
+
+   **Agent Spawning (Task tool with model="haiku"):**
+   - For each tree chunk, spawn a subagent with:
+     - `subagent_type: "general-purpose"`
+     - `model: "haiku"`
+     - Prompt: "Read PATTERN-ANALYSIS-SUBAGENT-INSTRUCTIONS.md, then analyze tree chunk ${chunk_file} for documentation patterns. Return structured recommendations."
+   - Launch all agents in parallel (single message with multiple Task tool calls)
+   - Save each agent's output to `${SNAPSHOT_DIR}/pattern-analysis/agent-${N}-results.md`
+
+   **4.3) Combine pattern analysis results**
+
+   Synthesize recommendations from all agents:
+
+   ```bash
+   # Curator reads all agent results
+   # Identifies consensus patterns across chunks
+   # Resolves conflicts (e.g., one agent says include, another says exclude)
+   # Creates unified ALLOWLIST and DENYLIST
+   ```
+
+   **Combined patterns should include:**
    - ALLOWLIST (what to keep):
      * Documentation directories: `docs/**/*.md`, `docs/**/*.mdx`, `documentation/**/*.md`
      * Content directories: `content/**/*.md`, `guides/**/*.md`, `website/content/**/*.md`
@@ -152,12 +214,21 @@ Workflow Steps
      * Infrastructure at root: `Dockerfile`, `docker-compose.yml`, `.dockerignore`, `uv.lock`, `cliff.toml`, `.env*`, `MANIFEST.in`, `setup.py`, `setup.cfg`, `pyproject.toml`
      * Other: `scripts/**`, `bench/**`, `.vscode/**`, `.devcontainer/**`, `.changeset/**`, `patches/**`
 
-   4.4) Apply QUALITATIVE inclusion criteria
+   **4.4) Apply QUALITATIVE inclusion criteria**
+
+   Review combined patterns using qualitative judgment:
    - Every file/directory decision based on: "Does this help an agent teach library usage?"
    - ✅ INCLUDE: Tutorials, guides, API docs, examples, concepts, diagrams
    - ❌ EXCLUDE: Website rendering code, build tools, tests, infrastructure
    - Size is an OUTCOME - comprehensive docs may be large, that's okay
    - Each micro-decision should be qualitative, not quantitative
+
+   **Optional: RepoPrompt validation**
+   ```
+   - Can optionally open ${FULL_REPO_PATH} as RepoPrompt workspace
+   - Call: mcp__RepoPrompt__get_file_tree (type="files", mode="auto")
+   - Useful to see documentation structure and validate decisions
+   ```
 
 5) GENERATE ARTIFACTS
 
@@ -335,6 +406,53 @@ Workflow Steps
 
    8.8) Top subtrees report
    Print top 10 directories by size. Verify they contain documentation, not excluded categories.
+
+   8.6) Create directory structure markers
+
+   ```bash
+   # Preserve mental model of full repository structure
+   # Create empty directories with .omitted markers for excluded content
+
+   # Identify major omitted directories from curated-tree.json
+   OMITTED_DIRS=$(jq -r '.entries[] |
+     select(.decision == "omit_all" and .node == "dir") |
+     .path' ${PROJECT_DIR}/curated-tree.json | sed 's:/$::')
+
+   # Create marker directories for excluded content
+   for dir in $OMITTED_DIRS; do
+     if [ ! -d "${DEST}/${dir}" ]; then
+       mkdir -p "${DEST}/${dir}"
+
+       # Extract exclusion reasons for this directory
+       REASONS=$(jq -r ".entries[] | select(.path == \"${dir}/\") | .reasons[]" \
+         ${PROJECT_DIR}/curated-tree.json)
+
+       # Create .omitted marker file
+       cat > "${DEST}/${dir}/.omitted" << EOF
+# Directory Excluded from Curation
+
+This directory exists in the source repository but was excluded from curation.
+
+**Excluded directory:** ${dir}/
+
+**Reasons:**
+${REASONS}
+
+**To access full content:** Check pristine source at:
+${FULL_REPO_PATH}/${dir}/
+
+This marker preserves the repository structure so you understand what's missing.
+EOF
+
+       echo "Created marker: ${dir}/.omitted"
+     fi
+   done
+
+   echo "✅ Directory structure preserved with .omitted markers"
+   ```
+
+   This helps the specialist understand the full documentation structure and know where
+   to find excluded content in the pristine source when needed.
 
 9) SPECIALIST READINESS CHECK
    Ask: "Does this give a docs specialist agent everything needed to teach library usage?"

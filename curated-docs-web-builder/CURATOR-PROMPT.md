@@ -222,6 +222,30 @@ files: $(find ${OUTPUT_DIR} -name "*.md" -not -path "*/.curation/*" | wc -l)
 EOF
 ```
 
+### Step 7.5: Create source reference
+
+```bash
+cat > ${OUTPUT_DIR}/.source-reference.md << EOF
+# Source Website Reference
+
+**Curated documentation:** ${OUTPUT_DIR}
+**Full scraped website:** ${SOURCE_DIR}
+
+## When to check the full source
+
+When specialist needs content that was excluded during curation:
+- Full page content before cleanup/deduplication
+- Website navigation structure
+- Images, assets, or other media
+- Alternative pages that were consolidated
+
+**To access full scraped content:**
+\`${SOURCE_DIR}\`
+
+This preserves awareness of what content exists beyond the curated subset.
+EOF
+```
+
 ### Step 8: Generate SPECIALIST-PROMPT.md (Multi-Agent)
 
 **8.1 - Create proposals directory:**
