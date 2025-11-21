@@ -444,37 +444,20 @@ else
 fi
 ```
 
-**8.5 - Structural validation:**
+**8.5 - Validate specialist prompt:**
 
 ```bash
-# Verify specialist prompt has required structure
-SPECIALIST_FILE="${OUTPUT_DIR}/SPECIALIST-PROMPT.md"
+# Run consolidated validation script
+/Users/MN/GITHUB/.knowledge-builder/tools/verify-curation.sh "${OUTPUT_DIR}/SPECIALIST-PROMPT.md"
 
-echo "Validating SPECIALIST-PROMPT.md structure..."
-
-# Check for required sections
-MISSING_SECTIONS=""
-grep -q "<role>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<role> "
-grep -q "<knowledge_base>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<knowledge_base> "
-grep -q "<capabilities>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<capabilities> "
-grep -q "<initialization>" "$SPECIALIST_FILE" || MISSING_SECTIONS="${MISSING_SECTIONS}<initialization> "
-
-if [ -n "$MISSING_SECTIONS" ]; then
-    echo "❌ ERROR: SPECIALIST-PROMPT.md missing required sections: $MISSING_SECTIONS"
-    echo "The specialist prompt structure is invalid. Check synthesis output."
+if [ $? -eq 0 ]; then
+    echo ""
+    echo "✅ Multi-agent specialist prompt generation complete!"
+    echo "📍 Final prompt: ${OUTPUT_DIR}/SPECIALIST-PROMPT.md"
+else
+    echo "❌ Validation failed. Review specialist prompt quality."
     exit 1
 fi
-
-# Verify substantial content
-PROMPT_SIZE=$(wc -l "$SPECIALIST_FILE" | awk '{print $1}')
-if [ $PROMPT_SIZE -lt 50 ]; then
-    echo "⚠️ WARNING: SPECIALIST-PROMPT.md seems too short (${PROMPT_SIZE} lines)"
-    echo "Consider reviewing the synthesis quality"
-fi
-
-echo "✅ SPECIALIST-PROMPT.md structure validated"
-echo "✅ Multi-agent specialist prompt generation complete!"
-echo "📍 Final prompt: ${OUTPUT_DIR}/SPECIALIST-PROMPT.md"
 ```
 
 **8.6 - Update manifest:**
