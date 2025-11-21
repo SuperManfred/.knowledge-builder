@@ -1,4 +1,4 @@
-repo: https://github.com/<owner>/<repo>.git
+repo: <repo-url>
 branch: main
 date: 2025-08-28  # YYYY-MM-DD
 

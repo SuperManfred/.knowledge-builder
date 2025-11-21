@@ -15,7 +15,7 @@ BRANCH="${2:-main}"
 # Parse owner and repo from URL
 TRIMMED_URL="${REPO_URL%.git}"
 TRIMMED_URL="${TRIMMED_URL%/}"
-.*[:/]([^/]+)/([^/]+)$#\1 \2#') || true
+PAIR=$(echo "$TRIMMED_URL" | sed -E 's#.*[:/]([^/]+)/([^/]+)$#\1 \2#') || true
 OWNER=$(printf "%s" "$PAIR" | awk '{print $1}')
 REPO_NAME=$(printf "%s" "$PAIR" | awk '{print $2}')
 if [ -z "${OWNER:-}" ] || [ -z "${REPO_NAME:-}" ]; then

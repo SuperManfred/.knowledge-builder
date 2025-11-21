@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO="${REPO:-https://github.com/<owner>/<repo>.git}"
+REPO="${REPO:-<repo-url>}"
 BRANCH="${BRANCH:-main}"
 # Clone target is the repo root (no /repo suffix)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_DIR="$(cd "$(dirname "$SCRIPT_DIR")" && pwd)"  # .../.context-builder/projects/<owner>-<repo>
 BUILDER_ROOT="$(cd "$PROJECT_DIR/../.." && pwd)"
 ROOT_PARENT="$(cd "$BUILDER_ROOT/.." && pwd)"
-CONTEXT_ROOT="$ROOT_PARENT/.context"
+CONTEXT_ROOT="$ROOT_PARENT/.knowledge"
 # Derive OWNER-REPO from REPO URL
-.*[:/]([^/]+)/([^/.]+)(\.git)?/?$#\1 \2#')
+_pair=$(echo "$REPO" | sed -E 's#.*[:/]([^/]+)/([^/.]+)(\.git)?/?$#\1 \2#')
 OWNER=${OWNER:-$(printf "%s" "$_pair" | awk '{print $1}')}
 REPO_NAME=${REPO_NAME:-$(printf "%s" "$_pair" | awk '{print $2}')}
 DEST="${DEST:-$CONTEXT_ROOT/${OWNER}-${REPO_NAME}}"
