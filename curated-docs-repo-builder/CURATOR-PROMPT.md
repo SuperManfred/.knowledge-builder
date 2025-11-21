@@ -351,29 +351,23 @@ Derived Paths (compute, don't ask)
 
 6. VALIDATION GATES (ABORT IF ANY FAIL)
 
-   6.1) Schema validation
+   **Execute validation script (deterministic enforcement):**
 
-   - curated-tree.json MUST match canonical schema
-   - Every reason MUST match one of three allowed formats
-   - Paths must follow slash rules (dirs end with `/`)
+   ```bash
+   /Users/MN/GITHUB/.knowledge-builder/tools/validate-curation.sh ${PROJECT_DIR} docs
+   ```
 
-     6.2) Consistency validation
+   This script validates:
+   - **6.1) Schema validation:** JSON structure, reason formats, path slash rules
+   - **6.2) Consistency validation:** sparse-checkout ⊂ keep decisions, global exclusions, mixed dir children
+   - **6.3) Pattern validation:** All decisions cite patterns, docs kept, website excluded
 
-   - sparse-checkout MUST be subset of keep decisions
-   - Global exclusions MUST be present
-   - For each `mixed` dir: child entries MUST exist
+   **Script will exit non-zero if validation fails.**
 
-     6.3) Pattern validation
-
-   - Every keep/omit decision MUST cite a pattern
-   - Verify docs directories are being kept
-   - Verify website infrastructure is being excluded
-
-   **IF ANY VALIDATION FAILS:**
-
-   - Print error details
-   - Regenerate artifacts
-   - Re-validate before proceeding
+   **IF VALIDATION FAILS:**
+   - Review error details printed by script
+   - Regenerate artifacts (curated-tree.json, sparse-checkout, curation.yaml)
+   - Re-run validation script before proceeding
 
 7. CLONE WITH SPARSE CHECKOUT
 
@@ -383,68 +377,31 @@ Derived Paths (compute, don't ask)
 
 8. POST-CLONE VERIFICATION
 
-   8.1) Test file check (MUST PASS)
+   **Execute verification script (deterministic quality gates):**
 
    ```bash
-   find ${DEST} -type f \( -name "*.test.*" -o -name "*.spec.*" -o -name "test_*" \) | wc -l
+   /Users/MN/GITHUB/.knowledge-builder/tools/verify-clone.sh ${DEST} docs
    ```
 
-   MUST return 0 (or very low if test files are legitimate doc examples). If not, fix sparse-checkout and re-clone.
-   NOTE: Test files WITHIN docs/ that are tutorial examples (showing how to test) are acceptable.
+   This script verifies:
+   - **8.1) Test files:** MUST be 0 (or ≤5 if doc examples)
+   - **8.2) Documentation:** MUST have docs/documentation/content directories
+   - **8.3) Website code:** SHOULD be 0 (.tsx/.jsx files)
+   - **8.4) Infrastructure files:** SHOULD be 0 (Dockerfile, setup.py, etc.)
+   - **8.5) Source code:** MUST be 0 (src/lib directories outside docs/)
+   - **8.6) Size awareness:** Report total size (NOT a constraint)
+   - **8.7) File count awareness:** Report total files (NOT a constraint)
+   - **8.8) Top subtrees:** Report largest directories
 
-   8.2) Documentation check (MUST PASS)
+   **Script will exit non-zero if critical verifications fail.**
 
-   ```bash
-   find ${DEST} -type d \( -name "docs" -o -name "documentation" -o -name "content" \) | wc -l
-   ```
+   **IF VERIFICATION FAILS:**
+   - Review error details printed by script
+   - Fix sparse-checkout patterns
+   - Re-clone with corrected sparse-checkout
+   - Re-run verification script
 
-   MUST return >0. If not, curation missed docs directories - fix patterns.
-
-   8.3) Website code check (SHOULD PASS)
-
-   ```bash
-   find ${DEST} -type f \( -name "*.tsx" -o -name "*.jsx" \) | wc -l
-   ```
-
-   SHOULD be 0 or very low. If high, check if website components were included.
-
-   8.4) Infrastructure files check (SHOULD PASS)
-
-   ```bash
-   find ${DEST} -maxdepth 1 -type f \( -name "Dockerfile" -o -name "docker-compose.yml" -o -name "uv.lock" -o -name "setup.py" \) | wc -l
-   ```
-
-   SHOULD return 0. If not, infrastructure files were incorrectly included.
-
-   8.5) Source code check (MUST PASS)
-
-   ```bash
-   find ${DEST} -type d \( -name "src" -o -name "lib" \) -not -path "*/docs/*" | wc -l
-   ```
-
-   MUST return 0. If not, source code directories were included.
-
-   8.6) Size awareness (NOT a constraint)
-
-   ```bash
-   du -sh ${DEST}
-   ```
-
-   Report the size. Large size is FINE if it's comprehensive documentation.
-   Check for missed exclusions if unusually large (node_modules, build outputs).
-
-   8.7) File count awareness
-
-   ```bash
-   find ${DEST} -type f | wc -l
-   ```
-
-   Report the count. High count is FINE if it's complete documentation.
-
-   8.8) Top subtrees report
-   Print top 10 directories by size. Verify they contain documentation, not excluded categories.
-
-   8.6) Create directory structure markers
+   8.9) Create directory structure markers
 
    ```bash
    # Preserve mental model of full repository structure

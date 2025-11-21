@@ -346,28 +346,23 @@ If it's implementation code that creates 10x engineer instincts, KEEP IT.
 
 6. VALIDATION GATES (ABORT IF ANY FAIL)
 
-   6.1) Schema validation
+   **Execute validation script (deterministic enforcement):**
 
-   - curated-tree.json MUST match canonical schema
-   - Every reason MUST match one of three allowed formats
-   - Paths must follow slash rules (dirs end with `/`)
+   ```bash
+   /Users/MN/GITHUB/.knowledge-builder/tools/validate-curation.sh ${PROJECT_DIR} code
+   ```
 
-     6.2) Consistency validation
+   This script validates:
+   - **6.1) Schema validation:** JSON structure, reason formats, path slash rules
+   - **6.2) Consistency validation:** sparse-checkout ⊂ keep decisions, global test exclusions, mixed dir children
+   - **6.3) Pattern validation:** All decisions cite patterns, docs excluded, source kept
 
-   - sparse-checkout MUST be subset of keep decisions
-   - Global test exclusions MUST be present
-   - For each `mixed` dir: child entries MUST exist
+   **Script will exit non-zero if validation fails.**
 
-     6.3) Pattern validation
-
-   - Every keep/omit decision MUST cite a pattern
-   - No "Outside include patterns" for top-level dirs
-
-   **IF ANY VALIDATION FAILS:**
-
-   - Print error details
-   - Regenerate artifacts
-   - Re-validate before proceeding
+   **IF VALIDATION FAILS:**
+   - Review error details printed by script
+   - Regenerate artifacts (curated-tree.json, sparse-checkout, curation.yaml)
+   - Re-run validation script before proceeding
 
 7. CLONE WITH SPARSE CHECKOUT
 
@@ -377,41 +372,26 @@ If it's implementation code that creates 10x engineer instincts, KEEP IT.
 
 8. POST-CLONE VERIFICATION
 
-   8.1) Test file check (MUST PASS)
+   **Execute verification script (deterministic quality gates):**
 
    ```bash
-   find ${DEST} -type f \( -name "*.test.*" -o -name "*.spec.*" \) | wc -l
+   /Users/MN/GITHUB/.knowledge-builder/tools/verify-clone.sh ${DEST} code
    ```
 
-   MUST return 0. If not, fix sparse-checkout and re-clone.
+   This script verifies:
+   - **8.1) Test files:** MUST be 0 (.test.*, .spec.*, test_*)
+   - **8.2) Documentation:** MUST be 0 (docs/doc/documentation directories)
+   - **8.3) Size awareness:** Report total size (NOT a constraint)
+   - **8.4) File count awareness:** Report total files (NOT a constraint)
+   - **8.5) Top subtrees:** Report largest directories
 
-   8.2) Documentation check (MUST PASS)
+   **Script will exit non-zero if critical verifications fail.**
 
-   ```bash
-   find ${DEST} -type d \( -name "docs" -o -name "doc" -o -name "documentation" \) | wc -l
-   ```
-
-   MUST return 0. Docs are extracted separately, not included in code context.
-
-   8.3) Size awareness (NOT a constraint)
-
-   ```bash
-   du -sh ${DEST}
-   ```
-
-   Report the size. Large size is FINE if it's all implementation code.
-   Check for missed exclusions if unusually large (vendor, build, generated files).
-
-   8.4) File count awareness
-
-   ```bash
-   find ${DEST} -type f | wc -l
-   ```
-
-   Report the count. High count is FINE if files contain implementation knowledge.
-
-   8.5) Top subtrees report
-   Print top 10 directories by size. Verify they contain implementation code, not excluded categories.
+   **IF VERIFICATION FAILS:**
+   - Review error details printed by script
+   - Fix sparse-checkout patterns
+   - Re-clone with corrected sparse-checkout
+   - Re-run verification script
 
    8.6) Create directory structure markers
 
