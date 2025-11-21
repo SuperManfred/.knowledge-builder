@@ -100,18 +100,11 @@ Derived Paths (compute, don't ask)
 
 0. CHECK UPSTREAM (Pristine Repo)
 
-   - Read `${FULL_REPO_DIR}/MANIFEST.yaml`
-   - Determine if this is initial curation or re-curation:
-     - Check if `${DEST}/` exists (destination curated docs directory)
-     - **Initial curation** (destination doesn't exist): ALWAYS sync to get latest
-     - **Re-curation** (destination exists): Use freshness check
-   - For **initial curation** OR **missing** entry:
-     - Execute `/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh ${REPO_URL}`
-   - For **re-curation** with existing entry:
-     - **Stale (>7 days)**: Execute `/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh ${REPO_URL}`
-     - **Fresh (<7 days)**: Continue with existing
-   - Verify `${FULL_REPO_PATH}/` exists after sync
-   - This ensures we have a pristine clone to work from (latest for initial, acceptable staleness for re-curation)
+   - Execute: `/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/check-and-sync.sh ${REPO_URL} ${DEST}`
+   - This script automatically:
+     - **Initial curation** (destination doesn't exist): Syncs to get absolute latest
+     - **Re-curation** (destination exists): Checks freshness, syncs only if >7 days stale
+   - Verify `${FULL_REPO_PATH}/` exists after script completes
 
 1. READ CONSTRAINTS
 
@@ -126,13 +119,11 @@ Derived Paths (compute, don't ask)
 3. FETCH API SNAPSHOT
 
    - Use local pristine clone from `${FULL_REPO_PATH}`
-   - Generate tree from local repository:
+   - Generate tree from local repository and save to file:
      ```bash
      cd ${FULL_REPO_PATH}
-     git ls-tree -r -t --full-tree HEAD
+     git ls-tree -r -t --full-tree HEAD > ${SNAPSHOT_DIR}/github-api-tree.txt
      ```
-   - Convert output to GitHub API tree format
-   - Save to `${SNAPSHOT_DIR}/github-api-tree.json`
 
 4. ANALYZE & DERIVE PATTERNS
 
@@ -149,7 +140,7 @@ Derived Paths (compute, don't ask)
      ${SNAPSHOT_DIR}/github-api-tree.txt > ${SNAPSHOT_DIR}/filtered-tree.txt
 
    FILTERED_ENTRIES=$(wc -l < ${SNAPSHOT_DIR}/filtered-tree.txt)
-   REDUCTION_PCT=$(echo "scale=1; ($TOTAL_ENTRIES - $FILTERED_ENTRIES) * 100 / $TOTAL_ENTRIES" | bc)
+   REDUCTION_PCT=$(( (TOTAL_ENTRIES - FILTERED_ENTRIES) * 100 / TOTAL_ENTRIES ))
 
    echo "Pre-filter: ${TOTAL_ENTRIES} → ${FILTERED_ENTRIES} entries (${REDUCTION_PCT}% reduction)"
    ```
@@ -163,12 +154,12 @@ Derived Paths (compute, don't ask)
    # Target: 5000 entries per agent = ~100k tokens
    ENTRIES_PER_AGENT=5000
 
-   NUM_AGENTS=$(echo "($FILTERED_ENTRIES + $ENTRIES_PER_AGENT - 1) / $ENTRIES_PER_AGENT" | bc)
+   NUM_AGENTS=$(( (FILTERED_ENTRIES + ENTRIES_PER_AGENT - 1) / ENTRIES_PER_AGENT ))
 
    # Cap at 10 agents max (for repos >50k entries)
    if [ $NUM_AGENTS -gt 10 ]; then
      NUM_AGENTS=10
-     ENTRIES_PER_AGENT=$(echo "($FILTERED_ENTRIES + $NUM_AGENTS - 1) / $NUM_AGENTS" | bc)
+     ENTRIES_PER_AGENT=$(( (FILTERED_ENTRIES + NUM_AGENTS - 1) / NUM_AGENTS ))
    fi
 
    echo "Will launch ${NUM_AGENTS} pattern analysis agents (${ENTRIES_PER_AGENT} entries each)"
