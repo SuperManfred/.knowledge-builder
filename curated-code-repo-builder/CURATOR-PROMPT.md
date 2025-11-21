@@ -141,12 +141,17 @@ If it's implementation code that creates 10x engineer instincts, KEEP IT.
 0. CHECK UPSTREAM (Pristine Repo)
 
    - Read `${FULL_REPO_DIR}/MANIFEST.yaml`
-   - Check if entry exists for `${REPO_NAME}`:
-     - **Missing**: Execute `/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh ${REPO_URL}`
+   - Determine if this is initial curation or re-curation:
+     - Check if `${DEST}/` exists (destination curated code directory)
+     - **Initial curation** (destination doesn't exist): ALWAYS sync to get latest
+     - **Re-curation** (destination exists): Use freshness check
+   - For **initial curation** OR **missing** entry:
+     - Execute `/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh ${REPO_URL}`
+   - For **re-curation** with existing entry:
      - **Stale (>7 days)**: Execute `/Users/MN/GITHUB/.knowledge-builder/full-repo-sync/sync.sh ${REPO_URL}`
      - **Fresh (<7 days)**: Continue with existing
    - Verify `${FULL_REPO_PATH}/` exists after sync
-   - This ensures we have a pristine clone to work from
+   - This ensures we have a pristine clone to work from (latest for initial, acceptable staleness for re-curation)
 
 1. READ CONSTRAINTS
 
