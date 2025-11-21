@@ -604,59 +604,24 @@ EOF
      subagent_type: "general-purpose"
      description: "Generate specialist prompt - independent perspective 1"
      prompt: """
-     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+     Read SPECIALIST-SUBAGENT-INSTRUCTIONS.md in the current directory for complete instructions.
 
-     You are analyzing a curated code repository to create specialist expertise.
+     Also read RepoPrompt specialist for context:
+     /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     CRITICAL PHILOSOPHY:
-     Create INVISIBLE 10X ENGINEER EXPERTISE - not a navigation guide.
-
-     What 10x engineers internalize:
-     - Read business spec → automatically know optimal implementation
-     - Recognize patterns instinctively (not consciously)
-     - Make architectural decisions by default (not when prompted)
-     - Apply latest features automatically (stable + canary/beta)
-     - Optimize for performance/security unconsciously
-
-     The Nightmare to Avoid:
-     - ❌ Q&A knowledge base: "When should you use X?"
-     - ❌ Navigation guide: "Feature X is in src/Y/Z.ts:145"
-     - ❌ Concept explainer: "This framework provides..."
-     - ❌ Paraphrased summaries of what code does
-
-     What You're Building:
-     - ✅ Deep internalized patterns
-     - ✅ Automatic decision-making expertise
-     - ✅ Instinctive optimization awareness
-     - ✅ Cutting-edge pattern knowledge (canary/beta included)
-
-     Context available via RepoPrompt:
+     RepoPrompt context:
      - Workspace: ${DEST}
      - Full curated codebase selected
      - Code maps for API structure
      - Full source for implementation reality
 
-     REQUIRED METADATA:
+     Required metadata (include verbatim):
      ${METADATA_CONTEXT}
 
-     MUST include this metadata in your proposal:
-     - Curation date
-     - Knowledge Freshness Protocol (check CHANGELOG, discuss with user if significant changes)
-
-     Analyze the ENTIRE codebase asking:
-     "What does a 10x engineer internalize to build features optimally without conscious thought?"
-
-     Focus areas:
-     - Pattern recognition: "Given spec X, automatically apply pattern Y"
-     - Automatic optimization: "This naturally gets cached/pre-rendered/optimized"
-     - Cutting-edge awareness: "Latest pattern for this is Z (including canary/beta)"
-     - Implementation instincts: "These decisions are automatic, not questioned"
-     - Performance implications: "This choice affects performance how?"
-     - Security considerations: "What's secure by default?"
-     - Staleness awareness: "Check changelog since curation for latest features"
+     Your focus: Independent analysis of invisible 10x engineer expertise.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-1-sonnet-independent.md
+     ${DEST}/.curation/specialist-proposals/proposal-1-haiku-independent.md
      """
 
    Task 2 (Haiku - Independent Analysis):
@@ -664,15 +629,22 @@ EOF
      subagent_type: "general-purpose"
      description: "Generate specialist prompt - independent perspective 2"
      prompt: """
-     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+     Read SPECIALIST-SUBAGENT-INSTRUCTIONS.md in the current directory for complete instructions.
 
-     [Same philosophy as Task 1]
+     Also read RepoPrompt specialist:
+     /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Independently analyze what creates 10x engineer instincts.
-     Focus on invisible expertise that makes optimal decisions automatic.
+     RepoPrompt context:
+     - Workspace: ${DEST}
+     - Full curated codebase selected
+
+     Required metadata (include verbatim):
+     ${METADATA_CONTEXT}
+
+     Your focus: Independent analysis from a different perspective.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-2-sonnet-independent.md
+     ${DEST}/.curation/specialist-proposals/proposal-2-haiku-independent.md
      """
 
    Task 3 (Sonnet - Independent Analysis):
@@ -680,12 +652,19 @@ EOF
      subagent_type: "general-purpose"
      description: "Generate specialist prompt - independent perspective 3"
      prompt: """
-     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+     Read SPECIALIST-SUBAGENT-INSTRUCTIONS.md in the current directory for complete instructions.
 
-     [Same philosophy as Task 1]
+     Also read RepoPrompt specialist:
+     /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Independently analyze what creates 10x engineer instincts.
-     Focus on invisible expertise that makes optimal decisions automatic.
+     RepoPrompt context:
+     - Workspace: ${DEST}
+     - Full curated codebase selected
+
+     Required metadata (include verbatim):
+     ${METADATA_CONTEXT}
+
+     Your focus: Independent analysis with Sonnet-level reasoning.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
      ${DEST}/.curation/specialist-proposals/proposal-3-sonnet-independent.md
@@ -696,19 +675,23 @@ EOF
      subagent_type: "general-purpose"
      description: "Generate specialist prompt - deep reasoning perspective 1"
      prompt: """
-     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+     Read SPECIALIST-SUBAGENT-INSTRUCTIONS.md in the current directory for complete instructions.
 
-     [Same philosophy as Task 1, with Opus-level deep reasoning]
+     Also read RepoPrompt specialist:
+     /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Use deep reasoning to identify:
-     - Core patterns that become instinctive
-     - Architectural decisions that happen automatically
-     - Performance/security considerations internalized by experts
-     - Cutting-edge patterns (stable + canary/beta) and when to adopt
-     - What makes implementation "just work" on first try
+     RepoPrompt context:
+     - Workspace: ${DEST}
+     - Full curated codebase selected
+
+     Required metadata (include verbatim):
+     ${METADATA_CONTEXT}
+
+     Your focus: Deep reasoning to identify core patterns that become instinctive.
+     Use Sonnet's reasoning capabilities to find patterns that make implementation "just work".
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
-     ${DEST}/.curation/specialist-proposals/proposal-4-opus-deep.md
+     ${DEST}/.curation/specialist-proposals/proposal-4-sonnet-deep.md
      """
 
    Task 5 (Opus - Deep Expertise Analysis):
@@ -716,11 +699,20 @@ EOF
      subagent_type: "general-purpose"
      description: "Generate specialist prompt - deep reasoning perspective 2"
      prompt: """
-     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+     Read SPECIALIST-SUBAGENT-INSTRUCTIONS.md in the current directory for complete instructions.
 
-     [Same philosophy as Task 4]
+     Also read RepoPrompt specialist:
+     /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Deep analysis of what creates invisible 10x engineer expertise.
+     RepoPrompt context:
+     - Workspace: ${DEST}
+     - Full curated codebase selected
+
+     Required metadata (include verbatim):
+     ${METADATA_CONTEXT}
+
+     Your focus: Deep expertise analysis using Opus-level reasoning.
+     Identify architectural decisions that happen automatically and cutting-edge patterns.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
      ${DEST}/.curation/specialist-proposals/proposal-5-opus-deep.md
@@ -731,11 +723,20 @@ EOF
      subagent_type: "general-purpose"
      description: "Generate specialist prompt - deep reasoning perspective 3"
      prompt: """
-     PREREQUISITE: Read /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
+     Read SPECIALIST-SUBAGENT-INSTRUCTIONS.md in the current directory for complete instructions.
 
-     [Same philosophy as Task 4]
+     Also read RepoPrompt specialist:
+     /Users/MN/GITHUB/.knowledge/curated-docs-web/repoprompt.com/SPECIALIST-PROMPT.md
 
-     Deep analysis of what creates invisible 10x engineer expertise.
+     RepoPrompt context:
+     - Workspace: ${DEST}
+     - Full curated codebase selected
+
+     Required metadata (include verbatim):
+     ${METADATA_CONTEXT}
+
+     Your focus: Deep expertise analysis from a third Opus perspective.
+     Focus on performance/security considerations internalized by experts.
 
      Write your complete SPECIALIST-PROMPT.md proposal to:
      ${DEST}/.curation/specialist-proposals/proposal-6-opus-deep.md
