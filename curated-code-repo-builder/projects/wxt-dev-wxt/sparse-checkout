@@ -1,0 +1,41 @@
+# Core wxt framework
+packages/wxt/src/**
+packages/wxt/package.json
+packages/wxt/tsconfig.json
+
+# Representative modules
+packages/storage/src/**
+packages/storage/package.json
+packages/i18n/src/**
+packages/i18n/package.json
+packages/runner/src/**
+packages/runner/package.json
+
+# Root configuration
+package.json
+pnpm-workspace.yaml
+tsconfig.base.json
+tsconfig.json
+
+# MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+!**/__tests__/**
+!**/test/**
+!**/tests/**
+!**/*.test.*
+!**/*.spec.*
+!**/*.snap
+!**/__mocks__/**
+!**/fixtures/**
+!docs/**
+!doc/**
+!documentation/**
+!**/*.md
+!.github/**
+!templates/**
+!packages/wxt-demo/**
+!packages/runner/demo-extension/**
+!scripts/**
+!patches/**
+!pnpm-lock.yaml
+!e2e/**
+!**/__snapshots__/**

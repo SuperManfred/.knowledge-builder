@@ -34,6 +34,10 @@ https://github.com/vercel/ai-elements
 - https://github.com/expo/expo/
 - https://github.com/jpudysz/react-native-unistyles
 
+### Web Extension Framework (cross browser extensions)
+
+- https://github.com/wxt-dev/wxt
+
 ### Types and & Linting
 
 - https://www.ultracite.ai/introduction

@@ -1,0 +1,41 @@
+repo: wxt-dev/wxt
+branch: main
+commit: 78f8434a0691a2e1a5be80fbebad2a4cc07c73a0
+date: 2025-11-22
+keep:
+  - packages/wxt/src/**
+  - packages/wxt/package.json
+  - packages/wxt/tsconfig.json
+  - packages/storage/src/**
+  - packages/storage/package.json
+  - packages/i18n/src/**
+  - packages/i18n/package.json
+  - packages/runner/src/**
+  - packages/runner/package.json
+  - package.json
+  - pnpm-workspace.yaml
+  - tsconfig.base.json
+  - tsconfig.json
+exclude:
+  - '**/__tests__/**'
+  - '**/test/**'
+  - '**/tests/**'
+  - '**/*.test.*'
+  - '**/*.spec.*'
+  - '**/*.snap'
+  - '**/e2e/**'
+  - '**/__snapshots__/**'
+  - '**/__mocks__/**'
+  - '**/fixtures/**'
+  - 'docs/**'
+  - 'doc/**'
+  - 'documentation/**'
+  - '**/*.md'
+  - '.github/**'
+  - '.vscode/**'
+  - 'templates/**'
+  - 'packages/wxt-demo/**'
+  - 'packages/runner/demo-extension/**'
+  - 'scripts/**'
+  - 'patches/**'
+  - 'pnpm-lock.yaml'
