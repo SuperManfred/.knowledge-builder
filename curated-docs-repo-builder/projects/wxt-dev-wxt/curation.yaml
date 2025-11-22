@@ -1,0 +1,73 @@
+repo: wxt-dev/wxt
+branch: main
+commit: 78f8434a0691a2e1a5be80fbebad2a4cc07c73a0
+date: 2025-11-22
+
+keep:
+  # Root documentation
+  - README.md
+
+  # Main documentation directory (VitePress)
+  - docs/
+  - docs/**/*.md
+  - docs/**/*.mdx
+  - docs/api/
+  - docs/guide/
+  - docs/blog/
+  - docs/assets/
+  - docs/tapes/
+
+  # Documentation assets
+  - docs/**/*.png
+  - docs/**/*.svg
+  - docs/**/*.jpg
+  - docs/**/*.gif
+
+  # Package documentation
+  - packages/*/README.md
+  - packages/*/CHANGELOG.md
+
+  # Template documentation
+  - templates/*/README.md
+
+exclude:
+  # VitePress site infrastructure
+  - docs/.vitepress/**
+  - docs/public/**
+
+  # Source code directories
+  - packages/**/src/**
+  - packages/**/entrypoints/**
+  - packages/**/modules/**
+  - packages/**/components/**
+
+  # Code files
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "**/*.js"
+  - "**/*.jsx"
+  - "**/*.vue"
+  - "**/*.svelte"
+
+  # Config files
+  - "**/*.json"
+  - "**/*.yml"
+  - "**/*.yaml"
+  - "**/*.toml"
+  - "**/*.config.*"
+
+  # Tests
+  - "**/__tests__/**"
+  - "**/test/**"
+  - "**/tests/**"
+  - "**/*.test.*"
+  - "**/*.spec.*"
+
+  # CI/CD
+  - .github/**
+  - .vscode/**
+
+  # Non-docs markdown
+  - CONTRIBUTING.md
+  - CODE_OF_CONDUCT.md
+  - SECURITY.md

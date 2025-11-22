@@ -1,0 +1,93 @@
+# WXT Documentation Sparse Checkout
+# Repository: wxt-dev/wxt
+# Curated: 2025-11-22
+
+# Root documentation
+/README.md
+
+# Main documentation directory (VitePress)
+/docs/
+/docs/**/*.md
+/docs/**/*.mdx
+/docs/api/
+/docs/guide/
+/docs/blog/
+/docs/assets/
+/docs/tapes/
+
+# Documentation assets
+/docs/**/*.png
+/docs/**/*.svg
+/docs/**/*.jpg
+/docs/**/*.gif
+
+# Package documentation
+/packages/*/README.md
+/packages/*/CHANGELOG.md
+
+# Template documentation
+/templates/*/README.md
+
+# MANDATORY GLOBAL EXCLUSIONS (DO NOT OMIT)
+# Tests
+!**/__tests__/**
+!**/test/**
+!**/tests/**
+!**/*.test.*
+!**/*.spec.*
+!**/*.snap
+!/test_*
+
+# Build outputs
+!**/node_modules/**
+!**/dist/**
+!**/build/**
+!**/.next/**
+!**/.docusaurus/**
+
+# Website code
+!**/*.tsx
+!**/*.jsx
+!**/*.ts
+!**/*.js
+!**/*.vue
+!**/*.svelte
+!/docs/.vitepress/**
+!/docs/public/**
+
+# Infrastructure at root
+!/Dockerfile
+!/docker-compose.yml
+!/uv.lock
+!/cliff.toml
+!/.env*
+!/MANIFEST.in
+!/setup.py
+!/setup.cfg
+!/pyproject.toml
+
+# Source code
+!/src/**
+!/lib/**
+!/packages/**/src/**
+!/packages/**/entrypoints/**
+!/packages/**/modules/**
+!/packages/**/components/**
+!/crawl4ai/**
+
+# Config files
+!**/*.json
+!**/*.yml
+!**/*.yaml
+!**/*.toml
+!**/*.config.*
+
+# CI/CD
+!/.github/**
+!/.gitlab/**
+!/.circleci/**
+
+# Non-docs markdown
+!/CONTRIBUTING.md
+!/CODE_OF_CONDUCT.md
+!/SECURITY.md
