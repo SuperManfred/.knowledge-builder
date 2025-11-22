@@ -2,7 +2,7 @@
 
 # Verify Curation Script
 # Validates SPECIALIST-PROMPT.md structure and content quality
-# Checks for anti-patterns and ensures invisible 10x engineer expertise
+# Checks for anti-patterns and ensures 10X Engineer 10x engineer expertise
 
 set -e
 
@@ -119,7 +119,7 @@ QUESTION_COUNT=$(grep -iE "when should you|how do you|what is the|why use|should
 if [ $QUESTION_COUNT -gt 5 ]; then
     echo "⚠️  WARNING: Q&A-style language detected (${QUESTION_COUNT} instances)"
     echo "   Specialist should create internalized knowledge, not answer questions"
-    echo "   This suggests prompt is oriented toward Q&A interaction rather than invisible expertise"
+    echo "   This suggests prompt is oriented toward Q&A interaction rather than 10X Engineer expertise"
     WARNINGS=$((WARNINGS + 1))
 else
     echo "✅ Q&A patterns: ${QUESTION_COUNT} instances (acceptable)"
@@ -156,7 +156,7 @@ echo "💡 Checking for expertise indicators..."
 # Expertise indicators (correct approach - internalized knowledge)
 EXPERTISE_COUNT=$(grep -iE "automatically|instinctively|naturally|by default|optimal pattern|internalized" "$SPECIALIST_FILE" | wc -l)
 if [ $EXPERTISE_COUNT -lt 5 ]; then
-    echo "⚠️  WARNING: Low invisible expertise language (${EXPERTISE_COUNT} instances)"
+    echo "⚠️  WARNING: Low 10X Engineer expertise language (${EXPERTISE_COUNT} instances)"
     echo "   Specialist should describe automatic/instinctive decision-making"
     echo "   This suggests prompt may not create 10x engineer expertise"
     WARNINGS=$((WARNINGS + 1))

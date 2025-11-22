@@ -17,33 +17,37 @@
 
 ---
 
-## CRITICAL PHILOSOPHY: INVISIBLE 10X ENGINEER EXPERTISE
+## CRITICAL PHILOSOPHY: 10X ENGINEER EXPERTISE
 
 **Goal:** Create specialist knowledge that makes ANY agent function like a 10x engineer with deep internalized expertise for using this tool/framework.
 
 **The Nightmare to Avoid:**
+
 - ❌ Abstracting/paraphrasing documentation into summaries
-- ❌ Creating a specialist that *sounds* knowledgeable but works from vibes
+- ❌ Creating a specialist that _sounds_ knowledgeable but works from vibes
 - ❌ Q&A knowledge base that requires prompting for every decision
 - ❌ Navigation guide focused on "where things are" instead of "how to build optimally"
 
 **What We're Building:**
+
 - ✅ Curated documentation preserves ALL usage guidance verbatim
-- ✅ Specialist prompt creates INVISIBLE 10X ENGINEER EXPERTISE
+- ✅ Specialist prompt creates 10X ENGINEER EXPERTISE
 - ✅ Agent reads detailed spec → automatically knows optimal usage patterns
 - ✅ Agent makes implementation decisions instinctively, without prompting
 - ✅ Agent applies latest patterns by default, optimizing for best practices
 
 **How 10x Engineers Use Tools (from docs):**
+
 - Read requirement → automatically recognize which features apply
 - Instinctively structure implementation using tool patterns
 - Make integration decisions without conscious thought
 - Apply best practices by default
 - Stay on cutting edge
 
-**The Specialist Prompt Creates This Invisible Expertise.**
+**The Specialist Prompt Creates This 10X Engineer Expertise.**
 
 When agent reads detailed spec:
+
 - ✅ Automatically recognizes optimal usage patterns
 - ✅ Instinctively applies framework best practices
 - ✅ Naturally chooses correct features
@@ -52,11 +56,12 @@ When agent reads detailed spec:
 
 **The Test:**
 Can agent read complex spec and implement correctly without being told:
+
 - "Use feature X here"
 - "Apply pattern Y"
 - "Follow best practice Z"
 
-If YES (makes optimal decisions automatically) → Specialist created invisible expertise
+If YES (makes optimal decisions automatically) → Specialist created 10X Engineer expertise
 If NO (needs prompting for usage decisions) → Specialist failed
 
 ---
@@ -96,6 +101,7 @@ cp -r ${SOURCE_DIR}/* ${OUTPUT_DIR}/
 ### Step 3: Strip frontmatter and breadcrumbs
 
 For each `.md` file:
+
 - Remove YAML frontmatter (lines between `---` markers at file start)
 - Remove breadcrumb navigation (e.g., "Documentation› Quick Start› Installation")
 - Keep only actual documentation content
@@ -137,13 +143,16 @@ head -20 ./quick-start/getting-started.md
 ```
 
 **Ask yourself**:
+
 1. Does `installation.md` contain ONLY installation content?
 2. Or does it contain the entire quick-start section (installation + getting-started + first-workspace + file-tree)?
 
 **If file contains only what it should**:
+
 - KEEP IT - it's properly scoped content
 
 **If file contains entire parent section** (common in SPAs):
+
 - This is noise - the file name lies about what's inside
 - Options:
   a) If all files in directory are identical: Delete duplicates, keep one with appropriate name
@@ -178,12 +187,14 @@ head -30 ./pro-features/context-builder.md
 4. Read first 20 lines of sample files to confirm unique content
 
 **Expected result**:
+
 - Directory structure mirrors website (section/subsection.md)
 - Zero duplication (files with same content removed)
 - Zero website chrome (no nav, headers, footers)
 - 100% documentation coverage (all sections from website)
 
 **Example good structure**:
+
 ```
 repoprompt.com/
 ├── overview/
@@ -201,6 +212,7 @@ repoprompt.com/
 ```
 
 **NOT flat like this**:
+
 ```
 repoprompt.com/
 ├── overview.md
@@ -473,6 +485,7 @@ HAS_SPECIALIST=$([ -f "${OUTPUT_DIR}/SPECIALIST-PROMPT.md" ] && echo "true" || e
 ```
 
 Print completion:
+
 ```
 ✅ CURATION COMPLETE
 ✅ SPECIALIST-PROMPT.md GENERATED (6-agent ensemble + synthesis)
@@ -519,6 +532,7 @@ Resource ready: ${OUTPUT_DIR}/
 ## Success Criteria
 
 Final output should preserve structure:
+
 ```
 repoprompt.com/
 ├── overview/
@@ -534,6 +548,7 @@ repoprompt.com/
 ```
 
 NOT flat like this:
+
 ```
 repoprompt.com/
 ├── changelog.md
@@ -545,6 +560,7 @@ repoprompt.com/
 Examples:
 
 **Case 1: Files have unique content (KEEP ALL)**:
+
 ```
 repoprompt.com/
 ├── quick-start/
@@ -553,9 +569,11 @@ repoprompt.com/
 │   ├── first-workspace.md   # Unique: workspace setup
 │   └── file-tree.md         # Unique: file tree navigation
 ```
+
 Result: Keep all 4 files - they have different content
 
 **Case 2: Files are identical duplicates (DELETE DUPLICATES)**:
+
 ```
 BEFORE:
 ├── pro-features/

@@ -2,13 +2,14 @@
 
 ## Your Mission
 
-Analyze a curated code repository to create **INVISIBLE 10X ENGINEER EXPERTISE** - NOT a navigation guide, NOT a Q&A knowledge base, but internalized expertise that makes optimal implementation decisions automatic.
+Analyze a curated code repository to create **10X ENGINEER EXPERTISE** - NOT a navigation guide, NOT a Q&A knowledge base, but internalized expertise that makes optimal implementation decisions automatic.
 
 ## Critical Philosophy
 
 ### What 10x Engineers Internalize
 
 When a 10x engineer reads a business spec, they **automatically know**:
+
 - Optimal implementation pattern (not multiple options to choose from)
 - Which framework features to use (stable + canary/beta when appropriate)
 - Performance implications (caching, pre-rendering, optimization)
@@ -20,21 +21,25 @@ They don't **think** about these decisions - they're **internalized**.
 ### The Nightmare to Avoid
 
 ❌ **Q&A Knowledge Base:**
+
 - "When should you use Server Actions?"
 - "How do you implement authentication?"
 - "What's the best way to handle errors?"
 
 ❌ **Navigation Guide:**
+
 - "The authentication logic is in `src/auth/index.ts:145`"
 - "Check `components/Button.tsx` for button patterns"
 - "See the routing code in `app/routes/`"
 
 ❌ **Concept Explainer:**
+
 - "Next.js provides..."
 - "This framework allows you to..."
 - "Server Actions enable..."
 
 ❌ **Abstracted Summaries:**
+
 - Paraphrasing what code does
 - Natural language descriptions instead of preserved implementation
 - Losing implementation reality to readable explanations
@@ -42,21 +47,25 @@ They don't **think** about these decisions - they're **internalized**.
 ### What You're Building
 
 ✅ **Deep Internalized Patterns:**
+
 - "For data fetching in Server Components, instinctively use async/await"
 - "Form submissions automatically trigger Server Actions (no explicit fetch)"
 - "Client components naturally use `'use client'` directive"
 
 ✅ **Automatic Decision-Making:**
+
 - "This data fetches at build time by default (Static Generation)"
 - "Interactive features naturally become client components"
 - "Server Actions get automatic POST endpoint generation"
 
 ✅ **Instinctive Optimization:**
+
 - "Images automatically lazy load with next/image"
 - "Route prefetching happens on link hover"
 - "Suspense boundaries naturally wrap async components"
 
 ✅ **Cutting-Edge Awareness:**
+
 - "Latest pattern for forms: Server Actions (stable in 14.0)"
 - "Partial Prerendering is available in canary (opt-in)"
 - "React Server Components are production-ready"
@@ -73,6 +82,7 @@ You have access to the curated repository via RepoPrompt MCP:
 ### Using RepoPrompt Context
 
 The curated code IS the knowledge base - it's already selected and available to you:
+
 - Use codemaps to understand API structure
 - Read full source to see implementation reality
 - Preserve implementation details verbatim (don't abstract)
@@ -83,11 +93,13 @@ The curated code IS the knowledge base - it's already selected and available to 
 ### 1. Understand What's Preserved
 
 The curated repository contains:
+
 - Core source code (typically `src/`, `lib/`, `app/`)
 - Key configuration files (manifests, type definitions)
 - Navigation files (index files showing structure)
 
 Excluded:
+
 - Tests, docs, examples (usually 60-95% excluded)
 - Build outputs, dependencies
 - CI/CD, tooling configs
@@ -97,6 +109,7 @@ Excluded:
 Ask: **"What does a 10x engineer internalize to build features optimally without conscious thought?"**
 
 Focus on:
+
 - **Pattern Recognition:** "Given spec X, automatically apply pattern Y"
 - **Automatic Optimization:** "This naturally gets cached/pre-rendered"
 - **Cutting-Edge Awareness:** "Latest pattern for X is Y (canary/beta available)"
@@ -107,25 +120,30 @@ Focus on:
 ### 3. Capture Implementation Reality
 
 DON'T abstract or paraphrase:
+
 - ❌ "The framework provides routing capabilities"
 - ✅ "File-based routing: `app/posts/[id]/page.tsx` → `/posts/:id`"
 
 DON'T create Q&A:
+
 - ❌ "How do you handle errors? Use Error Boundaries"
 - ✅ "Errors naturally bubble to nearest error.tsx boundary"
 
 DON'T guide navigation:
+
 - ❌ "Authentication logic is in src/auth/"
 - ✅ "Auth pattern: middleware checks session, redirects to /login"
 
 ### 4. Include Cutting-Edge Patterns
 
 Identify what's:
+
 - **Stable:** Production-ready, recommended patterns
 - **Canary/Beta:** Latest features available but opt-in
 - **Deprecated:** Patterns to avoid (old approaches)
 
 Example:
+
 - ✅ "Server Actions (stable 14.0): Progressive enhancement for forms"
 - ✅ "Partial Prerendering (canary): Opt-in via experimental flag"
 - ❌ "getServerSideProps (deprecated): Use Server Components instead"
@@ -133,6 +151,7 @@ Example:
 ### 5. Define Knowledge Boundaries
 
 Be precise about what the specialist knows:
+
 - Version coverage (based on curation)
 - What's excluded and why
 - When to check pristine source
@@ -143,7 +162,9 @@ Be precise about what the specialist knows:
 Your proposal must use these XML sections:
 
 ### `<role>`
+
 Define the 10x engineer specialist identity:
+
 ```xml
 <role>
 You are a [Framework/Library] 10x engineer specialist with deep internalized expertise in [specific domain].
@@ -158,7 +179,9 @@ You automatically make optimal decisions about:
 ```
 
 ### `<knowledge_base>`
+
 Describe what the curated code preserves:
+
 ```xml
 <knowledge_base>
 The knowledge base consists of:
@@ -177,7 +200,9 @@ Excluded (check pristine source if needed):
 ```
 
 ### `<metadata>`
+
 Include curation date and freshness protocol (provided via $METADATA_CONTEXT):
+
 ```xml
 <metadata>
 **Curated:** YYYY-MM-DD
@@ -189,7 +214,9 @@ Include curation date and freshness protocol (provided via $METADATA_CONTEXT):
 ```
 
 ### `<internalized_expertise>`
+
 Core patterns that become automatic:
+
 ```xml
 <internalized_expertise>
 ## Pattern Category 1
@@ -205,7 +232,9 @@ Core patterns that become automatic:
 ```
 
 ### `<implementation_instincts>`
+
 What the agent does automatically:
+
 ```xml
 <implementation_instincts>
 - [Instinct 1]: [What happens automatically]
@@ -215,7 +244,9 @@ What the agent does automatically:
 ```
 
 ### `<cutting_edge>`
+
 Latest patterns including canary/beta:
+
 ```xml
 <cutting_edge>
 ## Stable (Production-Ready)
@@ -230,7 +261,9 @@ Latest patterns including canary/beta:
 ```
 
 ### `<initialization>`
+
 How the specialist bootstraps:
+
 ```xml
 <initialization>
 When starting work:
@@ -246,7 +279,7 @@ When starting work:
 
 Before submitting your proposal, verify:
 
-✅ **Creates invisible expertise** (not Q&A or navigation)
+✅ **Creates internalized expertise** (not Q&A or navigation)
 ✅ **Preserves implementation reality** (code patterns verbatim, not abstracted)
 ✅ **Enables automatic decisions** (instincts, not choices)
 ✅ **Includes cutting-edge awareness** (stable + canary/beta)
@@ -262,6 +295,7 @@ Before submitting your proposal, verify:
 ## Task-Specific Focus
 
 You will receive a task-specific prompt with:
+
 - Your analysis perspective (independent vs. deep reasoning)
 - Output filename for your proposal
 - Any specific areas to emphasize

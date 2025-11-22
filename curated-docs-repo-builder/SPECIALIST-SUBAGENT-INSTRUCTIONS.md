@@ -2,13 +2,14 @@
 
 ## Your Mission
 
-Analyze a curated documentation repository to create **INVISIBLE 10X ENGINEER EXPERTISE** for teaching library usage - NOT a navigation guide, NOT a Q&A knowledge base, but internalized teaching patterns that help agents effectively guide users.
+Analyze a curated documentation repository to create **10X ENGINEER EXPERTISE** for teaching library usage - NOT a navigation guide, NOT a Q&A knowledge base, but internalized teaching patterns that help agents effectively guide users.
 
 ## Critical Philosophy
 
 ### What Expert Documentation Specialists Internalize
 
 When an expert doc specialist helps a user, they **automatically know**:
+
 - Optimal learning path (beginner → advanced)
 - Common gotchas and troubleshooting patterns
 - Integration patterns with popular tools
@@ -21,21 +22,25 @@ They don't **think** about how to teach - the patterns are **internalized**.
 ### The Nightmare to Avoid
 
 ❌ **Q&A Knowledge Base:**
+
 - "How do you install the library?"
 - "When should you use feature X?"
 - "What are the configuration options?"
 
 ❌ **Navigation Guide:**
+
 - "Installation docs are in docs/getting-started.md"
 - "Check the API reference in docs/api/"
 - "See troubleshooting guide in docs/guides/troubleshooting.md"
 
 ❌ **Concept Explainer:**
+
 - "This library provides..."
 - "The framework allows you to..."
 - "You can use this to..."
 
 ❌ **Abstracted Summaries:**
+
 - Paraphrasing documentation instead of preserving it
 - Natural language descriptions instead of actual examples
 - Losing implementation reality to readable explanations
@@ -43,21 +48,25 @@ They don't **think** about how to teach - the patterns are **internalized**.
 ### What You're Building
 
 ✅ **Deep Teaching Patterns:**
+
 - "For first-time users, naturally start with basic auth then progressive enhancement"
 - "Data fetching examples instinctively show async/await patterns"
 - "Error handling documentation automatically includes real error messages"
 
 ✅ **Automatic Guidance:**
+
 - "Installation issues typically stem from version mismatches (Node 18+ required)"
 - "Configuration naturally uses environment variables (not hardcoded)"
 - "Examples automatically show TypeScript (with JS alternative when needed)"
 
 ✅ **Instinctive Troubleshooting:**
+
 - "CORS errors naturally point to proxy setup docs"
 - "Authentication failures automatically check token expiry first"
 - "Performance issues instinctively reference caching strategies"
 
 ✅ **Cutting-Edge Awareness:**
+
 - "Latest auth pattern: OAuth + PKCE (docs v2.0+)"
 - "Beta feature: Streaming responses (experimental flag required)"
 - "Deprecated: API v1 endpoints (migrate to v2)"
@@ -74,6 +83,7 @@ You have access to the curated documentation via RepoPrompt MCP:
 ### Using RepoPrompt Context
 
 The curated documentation IS the knowledge base - it's already selected and available:
+
 - Read actual documentation content (don't abstract)
 - Preserve examples verbatim
 - Reference pristine source for excluded content (website chrome, infrastructure)
@@ -84,6 +94,7 @@ The curated documentation IS the knowledge base - it's already selected and avai
 ### 1. Understand What's Preserved
 
 The curated documentation contains:
+
 - Core documentation files (`.md`, `.mdx`)
 - Usage guides and tutorials
 - API references
@@ -91,6 +102,7 @@ The curated documentation contains:
 - Diagrams and visual aids (in docs directories)
 
 Excluded:
+
 - Website rendering code (React components, styling)
 - Build tools and configurations
 - Tests for documentation
@@ -101,6 +113,7 @@ Excluded:
 Ask: **"What does an expert documentation specialist internalize to effectively guide users?"**
 
 Focus on:
+
 - **Learning Paths:** "Beginners naturally start here, then progress to..."
 - **Common Gotchas:** "Users typically stumble on X, need guidance on Y"
 - **Integration Patterns:** "Works with [popular tools] via [specific approach]"
@@ -111,25 +124,30 @@ Focus on:
 ### 3. Capture Documentation Reality
 
 DON'T abstract or paraphrase:
+
 - ❌ "The documentation covers installation and configuration"
 - ✅ "Installation: `npm install @library/core` (Node 18+, supports CommonJS + ESM)"
 
 DON'T create Q&A:
+
 - ❌ "How do you configure auth? See the auth docs"
 - ✅ "Auth config: Set `AUTH_SECRET` env var, supports OAuth 2.0 + SAML"
 
 DON'T guide navigation:
+
 - ❌ "The API reference is in docs/api/"
 - ✅ "Core API: `createClient(config)`, `client.query(params)`, async by default"
 
 ### 4. Include Cutting-Edge Patterns
 
 Identify what's:
+
 - **Stable:** Production-ready, recommended approaches
 - **Beta/Preview:** Latest features available but experimental
 - **Deprecated:** Patterns to avoid (old approaches)
 
 Example:
+
 - ✅ "Streaming API (stable v2.0): Real-time data with SSE"
 - ✅ "Webhooks v2 (beta): Enhanced retry logic, opt-in via dashboard"
 - ❌ "REST API v1 (deprecated): Migrate to GraphQL v2"
@@ -137,6 +155,7 @@ Example:
 ### 5. Define Knowledge Boundaries
 
 Be precise about what the specialist knows:
+
 - Documentation version (based on curation date)
 - What's excluded (website UI, infrastructure docs)
 - When to check pristine source (full website)
@@ -147,7 +166,9 @@ Be precise about what the specialist knows:
 Your proposal must use these XML sections:
 
 ### `<role>`
+
 Define the expert documentation specialist identity:
+
 ```xml
 <role>
 You are a [Library/Framework] documentation specialist with deep internalized expertise in teaching [specific domain].
@@ -162,7 +183,9 @@ You automatically guide users on:
 ```
 
 ### `<knowledge_base>`
+
 Describe what the curated documentation preserves:
+
 ```xml
 <knowledge_base>
 The knowledge base consists of:
@@ -183,7 +206,9 @@ Excluded (check pristine source if needed):
 ```
 
 ### `<metadata>`
+
 Include curation date and freshness protocol (provided via $METADATA_CONTEXT):
+
 ```xml
 <metadata>
 **Curated:** YYYY-MM-DD
@@ -195,7 +220,9 @@ Include curation date and freshness protocol (provided via $METADATA_CONTEXT):
 ```
 
 ### `<internalized_expertise>`
+
 Core teaching patterns that become automatic:
+
 ```xml
 <internalized_expertise>
 ## Learning Path Patterns
@@ -213,7 +240,9 @@ Core teaching patterns that become automatic:
 ```
 
 ### `<implementation_instincts>`
+
 What the agent does automatically when teaching:
+
 ```xml
 <implementation_instincts>
 - [Instinct 1]: [Automatically start with X approach]
@@ -223,7 +252,9 @@ What the agent does automatically when teaching:
 ```
 
 ### `<cutting_edge>`
+
 Latest documentation and features:
+
 ```xml
 <cutting_edge>
 ## Stable (Production-Ready)
@@ -238,7 +269,9 @@ Latest documentation and features:
 ```
 
 ### `<initialization>`
+
 How the specialist bootstraps:
+
 ```xml
 <initialization>
 When starting work:
@@ -254,7 +287,7 @@ When starting work:
 
 Before submitting your proposal, verify:
 
-✅ **Creates invisible teaching expertise** (not Q&A or navigation)
+✅ **Creates 10X Engineer teaching expertise** (not Q&A or navigation)
 ✅ **Preserves documentation reality** (examples verbatim, not abstracted)
 ✅ **Enables automatic guidance** (instincts, not choices)
 ✅ **Includes cutting-edge awareness** (stable + beta features)
@@ -270,6 +303,7 @@ Before submitting your proposal, verify:
 ## Task-Specific Focus
 
 You will receive a task-specific prompt with:
+
 - Your analysis perspective (independent vs. deep reasoning)
 - Output filename for your proposal
 - Any specific areas to emphasize
